@@ -104,14 +104,84 @@
         <span id="total-time" class="time-label">05:10</span>
       </div>
 
-      <!-- Controles -->
-      <div class="controls-row">
-        <!-- Control de Voz Aislada vs Pista -->
-        <div class="audio-stems-control">
-          <span title="Aislamiento vocal por IA">🎙️</span>
-          <input type="range" id="stem-slider" class="stem-slider" min="0" max="1" step="0.05" value="0">
-          <span id="stem-label" style="font-size: 0.75rem; min-width: 85px;">100% Solo Voz</span>
+      <!-- Mezclador de 4 Pistas por IA (Voz, Batería, Bajo, Resto) -->
+      <div class="mixer-drawer" id="mixer-drawer">
+        <div class="mixer-header">
+          <div class="mixer-title-wrap">
+            <span class="mixer-badge">4 STEMS</span>
+            <span class="mixer-title">Consola de Pistas (IA Demucs)</span>
+          </div>
+          <div class="mixer-presets">
+            <button type="button" class="preset-btn active" data-preset="vocal-only">🎤 Solo Voz</button>
+            <button type="button" class="preset-btn" data-preset="vocal-rhythm">🥁 Voz + Base</button>
+            <button type="button" class="preset-btn" data-preset="full-band">🎧 Banda</button>
+          </div>
         </div>
+
+        <div class="mixer-channels">
+          <!-- Canal 1: Voz -->
+          <div class="channel-strip" data-stem="vocals">
+            <div class="ch-top">
+              <span class="ch-icon">🎤</span>
+              <span class="ch-name">Voz</span>
+              <span class="ch-val" id="val-vocals">100%</span>
+            </div>
+            <input type="range" class="ch-fader" id="fader-vocals" min="0" max="1" step="0.02" value="1.0">
+            <div class="ch-btns">
+              <button type="button" class="ch-btn m-btn" id="mute-vocals" title="Silenciar Voz">M</button>
+              <button type="button" class="ch-btn s-btn" id="solo-vocals" title="Solo Voz">S</button>
+            </div>
+          </div>
+
+          <!-- Canal 2: Batería -->
+          <div class="channel-strip" data-stem="drums">
+            <div class="ch-top">
+              <span class="ch-icon">🥁</span>
+              <span class="ch-name">Batería</span>
+              <span class="ch-val" id="val-drums">0%</span>
+            </div>
+            <input type="range" class="ch-fader" id="fader-drums" min="0" max="1" step="0.02" value="0.0">
+            <div class="ch-btns">
+              <button type="button" class="ch-btn m-btn" id="mute-drums" title="Silenciar Batería">M</button>
+              <button type="button" class="ch-btn s-btn" id="solo-drums" title="Solo Batería">S</button>
+            </div>
+          </div>
+
+          <!-- Canal 3: Bajo -->
+          <div class="channel-strip" data-stem="bass">
+            <div class="ch-top">
+              <span class="ch-icon">🎸</span>
+              <span class="ch-name">Bajo</span>
+              <span class="ch-val" id="val-bass">0%</span>
+            </div>
+            <input type="range" class="ch-fader" id="fader-bass" min="0" max="1" step="0.02" value="0.0">
+            <div class="ch-btns">
+              <button type="button" class="ch-btn m-btn" id="mute-bass" title="Silenciar Bajo">M</button>
+              <button type="button" class="ch-btn s-btn" id="solo-bass" title="Solo Bajo">S</button>
+            </div>
+          </div>
+
+          <!-- Canal 4: Resto -->
+          <div class="channel-strip" data-stem="other">
+            <div class="ch-top">
+              <span class="ch-icon">🎹</span>
+              <span class="ch-name">Resto</span>
+              <span class="ch-val" id="val-other">0%</span>
+            </div>
+            <input type="range" class="ch-fader" id="fader-other" min="0" max="1" step="0.02" value="0.0">
+            <div class="ch-btns">
+              <button type="button" class="ch-btn m-btn" id="mute-other" title="Silenciar Resto">M</button>
+              <button type="button" class="ch-btn s-btn" id="solo-other" title="Solo Resto">S</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles Principales -->
+      <div class="controls-row">
+        <button id="toggle-mixer-btn" class="player-icon-btn active" title="Abrir / Ocultar Consola de Pistas">
+          🎛️ <span style="font-size: 0.72rem; font-weight: 700; margin-left: 2px;">Mezclador</span>
+        </button>
 
         <!-- Botones Principales -->
         <div class="main-play-group">

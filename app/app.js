@@ -10,14 +10,25 @@ class PianoVocalApp {
     this.countInEnabled = true;
     this.loopSectionEnabled = false;
     this.playbackRate = 1.0;
-    this.backingTrackVolume = 0.0; // 100% solo voz por defecto
     this.wakeLock = null;
     this.noSleepVideo = null;
 
-    this.audioVocals = new Audio();
-    this.audioBacking = new Audio();
-    this.audioVocals.preload = 'auto';
-    this.audioBacking.preload = 'auto';
+    // 4 Stems de Audio (IA Demucs): Voz, Batería, Bajo, Resto
+    this.stems = {
+      vocals: new Audio(),
+      drums: new Audio(),
+      bass: new Audio(),
+      other: new Audio()
+    };
+    Object.values(this.stems).forEach(a => {
+      a.preload = 'auto';
+      a.preservesPitch = true;
+    });
+
+    this.volumes = { vocals: 1.0, drums: 0.0, bass: 0.0, other: 0.0 };
+    this.mutes = { vocals: false, drums: false, bass: false, other: false };
+    this.solos = { vocals: false, drums: false, bass: false, other: false };
+
     this.audioCtx = null;
 
     // Elementos DOM
@@ -33,12 +44,12 @@ class PianoVocalApp {
     this.measuresGrid = document.getElementById('measures-grid');
     this.countInOverlay = document.getElementById('count-in-overlay');
     this.countInNumber = document.getElementById('count-in-number');
-    this.stemSlider = document.getElementById('stem-slider');
-    this.stemLabel = document.getElementById('stem-label');
     this.speedSelect = document.getElementById('speed-select');
     this.loopBtn = document.getElementById('loop-btn');
     this.countInBtn = document.getElementById('countin-btn');
     this.wakeLockBtn = document.getElementById('wakelock-btn');
+    this.mixerDrawer = document.getElementById('mixer-drawer');
+    this.toggleMixerBtn = document.getElementById('toggle-mixer-btn');
 
     // Inicializar visualizador de teclado de piano
     this.piano = new PianoVisualizer('piano-container', {
@@ -142,16 +153,19 @@ class PianoVocalApp {
       btn.classList.toggle('active', btn.dataset.version === versionKey);
     });
 
-    // Configurar rutas de audio
-    this.audioVocals.src = this.versionData.audioVocals;
-    this.audioBacking.src = this.versionData.audioBacking;
-    this.audioVocals.playbackRate = this.playbackRate;
-    this.audioBacking.playbackRate = this.playbackRate;
-    this.audioVocals.preservesPitch = true;
-    this.audioBacking.preservesPitch = true;
+    // Configurar rutas de audio para los 4 stems
+    const stems = this.versionData.stems;
+    this.stems.vocals.src = stems.vocals;
+    this.stems.drums.src = stems.drums;
+    this.stems.bass.src = stems.bass;
+    this.stems.other.src = stems.other;
 
-    this.audioVocals.volume = 1.0;
-    this.audioBacking.volume = this.backingTrackVolume;
+    Object.values(this.stems).forEach(a => {
+      a.playbackRate = this.playbackRate;
+      a.preservesPitch = true;
+    });
+
+    this.applyMixerState();
 
     this.secondsPerBeat = 60 / this.versionData.bpm;
     this.secondsPerMeasure = this.secondsPerBeat * 4;
@@ -234,17 +248,73 @@ class PianoVocalApp {
     return Math.max(0, this.versionData.offsetSeconds + index * this.secondsPerMeasure);
   }
 
+  applyMixerState() {
+    const anySolo = Object.values(this.solos).some(v => v);
+
+    for (const key of ['vocals', 'drums', 'bass', 'other']) {
+      let audibleVol = this.volumes[key];
+      if (this.mutes[key]) {
+        audibleVol = 0;
+      } else if (anySolo && !this.solos[key]) {
+        audibleVol = 0;
+      }
+
+      const audio = this.stems[key];
+      if (audio) {
+        audio.volume = audibleVol;
+      }
+
+      // Actualizar UI
+      const strip = document.querySelector(`.channel-strip[data-stem="${key}"]`);
+      if (strip) {
+        strip.classList.toggle('muted', this.mutes[key]);
+        strip.classList.toggle('soloed', this.solos[key]);
+        const fader = document.getElementById(`fader-${key}`);
+        if (fader && document.activeElement !== fader) fader.value = this.volumes[key];
+        const valEl = document.getElementById(`val-${key}`);
+        if (valEl) valEl.textContent = `${Math.round(this.volumes[key] * 100)}%`;
+        const mBtn = document.getElementById(`mute-${key}`);
+        if (mBtn) mBtn.classList.toggle('active', this.mutes[key]);
+        const sBtn = document.getElementById(`solo-${key}`);
+        if (sBtn) sBtn.classList.toggle('active', this.solos[key]);
+      }
+    }
+  }
+
+  setMixerPreset(preset) {
+    if (preset === 'vocal-only') {
+      this.volumes = { vocals: 1.0, drums: 0.0, bass: 0.0, other: 0.0 };
+      this.mutes = { vocals: false, drums: false, bass: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, other: false };
+    } else if (preset === 'vocal-rhythm') {
+      this.volumes = { vocals: 1.0, drums: 0.75, bass: 0.75, other: 0.0 };
+      this.mutes = { vocals: false, drums: false, bass: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, other: false };
+    } else if (preset === 'full-band') {
+      this.volumes = { vocals: 1.0, drums: 0.85, bass: 0.85, other: 0.75 };
+      this.mutes = { vocals: false, drums: false, bass: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, other: false };
+    }
+
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.preset === preset);
+    });
+
+    this.applyMixerState();
+  }
+
   seekToMeasure(index) {
     this.isSeeking = true;
     const targetTime = this.getMeasureStartTime(index);
 
-    // Actualizar audio
-    try {
-      this.audioVocals.currentTime = targetTime;
-      this.audioBacking.currentTime = targetTime;
-    } catch (e) {
-      console.warn('Seek error:', e);
-    }
+    // Actualizar los 4 stems simultáneamente
+    Object.values(this.stems).forEach(audio => {
+      try {
+        audio.currentTime = targetTime;
+      } catch (e) {
+        console.warn('Seek error:', e);
+      }
+    });
 
     this.updateProgress(targetTime);
     this.highlightMeasureDirectly(index, 1);
@@ -317,30 +387,42 @@ class PianoVocalApp {
   }
 
   initAudioSync() {
-    this.audioVocals.addEventListener('timeupdate', () => {
+    const leadAudio = this.stems.vocals;
+
+    leadAudio.addEventListener('timeupdate', () => {
       if (this.isSeeking) return;
-      const time = this.audioVocals.currentTime;
+      const time = leadAudio.currentTime;
       this.updateProgress(time);
       this.highlightAtTime(time);
+
+      // Verificación de alineación milimétrica entre los 4 stems
+      for (const [name, audio] of Object.entries(this.stems)) {
+        if (name !== 'vocals' && Math.abs(audio.currentTime - time) > 0.08) {
+          audio.currentTime = time;
+        }
+      }
     });
 
-    this.audioVocals.addEventListener('seeked', () => {
+    leadAudio.addEventListener('seeked', () => {
       this.isSeeking = false;
-      this.audioBacking.currentTime = this.audioVocals.currentTime;
+      const time = leadAudio.currentTime;
+      for (const [name, audio] of Object.entries(this.stems)) {
+        if (name !== 'vocals') audio.currentTime = time;
+      }
     });
 
-    this.audioVocals.addEventListener('loadedmetadata', () => {
-      this.totalTimeEl.textContent = this.formatTime(this.audioVocals.duration);
+    leadAudio.addEventListener('loadedmetadata', () => {
+      this.totalTimeEl.textContent = this.formatTime(leadAudio.duration || this.versionData.totalDuration);
     });
 
-    this.audioVocals.addEventListener('ended', () => {
+    leadAudio.addEventListener('ended', () => {
       this.pause();
       this.updateProgress(0);
     });
   }
 
   updateProgress(time) {
-    const dur = this.audioVocals.duration || this.versionData.totalDuration;
+    const dur = this.stems.vocals.duration || this.versionData.totalDuration;
     const pct = Math.min(100, Math.max(0, (time / dur) * 100));
     this.progressBarFill.style.width = `${pct}%`;
     this.currentTimeEl.textContent = this.formatTime(time);
@@ -381,7 +463,7 @@ class PianoVocalApp {
     if (this.isPlaying) {
       this.pause();
     } else {
-      if (this.countInEnabled && this.audioVocals.currentTime < 1) {
+      if (this.countInEnabled && this.stems.vocals.currentTime < 1) {
         this.runCountIn(() => this.play());
       } else {
         this.play();
@@ -392,18 +474,20 @@ class PianoVocalApp {
   play() {
     this.isPlaying = true;
     this.playBtn.innerHTML = '⏸';
-    this.audioVocals.play().catch(e => console.warn('Audio play error:', e));
-    if (this.backingTrackVolume > 0) {
-      this.audioBacking.play().catch(e => console.warn('Backing play error:', e));
-    }
-    this.requestWakeLock();
+    
+    // Reproducir los 4 stems sincronizados
+    Object.values(this.stems).forEach(audio => {
+      audio.playbackRate = this.playbackRate;
+      audio.play().catch(e => console.warn('Play stem error:', e));
+    });
+
+    this.activateScreenKeepAlive();
   }
 
   pause() {
     this.isPlaying = false;
     this.playBtn.innerHTML = '▶';
-    this.audioVocals.pause();
-    this.audioBacking.pause();
+    Object.values(this.stems).forEach(audio => audio.pause());
   }
 
   runCountIn(callback) {
@@ -444,20 +528,7 @@ class PianoVocalApp {
       osc.start();
       osc.stop(this.audioCtx.currentTime + 0.08);
     } catch (e) {
-      // Ignorar si el usuario no ha interactuado aún con la página
-    }
-  }
-
-  async requestWakeLock() {
-    if ('wakeLock' in navigator) {
-      try {
-        this.wakeLock = await navigator.wakeLock.request('screen');
-        if (this.wakeLockBtn) {
-          this.wakeLockBtn.classList.add('active');
-        }
-      } catch (err) {
-        console.warn('Wake Lock no disponible:', err);
-      }
+      // AudioContext policy
     }
   }
 
@@ -468,17 +539,18 @@ class PianoVocalApp {
     this.progressBarWrap.addEventListener('click', (e) => {
       const rect = this.progressBarWrap.getBoundingClientRect();
       const pos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
-      const dur = this.audioVocals.duration || this.versionData.totalDuration;
+      const dur = this.stems.vocals.duration || this.versionData.totalDuration;
       const targetTime = pos * dur;
       this.isSeeking = true;
-      this.audioVocals.currentTime = targetTime;
-      this.audioBacking.currentTime = targetTime;
+      Object.values(this.stems).forEach(audio => {
+        audio.currentTime = targetTime;
+      });
       this.updateProgress(targetTime);
       this.highlightAtTime(targetTime);
       setTimeout(() => { this.isSeeking = false; }, 200);
     });
 
-    // Pestañas de versión
+    // Pestañas de versión (Oficial vs Live)
     document.querySelectorAll('.version-pill-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const v = e.target.dataset.version;
@@ -496,32 +568,58 @@ class PianoVocalApp {
         this.notation = e.target.dataset.notation;
         this.piano.setNotation(this.notation);
         this.renderMeasuresGrid();
-        this.highlightAtTime(this.audioVocals.currentTime);
+        this.highlightAtTime(this.stems.vocals.currentTime);
       });
     });
 
-    // Control de balance de stems (Solo Voz vs Pista)
-    this.stemSlider.addEventListener('input', (e) => {
-      const val = parseFloat(e.target.value);
-      this.backingTrackVolume = val;
-      this.audioBacking.volume = val;
-      if (val === 0) {
-        this.stemLabel.textContent = "100% Solo Voz";
-        this.audioBacking.pause();
-      } else {
-        this.stemLabel.textContent = `Voz + Pista (${Math.round(val * 100)}%)`;
-        if (this.isPlaying && this.audioBacking.paused) {
-          this.audioBacking.currentTime = this.audioVocals.currentTime;
-          this.audioBacking.play().catch(() => {});
-        }
+    // Controles de Mezclador de 4 Canales (Faders)
+    ['vocals', 'drums', 'bass', 'other'].forEach(stem => {
+      const fader = document.getElementById(`fader-${stem}`);
+      if (fader) {
+        fader.addEventListener('input', (e) => {
+          this.volumes[stem] = parseFloat(e.target.value);
+          this.applyMixerState();
+        });
+      }
+
+      const mBtn = document.getElementById(`mute-${stem}`);
+      if (mBtn) {
+        mBtn.addEventListener('click', () => {
+          this.mutes[stem] = !this.mutes[stem];
+          this.applyMixerState();
+        });
+      }
+
+      const sBtn = document.getElementById(`solo-${stem}`);
+      if (sBtn) {
+        sBtn.addEventListener('click', () => {
+          this.solos[stem] = !this.solos[stem];
+          this.applyMixerState();
+        });
       }
     });
+
+    // Botones de Preajustes de Mezcla (Presets)
+    document.querySelectorAll('.preset-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        this.setMixerPreset(e.target.dataset.preset);
+      });
+    });
+
+    // Botón para alternar visibilidad del mezclador
+    if (this.toggleMixerBtn && this.mixerDrawer) {
+      this.toggleMixerBtn.addEventListener('click', () => {
+        const isCollapsed = this.mixerDrawer.classList.toggle('collapsed');
+        this.toggleMixerBtn.classList.toggle('active', !isCollapsed);
+      });
+    }
 
     // Selector de velocidad
     this.speedSelect.addEventListener('change', (e) => {
       this.playbackRate = parseFloat(e.target.value);
-      this.audioVocals.playbackRate = this.playbackRate;
-      this.audioBacking.playbackRate = this.playbackRate;
+      Object.values(this.stems).forEach(audio => {
+        audio.playbackRate = this.playbackRate;
+      });
     });
 
     // Conteo previo toggle
@@ -550,7 +648,7 @@ class PianoVocalApp {
           this.wakeLock = null;
           this.wakeLockBtn.classList.remove('active');
         } else {
-          this.requestWakeLock();
+          this.activateScreenKeepAlive();
         }
       });
     }
@@ -561,9 +659,11 @@ class PianoVocalApp {
         e.preventDefault();
         this.togglePlay();
       } else if (e.code === 'ArrowLeft') {
-        this.audioVocals.currentTime = Math.max(0, this.audioVocals.currentTime - 5);
+        const target = Math.max(0, this.stems.vocals.currentTime - 5);
+        Object.values(this.stems).forEach(a => a.currentTime = target);
       } else if (e.code === 'ArrowRight') {
-        this.audioVocals.currentTime = Math.min(this.audioVocals.duration, this.audioVocals.currentTime + 5);
+        const target = Math.min(this.stems.vocals.duration, this.stems.vocals.currentTime + 5);
+        Object.values(this.stems).forEach(a => a.currentTime = target);
       }
     });
   }

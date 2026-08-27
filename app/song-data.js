@@ -183,8 +183,12 @@ export const SONG_METADATA = {
       name: "Video Oficial",
       bpm: 68.6,
       offsetSeconds: 3.65, // Calibrado al milisegundo: Compás #27 (Re) a los 94.65s ("cuesta"), Compás #28 (La#dim) a los 98.20s ("amor")
-      audioVocals: "audio/official_vocals.mp3",
-      audioBacking: "audio/official_no_vocals.mp3",
+      stems: {
+        vocals: "audio/official_vocals.mp3",
+        drums: "audio/official_drums.mp3",
+        bass: "audio/official_bass.mp3",
+        other: "audio/official_other.mp3"
+      },
       totalDuration: 310.6,
       measures: [
         // Fila 1 (Intro acústica / silencio video)
@@ -304,10 +308,14 @@ export const SONG_METADATA = {
     live: {
       name: "Live Session From LA",
       bpm: 62.8,
-      offsetSeconds: -2.0, // Calibrado: Compás 4 (Re) a los 9.4s
-      audioVocals: "audio/live_vocals.mp3",
-      audioBacking: "audio/live_no_vocals.mp3",
-      totalDuration: 243.6,
+      offsetSeconds: -2.0,
+      stems: {
+        vocals: "audio/live_vocals.mp3",
+        drums: "audio/live_drums.mp3",
+        bass: "audio/live_bass.mp3",
+        other: "audio/live_other.mp3"
+      },
+      totalDuration: 241.0,
       measures: [
         // Intro 1
         { id: 1, chords: [{ chord: null, beats: 1 }, { chord: 'Re', beats: 3 }], section: "Intro 1" },

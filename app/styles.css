@@ -642,18 +642,205 @@ body {
   gap: 12px;
 }
 
-.audio-stems-control {
+/* ========================================================
+   Consola de Pistas (4-Track Studio Mixer)
+   ======================================================== */
+
+.mixer-drawer {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.mixer-drawer.collapsed {
+  display: none;
+}
+
+.mixer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mixer-title-wrap {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.75rem;
-  color: var(--text-secondary);
 }
 
-.stem-slider {
-  accent-color: var(--accent-gold);
-  width: 90px;
+.mixer-badge {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.mixer-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mixer-presets {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.preset-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 20px;
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.preset-btn.active {
+  background: var(--accent-gold);
+  color: #000;
+  border-color: var(--accent-gold-light);
+  font-weight: 800;
+}
+
+.mixer-channels {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 580px) {
+  .mixer-channels {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+}
+
+.channel-strip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.channel-strip.muted {
+  opacity: 0.5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.channel-strip.soloed {
+  border-color: rgba(245, 158, 11, 0.7);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.ch-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.ch-icon {
+  font-size: 0.9rem;
+}
+
+.ch-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+  margin-left: 4px;
+}
+
+.ch-val {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.ch-fader {
+  width: 100%;
+  cursor: pointer;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.channel-strip[data-stem="vocals"] .ch-fader {
+  accent-color: var(--accent-gold);
+}
+
+.channel-strip[data-stem="drums"] .ch-fader {
+  accent-color: #f43f5e;
+}
+
+.channel-strip[data-stem="bass"] .ch-fader {
+  accent-color: #10b981;
+}
+
+.channel-strip[data-stem="other"] .ch-fader {
+  accent-color: #a855f7;
+}
+
+.ch-btns {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.ch-btn {
+  flex: 1;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 0;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ch-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.m-btn.active {
+  background: #ef4444 !important;
+  color: #fff !important;
+  border-color: #f87171 !important;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+.s-btn.active {
+  background: var(--accent-gold) !important;
+  color: #000 !important;
+  border-color: var(--accent-gold-light) !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
 }
 
 .main-play-group {
