@@ -220,8 +220,8 @@ export const SONG_METADATA = {
         // Fila 7
         { id: 25, chords: [{ chord: null, beats: 2 }, { chord: 'La#dim', beats: 2 }] },
         { id: 26, chords: [{ chord: null, beats: 2 }, { chord: 'Do#dim', beats: 2 }], lyric: "(Cómo me...)" },
-        { id: 27, chords: [{ chord: 'Re', beats: 4 }], section: "Estrofa 1", lyric: "Cuesta entender que tanto amor" },
-        { id: 28, chords: [{ chord: 'La#dim', beats: 4 }], lyric: "En esa cruz fuera por mí" },
+        { id: 27, chords: [{ chord: 'Re', beats: 4 }], section: "Estrofa 1", lyric: "Cuesta entender que tanto..." },
+        { id: 28, chords: [{ chord: 'La#dim', beats: 4 }], lyric: "Amor, en esa cruz fuera por mí" },
         // Fila 8
         { id: 29, chords: [{ chord: 'Sol', beats: 4 }], lyric: "Tú, siendo rey, no te negaste al dolor" },
         { id: 30, chords: [{ chord: 'Lasus4', beats: 2 }, { chord: 'La', beats: 2 }], lyric: "Y yo estaba allí" },
