@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Lecciones — piano al oído</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="practica.css">
+<link rel="stylesheet" href="lecciones.css">
+</head>
+<body class="pagina-practica">
+
+<header class="cabecera">
+  <div class="titulo-zona">
+    <h1><span id="lec-num">Lección 1</span>
+      <small id="lec-total">de 10</small></h1>
+    <p id="lec-titulo" class="meta"></p>
+  </div>
+  <div class="acciones">
+    <a href="practica.html" class="btn">📚 Método</a>
+    <a href="index.html" class="btn">🎸 Atril</a>
+  </div>
+</header>
+
+<main class="hoja">
+
+  <!-- Dónde estás: todas las lecciones, en orden -->
+  <nav id="indice" class="indice"></nav>
+
+  <!-- Qué vas a aprender hoy -->
+  <section class="aprendes-caja">
+    <span class="aprendes-marca">Hoy aprendes</span>
+    <h2 id="lec-aprendes"></h2>
+  </section>
+
+  <!-- Por qué importa esta lección -->
+  <section class="porque-caja">
+    <span id="lec-via" class="via-marca"></span>
+    <p id="lec-porque"></p>
+  </section>
+
+  <!-- Demostraciones: todo se ve y todo suena -->
+  <div id="demos"></div>
+
+  <!-- Prueba de oído, si la lección la tiene -->
+  <section id="prueba" class="prueba oculta"></section>
+
+  <!-- Qué hacer, paso a paso -->
+  <section class="bloque">
+    <h2>Paso a paso</h2>
+    <ol id="pasos" class="pasos"></ol>
+    <div id="vigilar" class="vigilar oculta">
+      <strong>Ojo con esto:</strong> <span id="vigilar-texto"></span>
+    </div>
+  </section>
+
+  <!-- Dónde practicarlo, en qué canción concreta -->
+  <section id="practica" class="bloque practica-caja oculta">
+    <h2>Ahora en música de verdad</h2>
+    <p id="practica-texto" class="demo-texto"></p>
+    <p id="practica-cancion" class="practica-cancion"></p>
+    <a id="practica-ir" class="btn destacado ancho" href="index.html">
+      Abrir el atril y practicar</a>
+  </section>
+
+  <!-- Navegación -->
+  <nav class="nav-lec">
+    <button id="btn-antes" class="btn">‹ Anterior</button>
+    <button id="btn-hecha" class="btn">Marcar hecha</button>
+    <button id="btn-despues" class="btn">Siguiente ›</button>
+  </nav>
+
+</main>
+
+<script type="module" src="lecciones.js"></script>
+</body>
+</html>

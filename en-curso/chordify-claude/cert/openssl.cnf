@@ -1,0 +1,15 @@
+[req]
+distinguished_name = dn
+x509_extensions = ext
+prompt = no
+[dn]
+CN = Atril
+[ext]
+subjectAltName = @alt
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+[alt]
+IP.1 = 192.168.100.105
+IP.2 = 127.0.0.1
+DNS.1 = localhost

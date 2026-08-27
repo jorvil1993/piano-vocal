@@ -1,0 +1,851 @@
+/* ============================================================
+   Atril — móvil primero.
+
+   La pantalla es una columna que ocupa el alto exacto del
+   dispositivo. Nada hace scroll salvo lo que se declara: así se
+   acaba la ventanita con barra interna que salía cuando el pie
+   fijo se comía media pantalla.
+   ============================================================ */
+
+:root {
+  --fondo: #0d1117;
+  --panel: #151b24;
+  --panel-alto: #1c2432;
+  --borde: #263041;
+  --texto: #e6edf3;
+  --tenue: #8b98a9;
+  --acento: #ffb64a;
+  --acento-2: #4aa3ff;
+  --ok: #3fb950;
+  --editado: #a371f7;
+  --rojo: #f2596f;
+  --seguro: env(safe-area-inset-bottom, 0px);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;                /* el scroll lo decide cada zona */
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
+.oculta { display: none !important; }
+
+/* ------------------------------------------------------ cabecera */
+
+.cabecera {
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "titulo acciones" "modos modos";
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--borde);
+}
+
+.titulo-zona { grid-area: titulo; min-width: 0; }
+.cabecera h1 {
+  font-size: 0.92rem; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.meta {
+  color: var(--tenue); font-size: 0.68rem; margin-top: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.acciones { grid-area: acciones; display: flex; gap: 5px; align-items: center; }
+
+/* Los modos: lo que decide qué instrumento estás tocando */
+.modos {
+  grid-area: modos;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px;
+}
+.modo {
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  background: var(--panel-alto); color: var(--tenue);
+  border: 1px solid var(--borde); border-radius: 9px;
+  padding: 8px 4px; font-size: 0.8rem; font-weight: 600; cursor: pointer;
+}
+.modo .ico { width: 21px; height: 21px; fill: currentColor; }
+.modo .ico .hueco { stroke: var(--panel-alto); stroke-width: 1.4; }
+.modo.activo .ico .hueco { stroke: var(--acento); }
+.modo.activo {
+  background: var(--acento); color: #1b1200; border-color: var(--acento);
+}
+
+.btn {
+  background: var(--panel-alto); color: var(--texto);
+  border: 1px solid var(--borde); border-radius: 8px;
+  padding: 6px 9px; font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+}
+.btn:hover { background: #232d3d; }
+.btn.activo { background: var(--acento); color: #1b1200; border-color: var(--acento); }
+.btn.guardar.pendiente { background: var(--ok); color: #04220c; border-color: var(--ok); }
+.btn:disabled { opacity: .5; }
+.btn.redondo {
+  width: 36px; height: 36px; border-radius: 50%; padding: 0;
+  display: grid; place-items: center;
+}
+.btn.play {
+  width: 46px; height: 46px; border-radius: 50%; font-size: 1.15rem;
+  background: var(--acento); color: #1b1200; border: none;
+}
+.btn.marcar { background: var(--editado); color: #fff; border-color: var(--editado); }
+
+.selector {
+  background: var(--panel-alto); color: var(--texto);
+  border: 1px solid var(--borde); border-radius: 8px;
+  padding: 6px 7px; font-size: 0.75rem; max-width: 130px;
+}
+.selector.chico { max-width: 78px; padding: 5px 6px; }
+.solo-ancho { display: none; }
+
+/* ----------------------------------------------------- escenario */
+
+.escena { flex: 1; min-height: 0; display: flex; }
+.vista { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 8px 10px; }
+.lienzo {
+  flex: 1; min-height: 0; width: 100%; display: block;
+  background: #080b11; border: 1px solid var(--borde); border-radius: 10px;
+}
+.aviso {
+  color: var(--tenue); font-size: 0.78rem; text-align: center;
+  padding: 14px 10px;
+}
+
+/* --- vista guitarra ---
+   El mástil manda: es lo que se mira para poner los dedos. El nombre del
+   acorde va en una línea compacta arriba, no ocupando media pantalla. */
+
+#vista-guitarra { flex-direction: column; gap: 8px; }
+
+.guia-cabecera {
+  flex: none;
+  display: flex; align-items: baseline; justify-content: center;
+  gap: 10px; flex-wrap: wrap;
+}
+.compas-actual {
+  color: var(--tenue); font-size: 0.66rem; letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.acorde-grande {
+  font-size: clamp(1.1rem, 4vw, 1.5rem); font-weight: 800; line-height: 1;
+  color: var(--acento); letter-spacing: -.01em;
+}
+/* En guitarra el nombre vive encima de cada mástil; repetirlo arriba
+   duplicaba la información y quitaba altura al diagrama. */
+body[data-modo="guitarra"] #vista-guitarra .acorde-grande { display: none; }
+.notas-acorde { color: var(--tenue); font-size: 0.76rem; }
+
+.pulsos { display: flex; gap: 6px; align-items: center; }
+.pulso {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: #2a3444; transition: transform .08s, background .08s;
+}
+.pulso.fuerte { box-shadow: 0 0 0 2px #3a4658; }
+.pulso.on { background: var(--acento); transform: scale(1.35); }
+
+/* Los dos mástiles se reparten todo el alto que sobra */
+.diagramas {
+  flex: 1; min-height: 0;
+  display: flex; gap: 12px; align-items: stretch; justify-content: center;
+}
+.diagrama-caja {
+  min-width: 0; display: flex; flex-direction: column; align-items: center;
+}
+.diagrama-caja.principal { flex: 1.35; }
+.diagrama-caja.siguiente { flex: 1; opacity: .72; }
+.diagrama-caja > div { flex: 1; min-height: 0; width: 100%;
+  display: flex; align-items: center; justify-content: center; }
+.diagrama-rotulo {
+  flex: none; font-size: 0.6rem; color: var(--tenue);
+  text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px;
+}
+
+/* --- vista piano --- */
+
+.piano-cabecera {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 10px; margin-bottom: 6px; flex-wrap: wrap;
+}
+.piano-acorde { font-size: 1.15rem; font-weight: 800; color: var(--acento); }
+.piano-notas { font-size: 0.72rem; color: var(--tenue); margin-left: 7px; }
+.piano-ctrl { display: flex; align-items: center; gap: 6px; }
+.piano-ctrl label { font-size: 0.7rem; color: var(--tenue); }
+#caida { width: 88px; accent-color: var(--acento-2); }
+
+/* --- vista batería --- */
+
+.bateria-cabecera {
+  display: flex; justify-content: space-between; gap: 8px;
+  font-size: 0.7rem; color: var(--tenue); margin-bottom: 6px; flex-wrap: wrap;
+}
+.simbolos { font-style: normal; }
+
+/* -------------------------------------------------------- cintas */
+
+.cinta { flex: none; border-top: 1px solid var(--borde); background: var(--panel); }
+
+/* Los próximos acordes: se desplaza sola, el activo va primero */
+/* Dos filas: arriba lo que suena, abajo lo que viene. Cuando el acorde
+   activo baja a la segunda fila, todo sube una fila y vuelve a quedar
+   arriba: así siempre se lee igual y nunca salta al principio. */
+.cinta-acordes {
+  position: relative;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+  gap: 6px; padding: 7px 10px;
+  max-height: calc(2 * var(--alto-paso) + 6px + 14px);
+  overflow-y: auto; scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.cinta-acordes::-webkit-scrollbar { display: none; }
+
+:root { --alto-paso: 46px; }
+
+.paso {
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  border-radius: 8px; padding: 5px 8px; cursor: pointer;
+}
+.paso-nombre { font-size: 1rem; font-weight: 800; line-height: 1.1; }
+.paso-pie { font-size: 0.58rem; color: #64717f; }
+.paso.activo {
+  border-color: var(--acento); background: #2a2110;
+  box-shadow: 0 0 0 1px var(--acento);
+}
+.paso.activo .paso-nombre { color: var(--acento); }
+.paso.vacio { opacity: .4; }
+.paso.editado { border-left: 3px solid var(--editado); }
+
+/* La letra, en su propia línea */
+.cinta-letra { padding: 7px 12px; }
+.letra-ahora {
+  font-size: 0.95rem; font-weight: 600; line-height: 1.25;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.letra-luego {
+  font-size: 0.78rem; color: var(--tenue); margin-top: 2px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* ---------------------------------------------------- transporte */
+
+.transporte {
+  flex: none; padding: 6px 10px calc(6px + var(--seguro));
+  background: rgba(19,25,34,.98); border-top: 1px solid var(--borde);
+  /* Los mandos siempre encima y siempre pulsables, pase lo que pase
+     con el alto de lo de arriba */
+  position: relative; z-index: 10;
+}
+.barra-fila { display: flex; align-items: center; gap: 8px; }
+.tiempo {
+  font-size: 0.68rem; color: var(--tenue); min-width: 34px;
+  font-variant-numeric: tabular-nums;
+}
+.barra {
+  flex: 1; height: 8px; background: #232d3d;
+  border-radius: 99px; cursor: pointer; overflow: hidden;
+}
+.barra-avance {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--acento-2), var(--acento));
+}
+.mandos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 7px; margin-top: 6px; flex-wrap: wrap;
+}
+
+/* ------------------------------------------------------- cajones */
+
+.cajon {
+  position: fixed; inset: 0; z-index: 70;
+  background: var(--fondo);
+  display: flex; flex-direction: column;
+  padding: 0 0 calc(10px + var(--seguro));
+  overscroll-behavior: contain;
+  animation: entra .16s ease-out;
+}
+@keyframes entra {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+/* Se anima con opacidad y un desplazamiento corto: translateY(100%) sacaba
+   el cajón fuera del viewport y el navegador creaba scroll por eso. */
+
+}
+
+.cajon-cabecera {
+  flex: none;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border-bottom: 1px solid var(--borde);
+  background: var(--panel);
+}
+.cajon-cabecera .btn.redondo { width: 42px; height: 42px; font-size: 1rem; }
+.cajon-cuerpo {
+  flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden;
+  padding: 12px 14px;
+}
+.cajon-titulo { font-size: 1rem; }
+.cajon-titulo { font-size: 0.86rem; font-weight: 700; }
+.insignia {
+  background: var(--acento-2); color: #04223f;
+  font-size: 0.6rem; font-weight: 800; letter-spacing: .05em;
+  padding: 3px 6px; border-radius: 5px; margin-right: 5px;
+}
+.ayuda { color: var(--tenue); font-size: 0.73rem; margin: 6px 0; }
+
+.presets {
+  display: grid; grid-template-columns: 1fr;
+  gap: 7px; margin-bottom: 14px;
+}
+.preset { padding: 12px 10px; font-size: 0.85rem; }
+.preset { text-align: center; white-space: nowrap; overflow: hidden;
+  text-overflow: ellipsis; }
+.preset {
+  background: var(--panel-alto); color: var(--tenue);
+  border: 1px solid var(--borde); border-radius: 7px;
+  padding: 6px 9px; font-size: 0.72rem; font-weight: 600; cursor: pointer;
+}
+.preset.activo { background: var(--acento); color: #1b1200; border-color: var(--acento); }
+
+/* La rejilla decide sola cuántos canales caben. Con dos columnas fijas y
+   seis canales, el cajón se ensanchaba y aparecía scroll horizontal. */
+.canales {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.canal {
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 10px 12px;
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  grid-template-areas: "nombre fader botones";
+  align-items: center; gap: 12px;
+  min-width: 0;
+}
+.canal.en-solo { border-color: var(--acento); box-shadow: 0 0 0 1px var(--acento); }
+.canal.silenciado { opacity: .45; }
+.canal-top {
+  grid-area: nombre; min-width: 0;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
+  font-size: 0.82rem; font-weight: 700;
+}
+.canal-nombre {
+  min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  width: 100%;
+}
+.canal-val { color: var(--acento-2); font-size: 0.8rem; font-weight: 800;
+  font-variant-numeric: tabular-nums; }
+.fader { grid-area: fader; width: 100%; margin: 0; height: 30px;
+  min-width: 0; }
+.canal[data-pista="voz"] .fader { accent-color: var(--acento); }
+.canal[data-pista="bateria"] .fader { accent-color: var(--rojo); }
+.canal[data-pista="bajo"] .fader { accent-color: var(--ok); }
+.canal[data-pista="guitarra"] .fader { accent-color: #ff8c42; }
+.canal[data-pista="piano"] .fader { accent-color: var(--acento-2); }
+.canal[data-pista="resto"] .fader { accent-color: var(--editado); }
+
+.canal-btns {
+  grid-area: botones;
+  display: grid; grid-template-columns: 46px 46px; gap: 6px;
+}
+.canal-btn {
+  background: var(--panel); color: var(--tenue);
+  border: 1px solid var(--borde); border-radius: 8px;
+  padding: 11px 0; font-size: 0.85rem; font-weight: 800; cursor: pointer;
+}
+.canal-btn.m.activo { background: var(--rojo); color: #2b0209; border-color: var(--rojo); }
+.canal-btn.s.activo { background: var(--acento); color: #1b1200; border-color: var(--acento); }
+
+.fila-ajuste { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+#ajuste { flex: 1; accent-color: var(--editado); }
+.etq { font-size: 0.7rem; color: var(--tenue); min-width: 54px; font-variant-numeric: tabular-nums; }
+.etq.marcas { color: var(--editado); }
+
+/* -------------------------------------------- diagrama de guitarra */
+
+.guitarra-vacia { color: var(--tenue); font-size: 1.4rem; }
+.guitarra-titulo { font-size: 0.66rem; color: var(--tenue); margin-bottom: 5px; font-weight: 600; }
+.guitarra-rejilla { display: grid; grid-template-columns: 16px repeat(6, 18px); }
+.guitarra-num {
+  font-size: 0.58rem; color: var(--tenue);
+  align-self: end; padding-bottom: 4px; text-align: right; padding-right: 3px;
+}
+.guitarra-cuerda { display: flex; flex-direction: column; }
+.guitarra-cabeza {
+  height: 14px; font-size: 0.64rem; color: var(--tenue);
+  display: grid; place-items: center;
+}
+.guitarra-casilla {
+  height: 18px; border-top: 1px solid #3a4658; border-right: 1px solid #3a4658;
+  display: grid; place-items: center;
+}
+.guitarra-cuerda:first-of-type .guitarra-casilla { border-left: 1px solid #3a4658; }
+.guitarra-punto { width: 12px; height: 12px; border-radius: 50%; background: var(--acento-2); }
+.guitarra-punto.raiz { background: var(--acento); }
+
+/* ------------------------------------------------ editor de acordes */
+
+.editor {
+  position: fixed; inset: 0; z-index: 60;
+  background: rgba(5,8,12,.8); display: none;
+  align-items: flex-end; justify-content: center;
+}
+.editor.abierto { display: flex; }
+.editor-caja {
+  background: var(--panel); border-top: 1px solid var(--borde);
+  border-radius: 14px 14px 0 0; padding: 14px;
+  width: min(760px, 100%); max-height: 80dvh; overflow-y: auto;
+}
+.editor-cabecera {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.editor-cabecera h3 { font-size: 0.88rem; }
+.paleta { display: flex; flex-direction: column; gap: 4px; }
+.fila-raiz { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.raiz-nombre { width: 38px; font-size: 0.72rem; font-weight: 700; color: var(--tenue); }
+.chip {
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  color: var(--texto); border-radius: 7px; padding: 6px 9px;
+  font-size: 0.74rem; cursor: pointer; font-weight: 600;
+}
+.chip.actual { background: var(--acento); color: #1b1200; border-color: var(--acento); }
+.chip.nulo { align-self: flex-start; margin-bottom: 5px; }
+
+body.modo-edicion .paso { cursor: cell; }
+body.modo-edicion .paso:hover { border-color: var(--editado); }
+
+/* ============================================================
+   Pantallas grandes: se reparte en vez de apilar
+   ============================================================ */
+
+@media (min-width: 760px) {
+  .cabecera {
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: "titulo modos acciones";
+    align-items: center;
+    padding: 10px 16px;
+  }
+  .cabecera h1 { font-size: 1.05rem; }
+  .meta { font-size: 0.74rem; }
+  .modos { grid-template-columns: repeat(3, auto); }
+  .modo { padding: 7px 14px; }
+  .selector { max-width: 220px; font-size: 0.8rem; }
+  .selector.chico { max-width: 92px; }
+  .solo-ancho { display: inline; }
+
+  .vista { padding: 12px 16px; }
+  .diagramas { gap: 16px; }
+  .guitarra-rejilla { grid-template-columns: 18px repeat(6, 22px); }
+  .guitarra-casilla { height: 22px; }
+
+  .cinta-acordes { padding: 9px 16px; gap: 8px; }
+  .paso { min-width: 78px; padding: 7px 10px; }
+  .paso-nombre { font-size: 1.15rem; }
+
+  .letra-ahora { font-size: 1.1rem; }
+  .letra-luego { font-size: 0.88rem; }
+
+  .transporte { padding: 8px 16px 12px; }
+  .mandos { justify-content: space-between; }
+
+  .cajon {
+    inset: auto; right: 24px; bottom: 24px; top: 24px;
+    width: min(560px, calc(100% - 48px));
+    border-radius: 16px; border: 1px solid var(--borde);
+  }
+  .presets { grid-template-columns: repeat(3, 1fr); }
+  .editor { align-items: center; }
+  .editor-caja { border-radius: 14px; border: 1px solid var(--borde); }
+}
+
+/* ============================================================
+   Teléfono acostado. Aquí el alto es el recurso escaso: entre
+   cabecera, cintas y transporte se iban ~235 px de los ~360 que
+   tiene la pantalla y al escenario le quedaban 130. Todo lo que
+   rodea se comprime a una fila para que el instrumento mande.
+   ============================================================ */
+
+@media (orientation: landscape) and (max-height: 520px) {
+  /* Cabecera: una sola fila con todo en línea */
+  .cabecera {
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "titulo modos acciones";
+    align-items: center;
+    padding: 4px 8px;
+    gap: 6px;
+  }
+  .cabecera h1 { font-size: 0.76rem; max-width: 28vw; }
+  .meta { display: none; }
+  .titulo-zona { flex: none; }
+  .modos { grid-template-columns: repeat(4, auto); gap: 4px; }
+  .modo { padding: 5px 9px; font-size: 0.9rem; }
+  .modo span { display: none; }          /* solo el icono */
+  .acciones { justify-content: flex-end; }
+  .selector { max-width: 108px; font-size: 0.68rem; padding: 4px 5px; }
+  .btn { padding: 4px 7px; font-size: 0.7rem; }
+
+  /* El escenario se queda con lo que sobra */
+  .vista { padding: 4px 8px; }
+
+  /* Cintas al mínimo legible */
+  .cinta-acordes { padding: 4px 8px; gap: 4px; }
+  .paso { min-width: 52px; padding: 3px 6px; }
+  .paso-nombre { font-size: 0.85rem; }
+  .paso-pie { display: none; }
+  .cinta-letra { padding: 3px 10px; }
+  .letra-ahora { font-size: 0.8rem; }
+  .letra-luego { display: none; }
+
+  /* Transporte en UNA fila: barra y mandos juntos */
+  .transporte {
+    display: flex; align-items: center; gap: 10px;
+    padding: 4px 10px calc(4px + var(--seguro));
+  }
+  .barra-fila { flex: 1; min-width: 0; }
+  .mandos { margin-top: 0; flex-wrap: nowrap; gap: 5px; }
+  .btn.play { width: 36px; height: 36px; font-size: 0.95rem; }
+  .btn.redondo { width: 30px; height: 30px; font-size: 0.8rem; }
+
+  /* Modo Notas: acostado es donde mejor se ve, el piano queda ancho.
+     Se le cede la cinta de acordes porque el rollo ya muestra el futuro. */
+  body[data-modo="piano"] .cinta-acordes { display: none; }
+  body[data-modo="piano"] .piano-cabecera { margin-bottom: 3px; }
+  body[data-modo="piano"] .piano-acorde { font-size: 0.9rem; }
+
+  /* Guitarra: el mástil al lado del acorde, ambos aprovechando el alto */
+  #vista-guitarra { gap: 14px; }
+  .acorde-grande { font-size: clamp(2rem, 9vh, 3.4rem); }
+  .pulsos { margin-top: 5px; }
+  .pulso { width: 9px; height: 9px; }
+
+  /* Teclado: que las teclas se lleven el alto */
+  .teclado-grande .teclado { height: clamp(90px, 34vh, 190px); }
+  .teclado-pie { font-size: 0.62rem; gap: 10px; }
+  #vista-teclado .ahora { display: flex; align-items: baseline;
+    gap: 10px; justify-content: center; }
+  #vista-teclado .acorde-grande { font-size: clamp(1.6rem, 7vh, 2.6rem); }
+
+  /* Los cajones no pueden taparlo todo */
+  .cajon { max-height: 88dvh; padding: 8px 10px calc(8px + var(--seguro)); }
+  .canal { padding: 5px; }
+  .canal-top { font-size: 0.64rem; margin-bottom: 3px; }
+}
+
+/* Respaldo del modo piano cuando no hay transcripción */
+.respaldo { flex: 1; min-height: 0; display: flex; flex-direction: column;
+  justify-content: center; gap: 10px; }
+.centrado { text-align: center; }
+.teclado-acorde { width: 100%; }
+.teclado {
+  position: relative; height: 116px; width: 100%;
+  background: #0a0e14; border: 1px solid var(--borde);
+  border-radius: 10px; overflow: hidden;
+}
+.tecla { position: absolute; top: 0; }
+.tecla.blanca {
+  height: 100%; background: #f2f4f7; border-right: 1px solid #c3c9d2;
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 6px;
+}
+.tecla.negra {
+  height: 62%; background: #10151d; border-radius: 0 0 4px 4px; z-index: 2;
+  display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px;
+}
+.tecla.activa.blanca { background: var(--acento-2); }
+.tecla.activa.negra { background: #2f7fd1; }
+.tecla.raiz.blanca { background: var(--acento); }
+.tecla.raiz.negra { background: #d98a1f; }
+.tecla.bajo.blanca { background: #9dc4ea; }
+.tecla.bajo.negra { background: #24557f; }
+.tecla-nombre { font-size: 0.66rem; font-weight: 700; color: #0d1117; }
+.tecla-nombre.negra { color: #fff; font-size: 0.58rem; }
+.tecla.negra.activa .tecla-nombre.negra,
+.tecla.negra.raiz .tecla-nombre.negra { color: #0d1117; }
+@media (max-width: 760px) { .teclado { height: 92px; } }
+
+/* ------------------------------------------------ capa de carga */
+
+.cargando {
+  position: fixed; inset: 0; z-index: 80;
+  background: rgba(13,17,23,.94);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+}
+.rueda {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 3px solid var(--borde); border-top-color: var(--acento);
+  animation: gira .8s linear infinite;
+}
+@keyframes gira { to { transform: rotate(360deg); } }
+.cargando-texto { font-size: 0.85rem; color: var(--tenue); }
+.cargando-barra {
+  width: min(240px, 60vw); height: 5px;
+  background: #232d3d; border-radius: 99px; overflow: hidden;
+}
+#cargando-avance {
+  height: 100%; width: 0; border-radius: 99px;
+  background: linear-gradient(90deg, var(--acento-2), var(--acento));
+  transition: width .2s;
+}
+
+/* ------------------------------------------------ mástil de guitarra */
+
+.mastil-caja { text-align: center; width: 100%; height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-start; }
+.mastil-caja .mastil { flex: 1; min-height: 0; }
+/* El nombre manda: se lee de un vistazo desde el atril */
+.mastil-nombre {
+  font-size: clamp(1.6rem, 7vw, 2.6rem); font-weight: 800; line-height: 1;
+  color: var(--acento); letter-spacing: -.02em;
+}
+.mastil-pos {
+  font-size: 0.66rem; color: var(--tenue); font-weight: 600;
+  margin: 2px 0 5px;
+}
+/* El que viene: igual pero más chico y apagado, para que no compita */
+.diagrama-caja.siguiente .mastil-nombre {
+  font-size: clamp(1.1rem, 4.5vw, 1.7rem); color: var(--tenue);
+}
+.diagrama-caja.siguiente .mastil-pos { font-size: 0.6rem; }
+.mastil { width: 100%; height: 100%; max-height: 100%; display: block; }
+.m-cuerda { stroke: #6b7686; stroke-width: 1.4; }
+.m-traste { stroke: #4a5666; stroke-width: 1.6; }
+.m-cejuela { fill: #cfd6e0; }
+/* El número del traste es la referencia para ubicar la mano:
+   tiene que leerse de un vistazo, no ser una nota al pie. */
+.m-numero { fill: var(--acento); font-size: 24px; text-anchor: end;
+  font-weight: 800; }
+.m-marca { font-size: 11px; text-anchor: middle; }
+.m-marca.muda { fill: #6b7686; }
+.m-marca.aire { fill: var(--texto); }
+.m-cejilla { fill: var(--acento-2); }
+.m-dedo { fill: var(--acento-2); }
+.m-dedo.raiz { fill: var(--acento); }
+
+/* El mástil manda en modo guitarra: se lleva el alto disponible */
+
+/* ------------------------------------------------- modo teclado */
+
+#vista-teclado { justify-content: center; gap: 10px; }
+/* La usa esta vista para el acorde en curso; en guitarra el nombre vive
+   en .guia-cabecera y no necesita este bloque. */
+#vista-teclado .ahora { flex: none; text-align: center; }
+.teclado-grande { width: 100%; }
+.teclado-grande .teclado { height: clamp(76px, 15vh, 130px); }
+.teclado-pie {
+  display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+  font-size: 0.7rem; color: var(--tenue);
+}
+.teclado-pie span { display: flex; align-items: center; gap: 5px; }
+.teclado-pie i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+.teclado-pie i.raiz { background: var(--acento); }
+.teclado-pie i.acorde { background: var(--acento-2); }
+.teclado-pie i.bajo { background: #2f7fd1; opacity: .6; }
+
+/* Los iconos solos no se entienden: llevan nombre siempre que quepa */
+
+/* Los pulsos del teclado, más grandes y numerados: hay que verlos de lejos */
+/* Cabecera plegable: la flechita es lo unico que queda al plegar */
+.pliegue {
+  flex: none; width: 100%; height: 18px; padding: 0;
+  background: var(--panel); color: var(--tenue);
+  border: none; border-bottom: 1px solid var(--borde);
+  font-size: 0.58rem; line-height: 1; cursor: pointer;
+}
+.pliegue:hover { background: #232d3d; color: var(--texto); }
+body.menu-plegado .cabecera { display: none; }
+
+.pulsos .pulso {
+  display: grid; place-items: center;
+  font-size: 0.6rem; font-weight: 800; color: transparent;
+}
+.pulsos.grandes { gap: 10px; justify-content: center; margin-top: 12px; }
+.pulsos.grandes .pulso {
+  width: 26px; height: 26px; font-size: 0.78rem; color: #55627a;
+}
+.pulsos.grandes .pulso.on { color: #1b1200; transform: scale(1.25); }
+
+/* Cuánto le queda al acorde, y cuánto dura en compases */
+.resta {
+  display: flex; align-items: center; gap: 9px;
+  width: min(260px, 78%); margin: 10px auto 0;
+}
+.resta-riel {
+  flex: 1; height: 4px; background: #232d3d;
+  border-radius: 99px; overflow: hidden;
+}
+#resta-barra {
+  height: 100%; width: 0; border-radius: 99px;
+  background: var(--acento); transition: width .1s linear;
+}
+.resta-num {
+  flex: none; font-size: 1rem; font-weight: 800; color: var(--acento);
+  min-width: 84px; text-align: left; white-space: nowrap;
+}
+/* El guion separa el número del acorde: sin él, un "La 2" se lee como si
+   el 2 fuera parte del acorde. */
+.resta-num::before { content: '— '; color: var(--tenue); font-weight: 600; }
+.resta-num:empty::before { content: none; }
+.resta-num em { font-style: normal; font-weight: 600; color: var(--tenue);
+  font-size: 0.8rem; }
+
+/* ------------------------------------------- hoja de cifrado
+   Monoespaciada a propósito: el acorde cae encima de su sílaba porque
+   cada carácter mide lo mismo. Con letra proporcional no cuadra. */
+.cifrado {
+  flex: 1 1 0; min-height: 0; display: flex; flex-direction: column;
+  background: var(--panel); border-top: 1px solid var(--borde);
+}
+.cif-mandos {
+  flex: none; display: flex; gap: 6px; padding: 7px 10px;
+  border-bottom: 1px solid var(--borde);
+}
+.btn.chico { padding: 4px 11px; font-size: 0.72rem; }
+/* La salida, a la derecha del todo y separada: es lo que se busca cuando
+   quieres volver a la vista de antes. */
+.btn.chico.salir { margin-left: auto; }
+.cif-hoja {
+  flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden;
+  padding: 8px 10px 40vh;
+  font-family: "Cascadia Mono", "Consolas", "DejaVu Sans Mono", monospace;
+  font-size: 0.82rem; line-height: 1.35;
+}
+.cif-fila { padding: 1px 0; border-left: 3px solid transparent; }
+.cif-fila.ahora {
+  border-left-color: var(--acento); background: #1a2231;
+}
+.cif-acordes {
+  white-space: pre; color: var(--acento-2);
+  font-weight: 700; min-height: 1.35em;
+}
+.cif-acordes.vacia { display: none; }
+.cif-letra { white-space: pre; color: var(--texto); cursor: pointer; }
+.cif-fila.ahora .cif-letra { color: #fff; }
+.cif-ac { cursor: pointer; border-radius: 3px; }
+/* El que suena antes de que entre la voz, apagado: se ve de un vistazo
+   que ese va en el vacío y no encima de ninguna sílaba. */
+.cif-ac.antes { color: var(--tenue); }
+/* OJO: la hoja NO lleva position. Un elemento posicionado se pinta en una
+   capa posterior a los que no lo estan, asi que la hoja tapaba la barra de
+   abajo y no se podia dar a pausa. El desplazamiento ya no lo necesita:
+   centrar() mide posiciones reales, no offsetTop. */
+.cif-ac:hover { background: #243247; }
+.cif-ac.ahora { background: var(--acento); color: #1b1200; }
+.cif-solo .cif-acordes { color: var(--tenue); }
+.cif-rotulo { color: var(--tenue); font-style: italic; }
+.cif-hueco { height: 0.9em; }
+.cif-vacio { color: var(--tenue); font-size: 0.8rem; padding: 12px; }
+
+@media (max-width: 560px) { .cif-hoja { font-size: 0.76rem; } }
+
+/* --------------------------------- entrenador de acordes (paso a paso) */
+.ent-pasos {
+  flex: none; display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 5px; padding: 0 12px 9px;
+}
+.ent-paso {
+  background: var(--panel-alto); color: var(--tenue);
+  border: 1px solid var(--borde); border-radius: 8px;
+  padding: 7px 4px; font-size: 0.68rem; font-weight: 700; cursor: pointer;
+}
+.ent-paso.activo {
+  background: var(--acento); color: #1b1200; border-color: var(--acento);
+}
+.ent-intro { margin-bottom: 13px; }
+.ent-intro h2 { font-size: 1.05rem; margin-bottom: 5px; }
+.ent-intro p { font-size: 0.84rem; line-height: 1.55; color: var(--tenue); }
+
+.ent-rejilla {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px; margin-bottom: 15px;
+}
+.ent-ficha {
+  position: relative; display: flex; flex-direction: column; gap: 2px;
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  border-radius: 10px; padding: 11px 8px; cursor: pointer; text-align: left;
+}
+.ent-ficha.sabido { background: #14301f; border-color: var(--ok); }
+.ent-nom { font-size: 1.05rem; font-weight: 800; color: var(--texto); }
+.ent-ficha.sabido .ent-nom { color: #7ee2a0; }
+.ent-veces { font-size: 0.64rem; color: var(--tenue); }
+.ent-tic {
+  position: absolute; top: 7px; right: 9px; font-size: 0.8rem;
+  color: var(--ok); opacity: 0;
+}
+.ent-ficha.sabido .ent-tic { opacity: 1; }
+
+.ent-pie { border-top: 1px solid var(--borde); padding-top: 12px; }
+.ent-cuenta { font-size: 0.86rem; margin-bottom: 10px; }
+.ent-cuenta strong { color: var(--acento); }
+
+.ent-foco, .ent-vista { text-align: center; margin-bottom: 12px; }
+.ent-marca {
+  font-size: 0.6rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--tenue);
+}
+.ent-grande { font-size: 2.4rem; font-weight: 800; color: var(--acento);
+  line-height: 1.15; }
+.ent-notas { font-size: 0.84rem; color: var(--tenue); margin-top: 2px; }
+
+.ent-instrumentos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  margin-top: 11px; align-items: start;
+}
+.ent-inst {
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  border-radius: 10px; padding: 9px;
+}
+.ent-rot {
+  display: block; font-size: 0.6rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--tenue); margin-bottom: 6px;
+}
+
+.ent-par {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;
+}
+.ent-lado { color: var(--tenue); padding: 3px 11px; border-radius: 8px; }
+.ent-lado.ahora { background: var(--acento); color: #1b1200; }
+.ent-flecha { color: var(--tenue); font-size: 1.1rem; }
+.ent-riel {
+  height: 5px; background: #232d3d; border-radius: 99px;
+  overflow: hidden; margin-bottom: 12px;
+}
+.ent-avance { height: 100%; width: 0; background: var(--acento); }
+
+.ent-velocidad {
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+  margin-bottom: 11px;
+}
+.ent-mandos { display: flex; flex-wrap: wrap; gap: 8px; }
+.ent-mandos .btn { flex: 1; padding: 11px 8px; text-align: center; }
+.ent-mandos .btn.ancho { flex-basis: 100%; }
+
+@media (max-width: 420px) {
+  .ent-instrumentos { grid-template-columns: 1fr; }
+  .ent-grande { font-size: 2rem; }
+}
+
+/* Ámbito del entrenador: esta canción o toda la biblioteca */
+.ent-ambito {
+  flex: none; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5px; padding: 0 12px 7px;
+}
+.ent-amb {
+  background: var(--panel-alto); color: var(--tenue);
+  border: 1px solid var(--borde); border-radius: 8px;
+  padding: 8px 4px; font-size: 0.74rem; font-weight: 700; cursor: pointer;
+}
+.ent-amb.activo {
+  background: var(--acento-2); color: #06131f; border-color: var(--acento-2);
+}

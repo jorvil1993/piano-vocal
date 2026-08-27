@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Atril — acordes, piano y batería</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<!-- Capa de carga: seis pistas de audio son ~45 MB por Wi-Fi -->
+<div id="cargando" class="cargando oculta">
+  <div class="rueda"></div>
+  <p id="cargando-texto" class="cargando-texto">Cargando…</p>
+  <div class="cargando-barra"><div id="cargando-avance"></div></div>
+</div>
+
+<!-- ------------------------------------------------------- cabecera -->
+<header class="cabecera">
+  <div class="titulo-zona">
+    <h1 id="titulo">Cargando…</h1>
+    <p id="meta" class="meta"></p>
+  </div>
+
+  <nav class="modos" id="modos">
+    <button class="modo activo" data-modo="guitarra" title="Guitarra">🎸</button>
+    <button class="modo" data-modo="teclado" title="Teclado">🎹</button>
+    <button class="modo" data-modo="piano" title="Notas cayendo">
+      <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3.5" y="1" width="4" height="7" rx="1.6"/>
+        <rect x="10" y="4" width="4" height="5" rx="1.6"/>
+        <rect x="16.5" y="0.5" width="4" height="9" rx="1.6"/>
+        <path d="M2 13h20v9H2z"/>
+        <path class="hueco" d="M8 13v9M12 13v9M16 13v9"/>
+      </svg></button>
+    <button class="modo" data-modo="bateria" title="Batería">🥁</button>
+  </nav>
+
+  <div class="acciones">
+    <select id="selector-cancion" class="selector"></select>
+    <a href="practica.html" class="btn" title="Método de hoy">📚</a>
+    <a href="lecciones.html" class="btn" title="Lecciones">🎓</a>
+    <button id="btn-tapar" class="btn"
+            title="Ocultar los nombres de los acordes para sacarlos de oído">
+      👁</button>
+    <button id="btn-notacion" class="btn" title="Cambiar cifrado">Do Re Mi</button>
+    <button id="btn-editar" class="btn" title="Corregir acordes">✎</button>
+    <button id="btn-guardar" class="btn guardar" title="Guardar (Ctrl+S)">Guardar</button>
+  </div>
+</header>
+
+<!-- Plegar la cabecera entera: en el atril lo que importa es el piano -->
+<button id="btn-menu" class="pliegue" title="Ocultar el menú (tecla H)">
+  <span id="pliegue-flecha">▲</span></button>
+
+<!-- ------------------------------------------------------- escenario -->
+<main class="escena">
+
+  <!-- GUITARRA: acorde grande + diagrama, y el que viene -->
+  <section class="vista" id="vista-guitarra">
+    <div class="guia-cabecera">
+      <span id="compas-actual" class="compas-actual">Compás —</span>
+      <span id="acorde-grande" class="acorde-grande">—</span>
+      <span id="notas-acorde" class="notas-acorde">—</span>
+      <div class="pulsos" id="pulsos"></div>
+    </div>
+    <div class="diagramas">
+      <div class="diagrama-caja principal">
+        <span class="diagrama-rotulo">Ahora</span>
+        <div id="guitarra-ahora"></div>
+      </div>
+      <div class="diagrama-caja siguiente">
+        <span class="diagrama-rotulo">Después</span>
+        <div id="guitarra-luego"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PIANO: rollo cayendo + teclado -->
+  <section class="vista oculta" id="vista-piano">
+    <div class="piano-cabecera">
+      <div>
+        <span id="piano-acorde" class="piano-acorde">—</span>
+        <span id="piano-notas" class="piano-notas"></span>
+      </div>
+      <div class="piano-ctrl" id="piano-ctrl-caja">
+        <label for="caida">Ver</label>
+        <input type="range" id="caida" min="1.5" max="6" step="0.5" value="3">
+        <span id="etq-caida" class="etq">3.0 s</span>
+      </div>
+    </div>
+    <canvas id="lienzo-piano" class="lienzo"></canvas>
+    <div id="piano-respaldo" class="respaldo oculta">
+      <p id="piano-aviso" class="aviso"></p>
+      <p class="ayuda centrado">Usa el modo <strong>Teclado</strong> para ver los acordes.</p>
+    </div>
+  </section>
+
+  <!-- TECLADO: el acorde en curso sobre las teclas, para tocarlo -->
+  <section class="vista oculta" id="vista-teclado">
+    <div class="ahora">
+      <div id="tec-compas" class="compas-actual">Compás —</div>
+      <div id="tec-acorde" class="acorde-grande">—</div>
+      <div id="tec-notas" class="notas-acorde">—</div>
+      <div class="pulsos grandes" id="pulsos-teclado"></div>
+      <div class="resta">
+        <div class="resta-riel"><div id="resta-barra"></div></div>
+        <span id="resta-num" class="resta-num"></span>
+      </div>
+    </div>
+    <div class="teclado-grande"><div id="teclado-acorde"></div></div>
+    <div class="teclado-pie">
+      <span><i class="raiz"></i> fundamental</span>
+      <span><i class="acorde"></i> notas del acorde</span>
+      <span><i class="bajo"></i> bajo (mano izquierda)</span>
+    </div>
+  </section>
+
+  <!-- BATERÍA: carriles -->
+  <section class="vista oculta" id="vista-bateria">
+    <div class="bateria-cabecera">
+      <span class="simbolos">✕ platillo · ● parche</span>
+      <span id="bateria-info" class="bateria-info"></span>
+    </div>
+    <canvas id="lienzo-bateria" class="lienzo"></canvas>
+    <p id="bateria-aviso" class="aviso oculta"></p>
+  </section>
+
+</main>
+
+<!-- ------------------------------ cinta de acordes: lo que viene -->
+<section class="cinta cinta-acordes" id="cinta-acordes"></section>
+
+<!-- ------------------------------------------ cinta de letra -->
+<section class="cinta cinta-letra" id="cinta-letra">
+  <p id="letra-ahora" class="letra-ahora">—</p>
+  <p id="letra-luego" class="letra-luego"></p>
+</section>
+
+<!-- ---------------------- hoja de cifrado: la letra con sus acordes -->
+<section class="cifrado oculta" id="cifrado">
+  <div class="cif-mandos">
+    <button id="cif-sencillo" class="btn chico activo"
+            title="Solo mayores y menores">Sencillo</button>
+    <button id="cif-completo" class="btn chico"
+            title="Con sus4, séptimas y todo lo demás">Completo</button>
+    <button id="cif-cerrar" class="btn chico salir"
+            title="Volver a la cinta de acordes">✕ Cerrar</button>
+  </div>
+  <div class="cif-hoja" id="cif-hoja"></div>
+</section>
+
+<!-- ------------------------------------------------------ transporte -->
+<footer class="transporte">
+  <div class="barra-fila">
+    <span id="tiempo" class="tiempo">0:00</span>
+    <div id="barra" class="barra"><div id="barra-avance" class="barra-avance"></div></div>
+    <span id="dur-total" class="tiempo">0:00</span>
+  </div>
+  <div class="mandos">
+    <button id="btn-atras" class="btn redondo" title="5 s atrás">⏪</button>
+    <button id="btn-play" class="btn play" title="Espacio">▶</button>
+    <button id="btn-adelante" class="btn redondo" title="5 s adelante">⏩</button>
+
+    <select id="velocidad" class="selector chico" title="Velocidad">
+      <option value="0.5">0.5×</option>
+      <option value="0.7">0.7×</option>
+      <option value="0.85">0.85×</option>
+      <option value="1" selected>1×</option>
+      <option value="1.15">1.15×</option>
+    </select>
+
+    <button id="btn-consola" class="btn" title="Volumen de cada instrumento">
+      🎚️</button>
+    <button id="btn-ajustes" class="btn" title="Ajuste fino de la sincronía">
+      ⚙︎</button>
+    <button id="btn-cifrado" class="btn" title="Letra con los acordes encima">
+      📜</button>
+    <button id="btn-entreno" class="btn" title="Practicar los acordes de esta canción">
+      🎯</button>
+    <button id="btn-pantalla" class="btn" title="Impedir que la pantalla se apague">
+      💡</button>
+  </div>
+</footer>
+
+<!-- --------------------------------------------- cajón: consola -->
+<aside class="cajon oculta" id="cajon-consola">
+  <div class="cajon-cabecera">
+    <div class="cajon-titulo"><span class="insignia">6 PISTAS</span> Consola</div>
+    <button class="btn redondo cerrar" data-cierra="cajon-consola" title="Cerrar">✕</button>
+  </div>
+  <div class="cajon-cuerpo">
+    <div class="presets">
+      <button type="button" class="preset activo" data-preset="banda">🎧 Banda</button>
+      <button type="button" class="preset" data-preset="solo-voz">🎤 Solo voz</button>
+      <button type="button" class="preset" data-preset="voz-ritmo">🥁 Voz baja + ritmo</button>
+    </div>
+    <div class="canales" id="canales"></div>
+  </div>
+</aside>
+
+<!-- --------------------------------------------- cajón: ajustes -->
+<aside class="cajon oculta" id="cajon-ajustes">
+  <div class="cajon-cabecera">
+    <div class="cajon-titulo">Ajuste fino</div>
+    <button class="btn redondo cerrar" data-cierra="cajon-ajustes" title="Cerrar">✕</button>
+  </div>
+  <div class="cajon-cuerpo">
+    <button class="btn redondo cerrar" data-cierra="cajon-ajustes">✕</button>
+  </div>
+  <p class="ayuda">Mueve los acordes respecto al audio, sin alterar la reproducción.</p>
+  <div class="fila-ajuste">
+    <input type="range" id="ajuste" min="-600" max="600" step="10" value="0">
+    <span id="etq-ajuste" class="etq">0 ms</span>
+  </div>
+  <div class="fila-ajuste">
+    <button id="btn-marcar" class="btn marcar">🎯 Marcar al oído</button>
+    <button id="btn-ajuste-cero" class="btn">Cero</button>
+    <span id="etq-marcas" class="etq marcas"></span>
+  </div>
+  <p class="ayuda">Reproduce y toca «Marcar» (tecla M) cada vez que oigas un cambio de acorde.</p>
+</div>
+</aside>
+
+<!-- ------------------- entrenador de los acordes de esta canción -->
+<aside class="cajon oculta" id="cajon-entreno">
+  <div class="cajon-cabecera">
+    <div class="cajon-titulo">
+      <span class="insignia">🎯</span> Practicar los acordes</div>
+    <button class="btn redondo cerrar" data-cierra="cajon-entreno"
+            title="Cerrar">✕</button>
+  </div>
+  <nav class="ent-ambito">
+    <button class="ent-amb activo" data-ambito="cancion">Esta canción</button>
+    <button class="ent-amb" data-ambito="todas">Todas mis canciones</button>
+  </nav>
+  <nav class="ent-pasos">
+    <button class="ent-paso activo" data-paso="0">1 · ¿Cuáles sabes?</button>
+    <button class="ent-paso" data-paso="1">2 · Aprender</button>
+    <button class="ent-paso" data-paso="2">3 · Cambios</button>
+  </nav>
+  <div class="cajon-cuerpo" id="ent-cuerpo"></div>
+</aside>
+
+<!-- --------------------------------------------- editor de acordes -->
+<div id="editor" class="editor">
+  <div class="editor-caja">
+    <div class="editor-cabecera">
+      <h3 id="editor-titulo">Cambiar acorde</h3>
+      <button id="cerrar-editor" class="btn redondo">✕</button>
+    </div>
+    <div id="paleta" class="paleta"></div>
+  </div>
+</div>
+
+<!-- Mantiene la pantalla encendida cuando la API de Wake Lock no está
+     disponible, que es el caso al entrar por http:// desde el celular.
+     No puede llevar display:none: un video oculto no se reproduce. -->
+<video id="desvelo" loop muted playsinline preload="auto"
+       aria-hidden="true" tabindex="-1"
+       style="position:fixed;width:2px;height:2px;opacity:0.01;
+              bottom:0;left:0;pointer-events:none;z-index:-1">
+  <source src="silencio.mp4" type="video/mp4">
+  <source src="silencio.webm" type="video/webm">
+</video>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

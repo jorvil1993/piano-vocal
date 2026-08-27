@@ -1,0 +1,257 @@
+/* Lecciones: una a la vez, con forma fija.
+   por qué importa → se ve y se oye → pasos → practicar */
+
+/* --------------------------------------------------------- índice */
+
+.indice {
+  display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px;
+  margin-bottom: 14px;
+}
+.idx {
+  aspect-ratio: 1; border-radius: 8px; cursor: pointer;
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  color: var(--tenue); font-size: 0.78rem; font-weight: 700;
+}
+.idx.hecha { background: #14301f; border-color: var(--ok); color: #7ee2a0; }
+.idx.actual {
+  background: var(--via); border-color: var(--via); color: #12161d;
+  transform: scale(1.08);
+}
+
+/* ------------------------------------------------- por qué importa */
+
+.porque-caja {
+  background: var(--panel); border: 1px solid var(--borde);
+  border-left: 4px solid var(--via-color, var(--acento));
+  border-radius: 12px; padding: 13px 15px; margin-bottom: 14px;
+}
+.via-marca {
+  display: inline-block; font-size: 0.6rem; font-weight: 800;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--via-color, var(--acento)); margin-bottom: 5px;
+}
+.porque-caja p { font-size: 0.92rem; line-height: 1.6; }
+
+/* ---------------------------------------------------- demos */
+
+.demo {
+  background: var(--panel); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 13px 14px; margin-bottom: 12px;
+}
+.demo-titulo { font-size: 0.95rem; margin-bottom: 5px; }
+.demo-texto { font-size: 0.83rem; line-height: 1.55; color: var(--tenue);
+  margin-bottom: 10px; }
+.demo-cuerpo { display: flex; flex-direction: column; gap: 9px; }
+
+.btn.ancho { width: 100%; text-align: center; }
+.btn.grande { font-size: 1.1rem; padding: 12px 26px; font-weight: 800; }
+.btn.destacado { background: var(--ok); color: #04220c; border-color: var(--ok); }
+
+/* así no / así sí */
+.versus { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.versus-lado { display: flex; flex-direction: column; gap: 5px; }
+.versus-nota { font-size: 0.72rem; line-height: 1.45; color: var(--tenue); }
+.versus-lado.mal .btn { border-color: #5a2b38; }
+
+/* línea de eventos que se ilumina al sonar */
+.linea-eventos { display: flex; gap: 5px; flex-wrap: wrap; }
+.evento {
+  flex: 1; min-width: 66px; padding: 6px 7px; border-radius: 7px;
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  transition: background .12s, border-color .12s;
+}
+.evento.sonando {
+  background: #2a2110; border-color: var(--acento);
+}
+.ev-t { display: block; font-size: 0.58rem; color: #64717f; }
+.ev-rot { font-size: 0.68rem; font-weight: 600; }
+
+/* posiciones paso a paso */
+.paso-rotulo { font-size: 0.88rem; font-weight: 700; }
+.paso-n {
+  background: var(--acento); color: #1b1200; border-radius: 5px;
+  padding: 2px 6px; font-size: 0.66rem; margin-right: 5px;
+}
+.paso-nota { font-size: 0.78rem; color: var(--tenue); line-height: 1.45; }
+.paso-mandos { display: flex; gap: 6px; flex-wrap: wrap; }
+.paso-mandos .btn { flex: none; }
+.paso-mandos .btn.destacado { flex: 1; }
+
+/* ----------------------------------------------------- prueba */
+
+.prueba {
+  background: linear-gradient(180deg, #101f2c, #0d1620);
+  border: 1px solid #1e4157; border-radius: 12px;
+  padding: 13px 14px; margin-bottom: 12px;
+}
+.marcador { font-size: 0.78rem; color: #7ec8f0; margin-bottom: 9px;
+  font-weight: 600; }
+.veredicto { font-size: 0.86rem; font-weight: 600; min-height: 22px;
+  margin: 9px 0; line-height: 1.45; }
+.veredicto.bien { color: #7ee2a0; }
+.veredicto.mal { color: #f0a0bc; }
+
+/* ------------------------------------------------------ pasos */
+
+.pasos { padding-left: 0; list-style: none; counter-reset: paso; }
+.pasos li {
+  counter-increment: paso; position: relative;
+  padding: 8px 0 8px 34px; font-size: 0.88rem; line-height: 1.55;
+  border-bottom: 1px solid var(--borde);
+}
+.pasos li:last-child { border-bottom: none; }
+.pasos li::before {
+  content: counter(paso); position: absolute; left: 0; top: 8px;
+  width: 23px; height: 23px; border-radius: 50%;
+  background: var(--via-color, var(--acento)); color: #12161d;
+  font-size: 0.72rem; font-weight: 800;
+  display: grid; place-items: center;
+}
+
+.vigilar {
+  margin-top: 10px; padding: 10px 12px; border-radius: 9px;
+  background: #241c0e; border: 1px solid #5a4520; color: #f0d9a8;
+  font-size: 0.82rem; line-height: 1.5;
+}
+
+/* --------------------------------------------------- practicar */
+
+.practica-caja { border-left: 4px solid var(--ok); }
+.practica-cancion {
+  font-size: 0.78rem; color: var(--acento); font-weight: 700;
+  margin: 7px 0 10px;
+}
+
+/* -------------------------------------------------- navegación */
+
+.nav-lec {
+  display: grid; grid-template-columns: 1fr 1.3fr 1fr; gap: 8px;
+  margin: 18px 0 10px;
+}
+.nav-lec .btn { padding: 11px 8px; text-align: center; }
+
+/* -------------------------------------------------- teclado */
+
+.tk {
+  position: relative; height: 120px; width: 100%;
+  background: #0a0e14; border: 1px solid var(--borde);
+  border-radius: 10px; overflow: hidden; touch-action: none;
+}
+.tk-tecla {
+  position: absolute; top: 0; padding: 0; border: none; cursor: pointer;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+.tk-blanca {
+  height: 100%; background: #f2f4f7; border-right: 1px solid #c3c9d2;
+  padding-bottom: 6px;
+}
+.tk-negra {
+  height: 62%; background: #10151d; z-index: 2;
+  border-radius: 0 0 4px 4px; padding-bottom: 4px;
+}
+.tk-pulsada { filter: brightness(1.4); }
+.tk-blanca.tk-acorde { background: var(--acento-2); }
+.tk-negra.tk-acorde { background: #2f7fd1; }
+.tk-blanca.tk-raiz { background: var(--acento); }
+.tk-negra.tk-raiz { background: #d98a1f; }
+.tk-blanca.tk-bajo { background: #9dc4ea; }
+.tk-negra.tk-bajo { background: #24557f; }
+.tk-nombre { font-size: 0.58rem; font-weight: 800; color: #0d1117;
+  pointer-events: none; }
+.tk-negra .tk-nombre { color: #fff; font-size: 0.5rem; }
+.tk-negra.tk-acorde .tk-nombre, .tk-negra.tk-raiz .tk-nombre { color: #0d1117; }
+
+@media (max-width: 560px) {
+  .indice { grid-template-columns: repeat(5, 1fr); }
+  .versus { grid-template-columns: 1fr; }
+  .tk { height: 96px; }
+  .nav-lec { grid-template-columns: 1fr 1fr; }
+  .nav-lec #btn-hecha { grid-column: 1 / -1; order: -1; }
+}
+
+/* --------------------------------------- qué aprendes hoy */
+
+.aprendes-caja {
+  background: linear-gradient(135deg, #1d2433, #161c28);
+  border: 1px solid var(--via-color, var(--acento));
+  border-radius: 12px; padding: 14px 16px; margin-bottom: 12px;
+}
+.aprendes-marca {
+  font-size: 0.6rem; font-weight: 800; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--via-color, var(--acento));
+}
+.aprendes-caja h2 {
+  font-size: 1.12rem; line-height: 1.35; margin-top: 5px; font-weight: 700;
+}
+
+/* ------------------------------------- rejilla de compases */
+
+.acorde-de-hoy {
+  display: flex; align-items: baseline; gap: 8px;
+  background: var(--panel-alto); border-radius: 8px;
+  padding: 8px 12px; align-self: flex-start;
+}
+.acorde-de-hoy span {
+  font-size: 0.6rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--tenue);
+}
+.acorde-de-hoy strong { font-size: 1.15rem; color: var(--acento); }
+
+.rejilla-compas {
+  display: flex; flex-direction: column; gap: 3px;
+  background: #0a0e14; border: 1px solid var(--borde);
+  border-radius: 10px; padding: 9px; overflow-x: auto;
+}
+.rc-fila {
+  display: grid;
+  grid-template-columns: 96px repeat(var(--cols), minmax(28px, 1fr));
+  gap: 3px; align-items: center;
+}
+.rc-rotulo { font-size: 0.66rem; line-height: 1.25; padding-right: 6px; }
+.rc-rotulo strong { display: block; font-size: 0.7rem; }
+.rc-rotulo span { color: var(--tenue); font-size: 0.6rem; }
+.rc-rotulo.rc-der strong { color: var(--acento-2); }
+.rc-rotulo.rc-izq strong { color: var(--acento); }
+
+.rc-celda {
+  aspect-ratio: 1; border-radius: 6px; background: #121a26;
+  display: grid; place-items: center; min-height: 26px;
+  transition: background .08s, transform .08s;
+}
+.rc-celda.inicio { box-shadow: inset 2px 0 0 #3a4658; }
+.rc-celda i {
+  width: 60%; height: 60%; border-radius: 50%; background: #35415a;
+  display: block; transition: background .08s, transform .08s;
+}
+.rc-fila:nth-child(2) .rc-celda i { background: var(--acento-2); }
+.rc-fila:nth-child(3) .rc-celda i { background: var(--acento); }
+.rc-celda.ahora { background: #1e2938; }
+.rc-celda.ahora.suena i { transform: scale(1.35); filter: brightness(1.4); }
+
+.rc-cabecera .rc-celda {
+  aspect-ratio: auto; min-height: 18px; background: none;
+  font-size: 0.62rem; color: var(--tenue); font-weight: 700;
+}
+.rc-cabecera .rc-celda.inicio { color: var(--texto); }
+.rc-cabecera .rc-celda.ahora { color: var(--acento); background: none; }
+
+.rc-mandos { display: flex; gap: 8px; align-items: center; }
+.rc-mandos .btn { flex: 1; }
+.btn.sonando { background: var(--rojo); color: #fff; border-color: var(--rojo); }
+
+/* Veredicto explícito en cada comparación */
+.sello {
+  font-size: 0.66rem; font-weight: 800; letter-spacing: .06em;
+  padding: 4px 9px; border-radius: 6px; align-self: flex-start;
+}
+.sello.mal { background: #3a1520; color: #f0a0bc; }
+.sello.bien { background: #14301f; color: #7ee2a0; }
+.versus-lado.mal .btn { opacity: .75; }
+.sello.neutro { background: var(--panel-alto); color: var(--tenue); }
+
+/* Nombre del acorde encima de cada compás */
+.rc-acordes .rc-celda {
+  aspect-ratio: auto; min-height: 20px; background: none;
+  font-size: 0.62rem; font-weight: 700; color: var(--acento);
+  justify-content: flex-start; white-space: nowrap; overflow: visible;
+}

@@ -1,0 +1,214 @@
+/* Módulo de práctica. A diferencia del atril, esta página SÍ hace scroll:
+   se lee sentado, no se toca mirándola. */
+
+body.pagina-practica {
+  height: auto;
+  min-height: 100dvh;
+  overflow-y: auto;
+  display: block;
+}
+
+.hoja {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 14px 14px calc(28px + var(--seguro));
+}
+
+/* ------------------------------------------------------- avisos */
+
+.aviso-practica, .cumplido {
+  border-radius: 10px; padding: 11px 13px; margin-bottom: 14px;
+  font-size: 0.86rem; line-height: 1.45;
+}
+.aviso-practica {
+  background: #241c0e; border: 1px solid #5a4520; color: #f0d9a8;
+}
+.cumplido {
+  background: #0f2417; border: 1px solid #1f5c37; color: #9be6b4;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------- ejercicios */
+
+.sesion { display: flex; flex-direction: column; gap: 12px; }
+
+.ejercicio {
+  background: var(--panel); border: 1px solid var(--borde);
+  border-left: 4px solid var(--via, var(--acento));
+  border-radius: 12px; padding: 13px 14px;
+  transition: opacity .2s;
+}
+.ejercicio.hecho { opacity: .5; }
+
+.ej-top {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 5px;
+}
+.ej-via {
+  font-size: 0.64rem; font-weight: 800; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--via, var(--acento));
+}
+.ej-min { font-size: 0.68rem; color: var(--tenue); }
+
+.ej-titulo { font-size: 1.02rem; font-weight: 700; margin-bottom: 6px; }
+.ej-consigna { font-size: 0.88rem; line-height: 1.5; margin-bottom: 8px; }
+.ej-porque {
+  font-size: 0.78rem; line-height: 1.45; color: var(--tenue);
+  background: var(--panel-alto); border-radius: 8px; padding: 8px 10px;
+  margin-bottom: 11px;
+}
+.ej-porque strong { color: var(--texto); }
+
+.ej-botones { display: flex; gap: 8px; flex-wrap: wrap; }
+.ej-botones .btn { text-decoration: none; display: inline-block; }
+.ejercicio.hecho .marcar-hecho {
+  background: var(--ok); color: #04220c; border-color: var(--ok);
+}
+
+/* ------------------------------------------------------ bloques */
+
+.bloque {
+  background: var(--panel); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 14px; margin-top: 14px;
+}
+.bloque h2 { font-size: 0.95rem; margin-bottom: 6px; }
+.bloque.nota p { font-size: 0.85rem; line-height: 1.55; margin-bottom: 9px; }
+.bloque.nota p:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------- calendario */
+
+.calendario {
+  display: grid; grid-template-columns: repeat(14, 1fr);
+  gap: 4px; margin-top: 10px;
+}
+.dia {
+  aspect-ratio: 1; border-radius: 4px;
+  background: var(--panel-alto); border: 1px solid var(--borde);
+}
+.dia.hecho { background: var(--ok); border-color: var(--ok); }
+.dia.hoy { box-shadow: 0 0 0 2px var(--acento); }
+
+/* -------------------------------------------------------- datos */
+
+.datos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+  margin: 10px 0; }
+.dato {
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  border-radius: 10px; padding: 11px 8px; text-align: center;
+}
+.dato-num {
+  display: block; font-size: 1.5rem; font-weight: 800; color: var(--acento);
+  line-height: 1.1;
+}
+.dato-rot { font-size: 0.66rem; color: var(--tenue); }
+
+@media (max-width: 460px) {
+  .calendario { grid-template-columns: repeat(8, 1fr); }
+  .datos { grid-template-columns: 1fr; }
+  .dato { display: flex; align-items: baseline; gap: 8px; text-align: left; }
+  .dato-num { font-size: 1.2rem; }
+}
+
+/* ------------------------------------------------ fases del método */
+
+.fases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px;
+  margin-bottom: 8px; }
+.fase {
+  background: var(--panel-alto); border: 1px solid var(--borde);
+  border-top: 3px solid var(--borde);
+  border-radius: 8px; padding: 7px 5px; text-align: center;
+}
+.fase.activa { border-top-color: var(--fase); background: var(--panel); }
+.fase.pasada { border-top-color: var(--fase); opacity: .55; }
+.fase-nombre { display: block; font-size: 0.7rem; font-weight: 700; }
+.fase.activa .fase-nombre { color: var(--fase); }
+.fase-rango { font-size: 0.6rem; color: var(--tenue); }
+
+.fase-info {
+  background: var(--panel); border: 1px solid var(--borde);
+  border-left: 3px solid var(--fase-color, var(--acento));
+  border-radius: 10px; padding: 9px 12px; margin-bottom: 10px;
+}
+.fase-info strong { display: block; font-size: 0.86rem; margin-bottom: 3px; }
+.fase-info span { font-size: 0.78rem; color: var(--tenue); line-height: 1.45; }
+
+.avance-barra {
+  height: 6px; background: #232d3d; border-radius: 99px; overflow: hidden;
+}
+#avance-metodo {
+  height: 100%; width: 0; border-radius: 99px;
+  background: linear-gradient(90deg, var(--acento-2), var(--acento));
+  transition: width .3s;
+}
+.avance-rotulo {
+  font-size: 0.68rem; color: var(--tenue); text-align: right;
+  margin: 3px 0 12px;
+}
+
+/* ----------------------------------------------------- la oración */
+
+.oracion {
+  background: linear-gradient(180deg, #171526, #12131c);
+  border: 1px solid #2e2a45; border-radius: 12px;
+  padding: 14px 16px; margin-bottom: 14px; text-align: center;
+}
+.oracion-marca {
+  font-size: 0.62rem; letter-spacing: .1em; text-transform: uppercase;
+  color: #9d8ec9;
+}
+.oracion h2 { font-size: 0.88rem; margin: 5px 0 7px; color: #cbbef0; }
+.oracion p {
+  font-size: 0.92rem; line-height: 1.6; font-style: italic; color: #e6e0f7;
+}
+
+/* ------------------------------------------------- lección del día */
+
+.leccion-bloque { border-left: 3px solid var(--fase-color, var(--acento)); }
+.etiquetas { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 7px; }
+.etiqueta {
+  font-size: 0.6rem; font-weight: 800; letter-spacing: .05em;
+  text-transform: uppercase; padding: 3px 7px; border-radius: 5px;
+}
+.etiqueta.nuevo { background: #1d3a24; color: #7ee2a0; }
+.etiqueta.repaso { background: #2a2415; color: #e0c67a; }
+.etiqueta.control { background: #2a1520; color: #f0a0bc; }
+.etiqueta.midi { background: #15283a; color: #7ec8f0; }
+
+.leccion { font-size: 0.92rem; line-height: 1.62; margin-bottom: 9px; }
+.reto {
+  font-size: 0.84rem; background: var(--panel-alto);
+  border-radius: 8px; padding: 8px 11px; line-height: 1.45;
+}
+.midi-caja {
+  font-size: 0.82rem; line-height: 1.5; margin-top: 9px;
+  background: #10222f; border: 1px solid #1e4157;
+  border-radius: 9px; padding: 10px 12px;
+}
+.midi-caja code {
+  display: block; margin-top: 7px; padding: 7px 9px;
+  background: #0a0e14; border-radius: 6px;
+  font-size: 0.76rem; color: #7ec8f0; overflow-x: auto;
+}
+
+.dia-celda {
+  aspect-ratio: 1; border-radius: 4px;
+  background: var(--panel-alto); border: 1px solid var(--borde);
+}
+.dia-celda.hecho { background: var(--ok); border-color: var(--ok); }
+.dia-celda.hoy { box-shadow: 0 0 0 2px var(--acento); }
+
+.cabecera h1 small {
+  font-size: 0.7rem; font-weight: 500; color: var(--tenue); margin-left: 4px;
+}
+
+@media (max-width: 460px) {
+  .fases { grid-template-columns: repeat(2, 1fr); }
+}
+
+.midi-mandos { display: flex; align-items: center; gap: 10px; margin-top: 9px;
+  flex-wrap: wrap; }
+.btn.grabar { background: #7e2436; color: #fff; border-color: #a33049; }
+.btn.grabar.grabando { background: #d8344f; border-color: #d8344f;
+  animation: late 1.2s ease-in-out infinite; }
+@keyframes late { 50% { opacity: .6; } }
+.midi-estado { font-size: 0.74rem; color: var(--tenue); }

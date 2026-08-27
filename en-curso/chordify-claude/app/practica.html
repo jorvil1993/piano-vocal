@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>Método — piano al oído para la oración</title>
+<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="practica.css">
+</head>
+<body class="pagina-practica">
+
+<header class="cabecera">
+  <div class="titulo-zona">
+    <h1><span id="dia-numero">Día 1</span>
+      <small id="dia-total">de 66</small></h1>
+    <p id="resumen-hoy" class="meta">…</p>
+  </div>
+  <div class="acciones">
+    <a href="lecciones.html" class="btn">🎓 Lecciones</a>
+    <a href="index.html" class="btn">🎸 Atril</a>
+  </div>
+</header>
+
+<main class="hoja">
+
+  <!-- Dónde estás dentro del método -->
+  <div id="fases" class="fases"></div>
+  <div class="fase-info">
+    <strong id="fase-lema"></strong>
+    <span id="fase-idea"></span>
+  </div>
+  <div class="avance-barra"><div id="avance-metodo"></div></div>
+  <p id="avance-rotulo" class="avance-rotulo">0% del método</p>
+
+  <p id="aviso" class="aviso-practica oculta"></p>
+  <p id="cumplido" class="cumplido oculta"></p>
+
+  <!-- Antes de tocar -->
+  <section class="oracion">
+    <span class="oracion-marca">✝ Antes de empezar</span>
+    <h2 id="oracion-titulo"></h2>
+    <p id="oracion-texto"></p>
+  </section>
+
+  <!-- La lección del día -->
+  <section class="bloque leccion-bloque">
+    <div id="etiquetas" class="etiquetas"></div>
+    <h2 id="dia-titulo"></h2>
+    <p id="leccion" class="leccion"></p>
+    <a id="ir-leccion" class="btn destacado ancho oculta" href="lecciones.html">
+      Abrir la lección interactiva →</a>
+    <p id="leccion-aviso" class="ayuda oculta">
+      Esta lección todavía no tiene versión interactiva. Se está escribiendo.
+    </p>
+    <p id="reto-caja" class="reto oculta"><strong>Hoy:</strong>
+      <span id="reto"></span></p>
+    <div id="midi-caja" class="midi-caja oculta">
+      <strong>Día de medición.</strong> Conecta el piano por USB y dale a
+      grabar. Toca cinco minutos y para. Queda guardado para que lo revise.
+      <div class="midi-mandos">
+        <button id="btn-grabar" class="btn grabar">⏺ Grabar</button>
+        <span id="midi-estado" class="midi-estado">Buscando el piano…</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Los ejercicios -->
+  <section id="sesion" class="sesion"></section>
+
+  <!-- Historial -->
+  <section class="bloque">
+    <h2>Tus días</h2>
+    <p class="ayuda">
+      Cada día que tocas queda pintado para siempre. No hay rachas que romper:
+      los días en blanco no restan nada, y el método avanza contigo, no con
+      el calendario.
+    </p>
+    <div id="calendario" class="calendario"></div>
+  </section>
+
+  <section class="bloque">
+    <h2>Dónde vas</h2>
+    <div class="datos">
+      <div class="dato"><span id="dato-dias" class="dato-num">0</span>
+        <span class="dato-rot">días tocados</span></div>
+      <div class="dato"><span id="dato-minutos" class="dato-num">0</span>
+        <span class="dato-rot">minutos en total</span></div>
+      <div class="dato"><span id="dato-dominados" class="dato-num">0</span>
+        <span class="dato-rot">ejercicios dominados</span></div>
+    </div>
+    <p class="ayuda">
+      Cuando sientas que no avanzas, mira estos números. La sensación de
+      estancamiento y el avance real casi nunca coinciden.
+    </p>
+  </section>
+
+  <section class="bloque nota">
+    <h2>Tres cosas que conviene recordar</h2>
+    <p><strong>El piso son 5 minutos y no se falla.</strong> No es la meta,
+    es el mínimo. Los días que toques cuarenta minutos, eso es regalo, no
+    adelanto. El día que hagas cinco, cumpliste igual.</p>
+    <p><strong>La mejora aparece después de dormir.</strong> En habilidad
+    motora el rendimiento sube entre un 10 y un 13% tras una noche de sueño,
+    con menos errores. Lo que practicas hoy se cobra mañana: si al terminar
+    sientes que no salió, es que todavía no tocaba salir.</p>
+    <p><strong>Esto se va a sentir peor de lo que funciona.</strong> Alternar
+    entre manos, oído y sonido retiene mejor que repetir una sola cosa, pero
+    da menos sensación de fluidez. Vas a sentir que avanzas menos justo
+    cuando más estás avanzando.</p>
+  </section>
+
+</main>
+
+<script type="module" src="practica.js"></script>
+</body>
+</html>
