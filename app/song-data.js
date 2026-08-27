@@ -181,8 +181,8 @@ export const SONG_METADATA = {
   versions: {
     official: {
       name: "Video Oficial",
-      bpm: 70.0,
-      offsetSeconds: 6.86, // Calibrado exactamente: Compás #27 en 01:36 (96.0s) con la palabra "cuesta"
+      bpm: 68.6,
+      offsetSeconds: 3.65, // Calibrado al milisegundo: Compás #27 (Re) a los 94.65s ("cuesta"), Compás #28 (La#dim) a los 98.20s ("amor")
       audioVocals: "audio/official_vocals.mp3",
       audioBacking: "audio/official_no_vocals.mp3",
       totalDuration: 310.6,
