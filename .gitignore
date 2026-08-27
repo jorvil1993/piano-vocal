@@ -1,0 +1,10 @@
+# Audio pesado no comprimido
+*.wav
+en-curso/separated/*/*.wav
+en-curso/*.webm
+temp_*.wav
+
+# Cache
+__pycache__/
+*.pyc
+.system_generated/

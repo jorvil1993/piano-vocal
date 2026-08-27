@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0a0c10">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>PianoVocal - Hasta el Final (Atril Piano)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <!-- Barra Superior -->
+  <header class="app-header">
+    <div class="brand-section">
+      <div class="app-logo">🎹</div>
+      <div class="song-title-group">
+        <h1 id="song-title">Hasta el Final</h1>
+        <span class="song-meta-badge">Estación Cero • Tono: Re Mayor</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="wakelock-btn" class="action-btn" title="Mantener pantalla del celular encendida mientras tocas">
+        <span>💡</span> <span class="btn-text">Atril Activo</span>
+      </button>
+      <button id="fullscreen-btn" class="action-btn" title="Pantalla completa">
+        <span>⛶</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Selector de Versiones y Notación -->
+  <div class="version-selector-container">
+    <div class="version-pills">
+      <button class="version-pill-btn active" data-version="official">Video Oficial</button>
+      <button class="version-pill-btn" data-version="live">Live Session (LA)</button>
+    </div>
+
+    <div class="notation-toggle">
+      <span>Notas:</span>
+      <button class="notation-btn active" data-notation="latin">Do-Re-Mi</button>
+      <button class="notation-btn" data-notation="anglo">C-D-E</button>
+    </div>
+  </div>
+
+  <!-- Panel Central Modo Atril (Letra y Acorde Activo) -->
+  <section class="atril-hero-panel">
+    <div id="active-section-tag" class="active-section-tag">Video Oficial</div>
+    
+    <div class="active-chord-display">
+      <div id="main-chord-name" class="main-chord-name">—</div>
+    </div>
+
+    <div id="chord-notes-badge" class="chord-notes-badge">Listo para tocar</div>
+
+    <div id="active-lyric-line" class="active-lyric-line empty">
+      Presiona Play para comenzar a practicar
+    </div>
+
+    <!-- Indicador de 4 pulsos del compás -->
+    <div class="beat-dots-container" title="Pulsos del compás 4/4">
+      <div id="beat-dot-1" class="beat-dot beat-one"></div>
+      <div id="beat-dot-2" class="beat-dot"></div>
+      <div id="beat-dot-3" class="beat-dot"></div>
+      <div id="beat-dot-4" class="beat-dot"></div>
+    </div>
+  </section>
+
+  <!-- Visualizador de Teclado de Piano Interactivo -->
+  <section class="piano-section">
+    <div class="piano-header">
+      <span><strong>🎹 Teclado Guía:</strong> Notas del acorde iluminadas</span>
+      <span style="font-size: 0.72rem; color: var(--text-muted);">Puedes pulsar las teclas</span>
+    </div>
+    <div id="piano-container"></div>
+  </section>
+
+  <!-- Cuadrícula de Compases (Estilo Chordify) -->
+  <main class="measures-container">
+    <div class="grid-legend">
+      <span><strong>Compases de la canción</strong> (toca cualquiera para ensayar esa parte)</span>
+      <span style="font-size: 0.75rem; color: var(--accent-gold);">4/4 compás</span>
+    </div>
+    <div id="measures-grid" class="measures-grid"></div>
+  </main>
+
+  <!-- Barra de Reproducción Fija en la Parte Inferior -->
+  <footer class="player-dock">
+    <div class="player-inner">
+      <!-- Barra de progreso -->
+      <div class="progress-container">
+        <span id="current-time" class="time-label">00:00</span>
+        <div id="progress-bar-wrap" class="progress-bar-wrap">
+          <div id="progress-bar-fill" class="progress-bar-fill"></div>
+        </div>
+        <span id="total-time" class="time-label">05:10</span>
+      </div>
+
+      <!-- Controles -->
+      <div class="controls-row">
+        <!-- Control de Voz Aislada vs Pista -->
+        <div class="audio-stems-control">
+          <span title="Aislamiento vocal por IA">🎙️</span>
+          <input type="range" id="stem-slider" class="stem-slider" min="0" max="1" step="0.05" value="0">
+          <span id="stem-label" style="font-size: 0.75rem; min-width: 85px;">100% Solo Voz</span>
+        </div>
+
+        <!-- Botones Principales -->
+        <div class="main-play-group">
+          <button id="countin-btn" class="player-icon-btn active" title="Conteo previo 1-2-3-4">
+            <span style="font-size: 0.75rem; font-weight: 800;">1234</span>
+          </button>
+          <button id="play-main-btn" class="play-main-btn" title="Reproducir / Pausar (Espacio)">
+            ▶
+          </button>
+          <button id="loop-btn" class="player-icon-btn" title="Repetir sección en bucle">
+            🔁
+          </button>
+        </div>
+
+        <!-- Velocidad de ensayo -->
+        <div class="secondary-controls">
+          <label style="font-size: 0.75rem; color: var(--text-muted);" for="speed-select">Tempo:</label>
+          <select id="speed-select" class="speed-select">
+            <option value="0.75">0.75x</option>
+            <option value="0.85">0.85x</option>
+            <option value="1.0" selected>1.0x (Normal)</option>
+            <option value="1.1">1.1x</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Animado del Conteo Previo (1, 2, 3, 4) -->
+  <div id="count-in-overlay" class="count-in-overlay">
+    <div id="count-in-number" class="count-in-number">1</div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
