@@ -13,11 +13,13 @@ class PianoVocalApp {
     this.wakeLock = null;
     this.noSleepVideo = null;
 
-    // 4 Stems de Audio (IA Demucs): Voz, Batería, Bajo, Resto
+    // 6 Stems de Audio (IA Meta Demucs 6S): Voz, Batería, Bajo, Piano Original, Guitarras, Cuerdas/Resto
     this.stems = {
       vocals: new Audio(),
       drums: new Audio(),
       bass: new Audio(),
+      piano: new Audio(),
+      guitar: new Audio(),
       other: new Audio()
     };
     Object.values(this.stems).forEach(a => {
@@ -25,9 +27,9 @@ class PianoVocalApp {
       a.preservesPitch = true;
     });
 
-    this.volumes = { vocals: 1.0, drums: 0.0, bass: 0.0, other: 0.0 };
-    this.mutes = { vocals: false, drums: false, bass: false, other: false };
-    this.solos = { vocals: false, drums: false, bass: false, other: false };
+    this.volumes = { vocals: 1.0, drums: 0.0, bass: 0.0, piano: 0.0, guitar: 0.0, other: 0.0 };
+    this.mutes = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
+    this.solos = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
 
     this.lastPlayedBeat = -1;
     this.lastChordKey = null;
@@ -155,12 +157,13 @@ class PianoVocalApp {
       btn.classList.toggle('active', btn.dataset.version === versionKey);
     });
 
-    // Configurar rutas de audio para los 4 stems
+    // Configurar rutas de audio para los 6 stems
     const stems = this.versionData.stems;
-    this.stems.vocals.src = stems.vocals;
-    this.stems.drums.src = stems.drums;
-    this.stems.bass.src = stems.bass;
-    this.stems.other.src = stems.other;
+    for (const key of ['vocals', 'drums', 'bass', 'piano', 'guitar', 'other']) {
+      if (this.stems[key] && stems[key]) {
+        this.stems[key].src = stems[key];
+      }
+    }
 
     Object.values(this.stems).forEach(a => {
       a.playbackRate = this.playbackRate;
@@ -253,7 +256,7 @@ class PianoVocalApp {
   applyMixerState() {
     const anySolo = Object.values(this.solos).some(v => v);
 
-    for (const key of ['vocals', 'drums', 'bass', 'other']) {
+    for (const key of ['vocals', 'drums', 'bass', 'piano', 'guitar', 'other']) {
       let audibleVol = this.volumes[key];
       if (this.mutes[key]) {
         audibleVol = 0;
@@ -285,17 +288,23 @@ class PianoVocalApp {
 
   setMixerPreset(preset) {
     if (preset === 'vocal-only') {
-      this.volumes = { vocals: 1.0, drums: 0.0, bass: 0.0, other: 0.0 };
-      this.mutes = { vocals: false, drums: false, bass: false, other: false };
-      this.solos = { vocals: false, drums: false, bass: false, other: false };
-    } else if (preset === 'vocal-rhythm') {
-      this.volumes = { vocals: 1.0, drums: 0.75, bass: 0.75, other: 0.0 };
-      this.mutes = { vocals: false, drums: false, bass: false, other: false };
-      this.solos = { vocals: false, drums: false, bass: false, other: false };
+      this.volumes = { vocals: 1.0, drums: 0.0, bass: 0.0, piano: 0.0, guitar: 0.0, other: 0.0 };
+      this.mutes = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
+    } else if (preset === 'study-piano') {
+      // Escuchar al pianista original para aprender qué notas toca
+      this.volumes = { vocals: 0.6, drums: 0.0, bass: 0.0, piano: 1.0, guitar: 0.0, other: 0.0 };
+      this.mutes = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
+    } else if (preset === 'minus-piano') {
+      // Toda la banda sonando EXCEPTO el piano original (para que toques tú)
+      this.volumes = { vocals: 1.0, drums: 0.8, bass: 0.8, piano: 0.0, guitar: 0.75, other: 0.75 };
+      this.mutes = { vocals: false, drums: false, bass: false, piano: true, guitar: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
     } else if (preset === 'full-band') {
-      this.volumes = { vocals: 1.0, drums: 0.85, bass: 0.85, other: 0.75 };
-      this.mutes = { vocals: false, drums: false, bass: false, other: false };
-      this.solos = { vocals: false, drums: false, bass: false, other: false };
+      this.volumes = { vocals: 1.0, drums: 0.85, bass: 0.85, piano: 0.85, guitar: 0.8, other: 0.75 };
+      this.mutes = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
+      this.solos = { vocals: false, drums: false, bass: false, piano: false, guitar: false, other: false };
     }
 
     document.querySelectorAll('.preset-btn').forEach(btn => {
@@ -710,8 +719,8 @@ class PianoVocalApp {
       });
     });
 
-    // Controles de Mezclador de 4 Canales (Faders)
-    ['vocals', 'drums', 'bass', 'other'].forEach(stem => {
+    // Controles de Mezclador de 6 Canales (Faders)
+    ['vocals', 'drums', 'bass', 'piano', 'guitar', 'other'].forEach(stem => {
       const fader = document.getElementById(`fader-${stem}`);
       if (fader) {
         fader.addEventListener('input', (e) => {

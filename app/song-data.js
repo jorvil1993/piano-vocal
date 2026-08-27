@@ -187,6 +187,8 @@ export const SONG_METADATA = {
         vocals: "audio/official_vocals.mp3",
         drums: "audio/official_drums.mp3",
         bass: "audio/official_bass.mp3",
+        piano: "audio/official_piano.mp3",
+        guitar: "audio/official_guitar.mp3",
         other: "audio/official_other.mp3"
       },
       totalDuration: 310.6,
@@ -313,6 +315,8 @@ export const SONG_METADATA = {
         vocals: "audio/live_vocals.mp3",
         drums: "audio/live_drums.mp3",
         bass: "audio/live_bass.mp3",
+        piano: "audio/live_piano.mp3",
+        guitar: "audio/live_guitar.mp3",
         other: "audio/live_other.mp3"
       },
       totalDuration: 241.0,

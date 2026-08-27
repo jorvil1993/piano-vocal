@@ -725,14 +725,21 @@ body {
 
 .mixer-channels {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 8px;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 768px) {
+  .mixer-channels {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+}
+
+@media (max-width: 440px) {
   .mixer-channels {
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
 }
 
@@ -798,6 +805,14 @@ body {
 }
 
 .channel-strip[data-stem="bass"] .ch-fader {
+  accent-color: #0ea5e9;
+}
+
+.channel-strip[data-stem="piano"] .ch-fader {
+  accent-color: #eab308;
+}
+
+.channel-strip[data-stem="guitar"] .ch-fader {
   accent-color: #10b981;
 }
 
