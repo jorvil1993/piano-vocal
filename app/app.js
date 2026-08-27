@@ -29,6 +29,8 @@ class PianoVocalApp {
     this.mutes = { vocals: false, drums: false, bass: false, other: false };
     this.solos = { vocals: false, drums: false, bass: false, other: false };
 
+    this.lastPlayedBeat = -1;
+    this.lastChordKey = null;
     this.audioCtx = null;
 
     // Elementos DOM
@@ -445,6 +447,34 @@ class PianoVocalApp {
     }
 
     this.highlightMeasureDirectly(measureIndex, currentBeat);
+
+    // Motor de Acompañamiento Acústico Inteligente (Rhythm & Bass Companion)
+    // En la canción original no hay batería ni bajo antes del segundo 168 (Compás 48).
+    // Este motor genera el ritmo y bajo acústico cuando el usuario sube las perillas de Batería o Bajo.
+    if (this.isPlaying && totalBeats !== this.lastPlayedBeat) {
+      this.lastPlayedBeat = totalBeats;
+
+      const needsSyntheticCompanion = (this.currentVersionKey === 'live' || time < 168.0);
+      if (needsSyntheticCompanion) {
+        const anySolo = Object.values(this.solos).some(v => v);
+        
+        // 1. Batería inteligente (Kick en 1 y 3, Rim click en 2 y 4)
+        const drumsAudible = this.mutes.drums ? 0 : (anySolo && !this.solos.drums ? 0 : this.volumes.drums);
+        if (drumsAudible > 0.02) {
+          this.playDrumBeat(currentBeat, drumsAudible);
+        }
+
+        // 2. Bajo inteligente (Toca la nota raíz del acorde)
+        const bassAudible = this.mutes.bass ? 0 : (anySolo && !this.solos.bass ? 0 : this.volumes.bass);
+        if (bassAudible > 0.02) {
+          const currentChordKey = this.getCurrentChordAt(measureIndex, currentBeat);
+          if (currentChordKey && (currentBeat === 1 || currentChordKey !== this.lastChordKey)) {
+            this.lastChordKey = currentChordKey;
+            this.playBassNote(currentChordKey, bassAudible);
+          }
+        }
+      }
+    }
   }
 
   clearMeasureHighlights() {
@@ -530,6 +560,114 @@ class PianoVocalApp {
     } catch (e) {
       // AudioContext policy
     }
+  }
+
+  getCurrentChordAt(measureIndex, currentBeat) {
+    if (measureIndex < 0 || measureIndex >= this.versionData.measures.length) return null;
+    const m = this.versionData.measures[measureIndex];
+    let acc = 0;
+    for (const c of m.chords) {
+      acc += c.beats;
+      if (currentBeat <= acc) return c.chord;
+    }
+    return null;
+  }
+
+  playDrumBeat(beat, volume) {
+    try {
+      if (!this.audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        this.audioCtx = new AudioContext();
+      }
+      if (this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume();
+      }
+
+      const now = this.audioCtx.currentTime;
+      const gain = this.audioCtx.createGain();
+      gain.connect(this.audioCtx.destination);
+
+      if (beat === 1 || beat === 3) {
+        // Bombo suave acústico (Kick)
+        const osc = this.audioCtx.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(105, now);
+        osc.frequency.exponentialRampToValueAtTime(42, now + 0.12);
+        gain.gain.setValueAtTime(volume * 0.45, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+        osc.connect(gain);
+        osc.start(now);
+        osc.stop(now + 0.15);
+      } else {
+        // Golpe de baqueta / Rim click acústico
+        const osc = this.audioCtx.createOscillator();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.exponentialRampToValueAtTime(300, now + 0.05);
+        gain.gain.setValueAtTime(volume * 0.28, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+        osc.connect(gain);
+        osc.start(now);
+        osc.stop(now + 0.07);
+      }
+    } catch (e) {}
+  }
+
+  playBassNote(chordKey, volume) {
+    const rootFreqs = {
+      'Re': 73.42,      // D2
+      'La#dim': 58.27,  // A#1
+      'Sol': 49.00,     // G1
+      'La': 55.00,      // A1
+      'Lasus4': 55.00,  // A1
+      'Lam': 55.00,     // A1
+      'Fa#m': 46.25,    // F#1
+      'Fa#': 46.25,     // F#1
+      'Sim': 61.74,     // B1
+      'Mim': 41.20,     // E1
+      'Mim7': 41.20,    // E1
+      'Do': 65.41,      // C2
+      'Si': 61.74,      // B1
+      'Si7': 61.74,     // B1
+      'Solm': 49.00,    // G1
+      'Do#dim': 69.30,  // C#2
+      'Sol#dim': 51.91  // G#1
+    };
+
+    const freq = rootFreqs[chordKey];
+    if (!freq) return;
+
+    try {
+      if (!this.audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        this.audioCtx = new AudioContext();
+      }
+      if (this.audioCtx.state === 'suspended') {
+        this.audioCtx.resume();
+      }
+
+      const now = this.audioCtx.currentTime;
+      const osc = this.audioCtx.createOscillator();
+      const filter = this.audioCtx.createBiquadFilter();
+      const gain = this.audioCtx.createGain();
+
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(freq, now);
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(220, now);
+      filter.frequency.exponentialRampToValueAtTime(110, now + 0.8);
+
+      gain.gain.setValueAtTime(volume * 0.4, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.audioCtx.destination);
+
+      osc.start(now);
+      osc.stop(now + 1.25);
+    } catch (e) {}
   }
 
   setupEventListeners() {
