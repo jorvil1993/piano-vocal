@@ -181,8 +181,8 @@ export const SONG_METADATA = {
   versions: {
     official: {
       name: "Video Oficial",
-      bpm: 67.3,
-      offsetSeconds: 1.0, // Calibrado exactamente: Compás 27 a los 93.7s
+      bpm: 70.0,
+      offsetSeconds: 6.86, // Calibrado exactamente: Compás #27 en 01:36 (96.0s) con la palabra "cuesta"
       audioVocals: "audio/official_vocals.mp3",
       audioBacking: "audio/official_no_vocals.mp3",
       totalDuration: 310.6,
@@ -219,8 +219,8 @@ export const SONG_METADATA = {
         { id: 24, chords: [{ chord: null, beats: 3 }, { chord: 'Re', beats: 1 }] },
         // Fila 7
         { id: 25, chords: [{ chord: null, beats: 2 }, { chord: 'La#dim', beats: 2 }] },
-        { id: 26, chords: [{ chord: null, beats: 2 }, { chord: 'Do#dim', beats: 2 }] },
-        { id: 27, chords: [{ chord: 'Re', beats: 4 }], section: "Estrofa 1", lyric: "Cómo me cuesta entender que tanto amor" },
+        { id: 26, chords: [{ chord: null, beats: 2 }, { chord: 'Do#dim', beats: 2 }], lyric: "(Cómo me...)" },
+        { id: 27, chords: [{ chord: 'Re', beats: 4 }], section: "Estrofa 1", lyric: "Cuesta entender que tanto amor" },
         { id: 28, chords: [{ chord: 'La#dim', beats: 4 }], lyric: "En esa cruz fuera por mí" },
         // Fila 8
         { id: 29, chords: [{ chord: 'Sol', beats: 4 }], lyric: "Tú, siendo rey, no te negaste al dolor" },
