@@ -51,15 +51,46 @@ ETIQUETAS, PLANTILLA_M, PENAS = construir_vocabulario()
 MASCARA = (PLANTILLA_M > 0).astype(float)
 
 
+GRADOS_MAYOR = [0, 2, 4, 5, 7, 9, 11]
+
+
 def detectar_tonalidad(cromagrama):
+    """Primero QUE ESCALA, y solo despues cual de sus dos tonicas.
+
+    Krumhansl-Schmuckler solo no vale para elegir la escala: puntua por
+    parecido con un perfil tipico y se lo lleva la nota que mas suena. En
+    "Destruyeme" el Do era la nota mas fuerte —el acorde mas repetido— y
+    daba Do mayor, cuando la cancion tiene Fa# y es de Mi menor. La unica
+    nota que separaba las dos tonalidades era esa, y pesaba demasiado poco.
+
+    El error no se queda en el rotulo: `prior_diatonico` empuja despues los
+    acordes hacia la tonalidad, y con Do mayor convertia catorce Re mayor
+    en Re menor.
+
+    Asi que la escala se elige por cuanta energia cae dentro de sus siete
+    notas frente a las cinco de fuera, que es justo donde el Fa# pesa. Ya
+    con la escala fijada, Krumhansl decide entre la mayor y su relativa
+    menor: ahi si acierta, porque las dos comparten las mismas notas y solo
+    cambia el centro.
+    """
     perfil = cromagrama.mean(axis=1)
     perfil = perfil / (perfil.sum() + 1e-9)
-    mejor, mejor_r = (0, 'mayor'), -2.0
-    for raiz in range(12):
-        for modo, ks in (('mayor', KS_MAYOR), ('menor', KS_MENOR)):
-            r = float(np.corrcoef(perfil, np.roll(ks, raiz))[0, 1])
-            if r > mejor_r:
-                mejor_r, mejor = r, (raiz, modo)
+
+    mejor_esc, mejor_v = 0, -9.0
+    for t in range(12):
+        dentro = set((t + g) % 12 for g in GRADOS_MAYOR)
+        v = (sum(perfil[i] for i in dentro)
+             - sum(perfil[i] for i in range(12) if i not in dentro))
+        if v > mejor_v:
+            mejor_v, mejor_esc = v, t
+
+    relativa = (mejor_esc + 9) % 12
+    mejor, mejor_r = (mejor_esc, 'mayor'), -2.0
+    for raiz, modo, ks in ((mejor_esc, 'mayor', KS_MAYOR),
+                           (relativa, 'menor', KS_MENOR)):
+        r = float(np.corrcoef(perfil, np.roll(ks, raiz))[0, 1])
+        if r > mejor_r:
+            mejor_r, mejor = r, (raiz, modo)
     return mejor[0], mejor[1], mejor_r
 
 
@@ -99,10 +130,23 @@ SUFIJOS = {'maj': '', 'min': 'm', 'dim': 'dim', 'aug': 'aug', 'sus4': 'sus4',
            'sus2': 'sus2', '7': '7', 'maj7': 'maj7', 'm7': 'm7', '6': '6', 'm6': 'm6'}
 
 
-def nombrar(etiqueta):
-    """'B:min' -> nombres en cifrado anglosajon y latino, mas sus notas."""
+def nombrar(etiqueta, bajo=None):
+    """'B:min' -> nombres en cifrado anglosajon y latino, mas sus notas.
+
+    `bajo` es la nota del bajo cuando NO es la fundamental: un Sol con Fa#
+    abajo. Va en campo aparte y no pegado al nombre, porque el diagrama de
+    guitarra y el teclado esperan el acorde a secas; quien lo quiera
+    mostrar con la barra lo compone al pintarlo.
+
+    Hoy SIEMPRE llega vacio: se llena a mano desde el editor. Se intento
+    sacarlo solo del cromagrama de graves y no salio ni una barra, porque
+    donde el musico oye "Sol con Fa# abajo" el audio a veces solo tiene el
+    bajo andando —una nota sola, sin acorde detras— y eso no se puede
+    deducir, se interpreta.
+    """
     if etiqueta == 'N':
-        return {'anglo': None, 'latino': None, 'notas': [], 'notas_latinas': []}
+        return {'anglo': None, 'latino': None, 'notas': [], 'notas_latinas': [],
+                'bajo': None, 'bajo_latino': None}
     nombre, tipo = etiqueta.split(':')
     raiz = CLASES.index(nombre)
     intervalos = PLANTILLAS[tipo][0]
@@ -112,6 +156,8 @@ def nombrar(etiqueta):
         'latino': LATIN[nombre] + SUFIJOS[tipo],
         'notas': notas,
         'notas_latinas': [LATIN[n] for n in notas],
+        'bajo': bajo,
+        'bajo_latino': LATIN[bajo] if bajo else None,
     }
 
 
@@ -143,24 +189,27 @@ def segmentar(secuencia, tiempos_beat, duracion, min_pulsos=2):
         else:
             segs.append({'etiqueta': c, 'inicio_beat': i, 'fin_beat': i + 1})
 
-    # Un acorde que dura un solo pulso casi siempre es ruido del detector:
-    # se lo absorbe el vecino mas largo.
+    # Un acorde de un solo pulso ENTRE DOS IGUALES es ruido del detector:
+    # A B A queda en A. Pero si los vecinos son distintos, ese pulso corto
+    # es un cambio de verdad y hay que respetarlo.
+    #
+    # Antes se lo absorbia el vecino mas largo fueran cuales fueran, y eso
+    # provocaba un efecto domino: absorber creaba vecinos iguales, que se
+    # fusionaban, lo que dejaba otro segmento corto al lado, que se volvia
+    # a absorber... En "Destruyeme" una estrofa entera de 56 s acabo como
+    # un unico Do. Medido: el Viterbi veia 14 cambios ahi y solo
+    # sobrevivian 5; con esta regla sobreviven los 14.
     cambio = True
-    while cambio and len(segs) > 1:
+    while cambio and len(segs) > 2:
         cambio = False
-        for i, s in enumerate(segs):
+        for i in range(1, len(segs) - 1):
+            s = segs[i]
             if s['fin_beat'] - s['inicio_beat'] >= min_pulsos:
                 continue
-            izq = segs[i - 1] if i > 0 else None
-            der = segs[i + 1] if i + 1 < len(segs) else None
-            if izq and (not der or (izq['fin_beat'] - izq['inicio_beat']) >=
-                        (der['fin_beat'] - der['inicio_beat'])):
-                izq['fin_beat'] = s['fin_beat']
-            elif der:
-                der['inicio_beat'] = s['inicio_beat']
-            else:
+            if segs[i - 1]['etiqueta'] != segs[i + 1]['etiqueta']:
                 continue
-            segs.pop(i)
+            segs[i - 1]['fin_beat'] = segs[i + 1]['fin_beat']
+            del segs[i:i + 2]
             cambio = True
             break
 

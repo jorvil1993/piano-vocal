@@ -15,6 +15,32 @@ import { Piano } from './piano.js';
 
 // Lo que te sabes es tuyo, no de la cancion: vale para todas
 const RECUERDO = 'acordes-que-se';
+
+// Los que marcas tocando: "este no me lo se". Es una lista aparte de la de
+// "no marcados como sabidos" porque esa son cientos; esta son los que de
+// verdad te frenaron con las manos en el teclado, y por eso vale oro.
+const MARCADOS = 'acordes-marcados';
+
+export function leerMarcados() {
+  try { return new Set(JSON.parse(localStorage.getItem(MARCADOS) || '[]')); }
+  catch (e) { return new Set(); }
+}
+
+// Devuelve true si queda marcado, false si se quito
+export function alternarMarcado(anglo) {
+  if (!anglo) return false;
+  const m = leerMarcados();
+  const puesto = !m.has(anglo);
+  if (puesto) m.add(anglo); else m.delete(anglo);
+  try { localStorage.setItem(MARCADOS, JSON.stringify([...m])); } catch (e) {}
+  return puesto;
+}
+
+export function quitarMarcado(anglo) {
+  const m = leerMarcados();
+  if (!m.delete(anglo)) return;
+  try { localStorage.setItem(MARCADOS, JSON.stringify([...m])); } catch (e) {}
+}
 const VELOCIDADES = [5, 4, 3, 2, 1.5];
 
 export class Entrenador {
@@ -52,7 +78,9 @@ export class Entrenador {
 
   // De donde salen los acordes segun el ambito elegido
   fuentes() {
-    if (this.ambito === 'todas') return this.biblioteca || [];
+    if (this.ambito === 'todas' || this.ambito === 'marcados') {
+      return this.biblioteca || [];
+    }
     return this.cancion ? [{titulo: this.cancion.titulo,
                             acordes: this.cancion.acordes}] : [];
   }
@@ -60,6 +88,7 @@ export class Entrenador {
   // Los acordes distintos, el mas usado primero: si solo vas a aprender
   // dos, que sean los que mas suenan.
   inventario() {
+    const marcados = this.ambito === 'marcados' ? leerMarcados() : null;
     const mapa = new Map();
     for (const src of this.fuentes()) {
       for (const a of (src.acordes || [])) {
@@ -82,7 +111,10 @@ export class Entrenador {
         c.donde.add(src.titulo || '');
       }
     }
-    return [...mapa.values()].sort((x, y) => y.veces - x.veces);
+    let lista = [...mapa.values()];
+    // En el ambito "marcados" solo salen los que senalaste tocando
+    if (marcados) lista = lista.filter((c) => marcados.has(c.anglo));
+    return lista.sort((x, y) => y.veces - x.veces);
   }
 
   // Los cambios que de verdad ocurren en la cancion, no todas las parejas
@@ -176,20 +208,31 @@ export class Entrenador {
   // ------------------------------------------------ paso 1: inventario
 
   pintarInventario() {
-    const todas = this.ambito === 'todas';
+    const marcados = this.ambito === 'marcados';
+    // Los dos ambitos globales se pintan igual: solo lo que falta
+    const todas = this.ambito === 'todas' || marcados;
     const inv = this.inventario();
     const faltan = inv.filter((c) => !this.sabidos.has(c.anglo));
     const sabidos = inv.filter((c) => this.sabidos.has(c.anglo));
 
     if (todas && !inv.length) {
-      this.cont.innerHTML = '<div class="ent-intro"><h2>Sin canciones</h2>' +
-        '<p>Todavía no hay acordes en la biblioteca.</p></div>';
+      this.cont.innerHTML = marcados
+        ? '<div class="ent-intro"><h2>No has marcado ninguno</h2>' +
+          '<p>Mientras tocas, <strong>mantén pulsado</strong> un acorde que ' +
+          'te frene —en la cinta, en la hoja de cifrado o el acorde grande— ' +
+          'y aparecerá aquí.</p></div>'
+        : '<div class="ent-intro"><h2>Sin canciones</h2>' +
+          '<p>Todavía no hay acordes en la biblioteca.</p></div>';
       return;
     }
 
     const cab = document.createElement('div');
     cab.className = 'ent-intro';
-    cab.innerHTML = todas
+    cab.innerHTML = marcados
+      ? '<h2>Los que te frenaron tocando</h2>' +
+        '<p>Los que fuiste marcando con el dedo mientras tocabas. En cuanto ' +
+        'marcas uno como sabido, sale de aquí solo.</p>'
+      : todas
       ? '<h2>Lo que te falta, en todo lo que tienes</h2>' +
         '<p>Los acordes de <strong>todas</strong> tus canciones que aún no ' +
         'marcaste. Según los vas aprendiendo desaparecen de aquí.</p>'
@@ -218,8 +261,9 @@ export class Entrenador {
     pie.innerHTML = '<p class="ent-cuenta">Te sabes <strong>' +
       (inv.length - n) + '</strong> de <strong>' + inv.length +
       '</strong> acordes ' +
-      (todas ? 'de tus ' + this.fuentes().length + ' canciones.'
-             : 'de esta canción.') + '</p>';
+      (marcados ? 'de los que marcaste.'
+       : todas ? 'de tus ' + this.fuentes().length + ' canciones.'
+       : 'de esta canción.') + '</p>';
     const ir = document.createElement('button');
     ir.className = 'btn destacado ancho grande';
     if (n) {
@@ -247,8 +291,12 @@ export class Entrenador {
                : c.veces + (c.veces === 1 ? ' vez' : ' veces')) +
         '</span><span class="ent-tic">✓</span>';
       b.onclick = () => {
-        if (this.sabidos.has(c.anglo)) this.sabidos.delete(c.anglo);
-        else this.sabidos.add(c.anglo);
+        if (this.sabidos.has(c.anglo)) {
+          this.sabidos.delete(c.anglo);
+        } else {
+          this.sabidos.add(c.anglo);
+          quitarMarcado(c.anglo);   // ya no hace falta tenerlo senalado
+        }
         this.guardar();
         this.pintar();
       };
@@ -296,7 +344,7 @@ export class Entrenador {
         this.pintar();
       }),
       this.boton('Ya lo tengo ✓', () => {
-        this.sabidos.add(c.anglo); this.guardar();
+        this.sabidos.add(c.anglo); quitarMarcado(c.anglo); this.guardar();
         this.cola.shift();
         this.pintar();
       }, 'destacado'));

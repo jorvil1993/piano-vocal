@@ -4,12 +4,28 @@ Le pasas un link, te devuelve los acordes con su tiempo real, la letra
 sincronizada y un panel para ensayar. Lo que el detector saque mal, lo
 corriges en el panel y la corrección queda guardada.
 
-## Uso
+## Añadir una canción — los dos pasos, siempre
 
 ```
 python procesar.py "https://www.youtube.com/watch?v=..."
+python revisar.py                # <- NO te la saltes
 python servidor.py
 ```
+
+**`procesar.py` termina sin quejarse aunque haya salido mal.** Ha pasado:
+transcripciones que se dejaron media canción y tempos detectados al doble.
+Nada de eso se ve en el log, hay que medirlo. Eso es `revisar.py`, y lo que
+diga es el veredicto:
+
+| Aviso | Qué significa | Qué hacer |
+|---|---|---|
+| `faltan N s de canto por transcribir` | Whisper se saltó parte, casi siempre una estrofa que entra floja | `python reletra.py <slug>` |
+| `tempo ambiguo` | El tempo y su mitad (o doble) encajan **igual de bien** con los acordes. El dato no lo decide | Oírla y mirar si los puntos 1-2-3-4 van al ritmo que contarías tocando |
+| `la rejilla de pulsos va irregular` | El detector de pulso perdió el hilo en algún tramo; los puntos del compás pueden bailar ahí |  Comprobar en el atril; si molesta, reprocesar |
+| `casi no hay palabras con tiempo` | Sin tiempos por palabra la hoja de cifrado no puede poner cada acorde sobre su sílaba | `python reletra.py <slug>` |
+
+Una canción instrumental no se revisa la letra: el programa lo detecta solo
+comparando la voz aislada con la mezcla.
 
 Y abres `http://localhost:8300` (o la IP que imprime, desde el celular en
 la misma red Wi-Fi).
@@ -21,6 +37,39 @@ Opciones útiles:
 | `python procesar.py <url> --sin-letra` | Solo acordes, sin Whisper (mucho más rápido) |
 | `python procesar.py <url> --modelo medium` | Whisper más liviano si `large-v3` tarda |
 | `python reletra.py <slug>` | Rehace solo la letra, sin repetir demucs ni acordes |
+| `python revisar.py <slug>` | Revisa una sola canción en vez de todas |
+| `python tono.py <slug> +2` | Deja el audio dos semitonos arriba (el panel lo hace solo) |
+| `python tono.py --peso` | Cuánto ocupa el caché de tonos |
+| `python tono.py --borrar` | Lo tira entero |
+
+## Subir y bajar el tono
+
+Los botones **− / 0 / +** de la barra de arriba (teclas **+** y **−**) suben
+o bajan la canción **entera**: los nombres de los acordes *y el audio*.
+
+Que se muevan las dos cosas a la vez es todo el asunto. Transportar solo los
+nombres te haría tocar Fa mientras suena Mi, y mirando la pantalla no habría
+forma de notarlo. Por eso, **si el audio no se puede transportar, los acordes
+tampoco se mueven**: el panel avisa y se queda como estaba.
+
+El audio lo cambia ffmpeg con `librubberband`, que mueve el tono **dejando la
+duración intacta**. Eso es lo que evita resincronizar nada: medido sobre
+Destrúyeme a −1, las seis pistas dan 236.040 s antes y 236.040 s después,
+deriva 0.000 s. Los tiempos de acordes, letra y pulsos siguen valiendo, y
+**el `cancion.json` no se toca**: si corriges un acorde con la canción
+transportada, se guarda en el tono del disco.
+
+A la voz se le aplica `formant=preserved`; sin eso, subida dos semitonos,
+suena a ardilla.
+
+- La primera vez que pides un tono son ~13 segundos (seis pistas, cuatro a la
+  vez). Después es instantáneo: queda en caché.
+- El caché **no** va junto a la canción: va a `%LOCALAPPDATA%\chordify-claude\tonos`,
+  **fuera de OneDrive**. Son 17 MB por tono y por canción —doce tonos por
+  veintinueve canciones serían 6 GB— y todo se rehace en trece segundos.
+- El tono se recuerda **por canción**: si dejaste Destrúyeme en −1, vuelve
+  en −1. Toca el número para volver al del disco.
+- El límite es ±6 semitonos: a +7 estás más cerca bajando 5.
 
 ## Qué hace cada archivo
 
@@ -28,6 +77,8 @@ Opciones útiles:
 - **`analisis.py`** — el motor musical: pulso, tonalidad y acordes.
 - **`servidor.py`** — sirve el panel y guarda las correcciones.
 - **`reletra.py`** — reprocesa solo la transcripción.
+- **`revisar.py`** — mide si una canción salió bien; se pasa después de procesar.
+- **`tono.py`** — sube o baja el audio sin cambiar la velocidad (rubberband).
 - **`app/`** — el panel (HTML, CSS, JS).
 - **`canciones/<slug>/`** — audio, stems y `cancion.json` de cada canción.
 
@@ -35,8 +86,8 @@ Opciones útiles:
 
 Con el modelo `htdemucs_6s`, cada canción se separa en **voz, batería,
 bajo, guitarra, piano y resto**. En el panel tienes un canal por pista con
-su deslizador, **M** (silenciar) y **S** (solo), más cinco presets: Solo
-Voz, Voz + Base, Armonía, Banda y Sin Voz.
+su deslizador, **M** (silenciar) y **S** (solo), más tres presets: **Banda**,
+**Solo voz** y **Voz baja + ritmo**.
 
 Las teclas **1 a 6** activan el solo de cada pista, como en una consola real.
 
@@ -98,6 +149,7 @@ tú arreglas por oído lo que importa. Cada corrección queda marcada con
 - **Espacio** reproduce/pausa, **←/→** saltan 5 s, **Ctrl+S** guarda.
 - Teclas 1-4: solo de voz, batería, bajo y resto. Presets arriba de la consola.
 - **Do Re Mi / C D E** cambia la notación.
+- **+** y **−** suben y bajan el tono de la canción entera, audio incluido.
 - **Corregir**: toca un acorde para abrir la paleta, o una línea para editar el texto.
 
 Antes de sobrescribir, el servidor deja una copia en `cancion.respaldo.json`.

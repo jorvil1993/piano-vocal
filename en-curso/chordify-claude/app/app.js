@@ -5,9 +5,15 @@ import { RolloPiano } from './rollo.js';
 import * as Guitarra from './guitarra.js';
 import { Piano } from './piano.js';
 import { Cifrado } from './cifrado.js';
-import { Entrenador } from './practicar.js';
+import { Entrenador, leerMarcados, alternarMarcado } from './practicar.js';
+import { angloAcorde } from './cifrado.js';
+import { transportarCancion, nombreTono, LIMITE as TONO_MAX }
+  from './transportar.js';
 
 const CLASES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+// Los tiempos se guardan con tres decimales, como los escribe el analisis
+const round3 = (t) => Math.round(t * 1000) / 1000;
 const LATIN = {C: 'Do', 'C#': 'Do#', D: 'Re', 'D#': 'Re#', E: 'Mi', F: 'Fa',
   'F#': 'Fa#', G: 'Sol', 'G#': 'Sol#', A: 'La', 'A#': 'La#', B: 'Si'};
 const TIPOS = [
@@ -62,6 +68,8 @@ class Atril {
     this.pasos = [];
     this.tapado = false;      // ejercicios de oido: acorde oculto
     this.velocidadBase = 1;   // tempo elegido; la sincronía ajusta sobre él
+    this.transporte = 0;      // semitonos arriba/abajo respecto al disco
+    this.cambiandoTono = false;
     this.candado = null;        // Wake Lock de pantalla
     this.mantenerPantalla = true;
 
@@ -85,7 +93,13 @@ class Atril {
     this.teclado = new Piano('teclado-acorde',
       {octavaInicial: angosta ? 3 : 3, octavas: angosta ? 2 : 3});
 
-    this.hoja = new Cifrado('cif-hoja', {alSaltar: (t) => this.saltarA(t)});
+    this.hoja = new Cifrado('cif-hoja', {
+      alSaltar: (t) => { if (!this.veniaDeLargo()) this.saltarA(t); },
+      alMantener: (el, anglo) => this.mantener(el, () => anglo),
+      marcado: (anglo) => this.marcados.has(anglo),
+      alMover: (viejo, nuevo, ancla) => this.moverAcorde(viejo, nuevo, ancla),
+    });
+    this.marcados = leerMarcados();
     this.cargaToken = 0;
     this.entreno = new Entrenador('ent-cuerpo', {notacion: this.notacion});
     this.verCifrado = false;
@@ -109,7 +123,9 @@ class Atril {
   // ============================================================ carga
 
   async cargarLista() {
-    const lista = await (await fetch('/api/canciones')).json();
+    let r = await fetch('/api/canciones').catch(() => null);
+    if (!r || !r.ok) r = await fetch('../canciones/lista.json');
+    const lista = await r.json();
     const sel = $('selector-cancion');
     sel.innerHTML = '';
     if (!lista.length) {
@@ -119,7 +135,8 @@ class Atril {
     for (const c of lista) {
       const o = document.createElement('option');
       o.value = c.id;
-      o.textContent = c.titulo;
+      // Siempre igual: cancion primero, artista despues
+      o.textContent = c.artista ? c.titulo + ' — ' + c.artista : c.titulo;
       sel.appendChild(o);
     }
     sel.onchange = () => this.cargar(sel.value);
@@ -132,7 +149,7 @@ class Atril {
     // la vieja tarda mas, se quedaba la anterior. Cada carga lleva un
     // numero: si al volver de un await ya no es la ultima, se abandona.
     const token = ++this.cargaToken;
-    const base = '/canciones/' + encodeURIComponent(slug) + '/';
+    const base = '../canciones/' + encodeURIComponent(slug) + '/';
     const datos = await (await fetch(base + 'cancion.json')).json();
     if (token !== this.cargaToken) return;
     this.cancion = datos;
@@ -146,14 +163,25 @@ class Atril {
     // debería obligarte a volver a darle play.
     const veniaSonando = !this.pistas.voz.paused;
     this.pausar();
-    await this.cargarPistas(base, this.cancion.audio);
+
+    // El tono con el que dejaste esta canción la última vez. Se pide ANTES
+    // de bajar el audio: si hay que renderizarlo se baja ya lo transportado,
+    // en vez de bajarse el original y volver a bajarlo todo encima medio
+    // minuto después.
+    this.transporte = 0;
+    const donde = await this.prepararTono(slug, this.tonoGuardado(slug));
+    if (token !== this.cargaToken) return;
+    if (donde.semis) {
+      transportarCancion(this.cancion, donde.semis);
+      this.transporte = donde.semis;
+    }
+
+    await this.cargarPistas(donde.base, this.cancion.audio);
     if (token !== this.cargaToken) return;
     this.aplicarConsola();
 
     $('titulo').textContent = this.cancion.titulo;
-    $('meta').textContent = [this.cancion.artista,
-      this.cancion.tonalidad.nombre, this.cancion.tempo.toFixed(1) + ' BPM',
-      this.cancion.compas].join(' · ');
+    this.pintarMeta();
     $('dur-total').textContent = this.formato(this.cancion.duracion);
 
     const ms = this.cancion.ajuste_ms || 0;
@@ -204,6 +232,7 @@ class Atril {
     this.rehacerHoja();
     this.marcarEstado();
     this.ajustarModo();
+    this.pintarTono();
     if (veniaSonando) this.reproducir();
   }
 
@@ -274,6 +303,134 @@ class Atril {
     });
   }
 
+  // ============================================================== tono
+  //
+  // Subir o bajar la canción entera. Se mueven a la vez el NOMBRE de los
+  // acordes y el AUDIO: mover solo los nombres te haría tocar Fa mientras
+  // suena Mi, que es peor que no tener la herramienta.
+  //
+  // El cancion.json no se toca. El tono es cómo te sientas a tocar hoy, no
+  // un dato de la canción: se recuerda en el navegador, canción por canción.
+
+  tonoGuardado(slug) {
+    try {
+      const n = parseInt(localStorage.getItem('tono:' + slug), 10);
+      return Number.isFinite(n) ? Math.max(-TONO_MAX, Math.min(TONO_MAX, n)) : 0;
+    } catch (e) { return 0; }
+  }
+
+  recordarTono() {
+    try {
+      if (this.transporte) {
+        localStorage.setItem('tono:' + this.slug, String(this.transporte));
+      } else {
+        localStorage.removeItem('tono:' + this.slug);
+      }
+    } catch (e) {}
+  }
+
+  // Pide al servidor el audio a ese tono y espera a que esté. Devuelve el
+  // tono que se consiguió DE VERDAD y de dónde bajar las pistas.
+  //
+  // Si el audio no se puede transportar devuelve 0, y quien llama deja los
+  // acordes como estaban. Enseñar los nombres transportados sobre el audio
+  // original sería lo peor que puede hacer esto: tocarías en un tono
+  // distinto del que suena y mirando la pantalla no habría cómo notarlo.
+  async prepararTono(slug, semis) {
+    const original = {semis: 0,
+      base: '../canciones/' + encodeURIComponent(slug) + '/'};
+    semis = Math.max(-TONO_MAX, Math.min(TONO_MAX, semis | 0));
+    if (!semis) return original;
+
+    const preguntar = async () => {
+      const r = await fetch('/api/tono?cancion='
+        + encodeURIComponent(slug) + '&semis=' + semis);
+      if (!r.ok) throw new Error('requiere el servidor en tu PC');
+      return r.json();
+    };
+    const capa = $('cargando');
+    const barra = $('cargando-avance');
+    const texto = $('cargando-texto');
+    try {
+      let res = await preguntar();
+      if (res.estado === 'haciendo') {
+        // Son trece segundos de ffmpeg. Sin barra parece que se colgó.
+        capa.classList.remove('oculta');
+        while (res.estado === 'haciendo') {
+          const parte = res.total ? res.hechas / res.total : 0;
+          barra.style.width = (parte * 100).toFixed(0) + '%';
+          texto.textContent = 'Cambiando el tono a ' + nombreTono(semis)
+            + '… ' + (res.hechas || 0) + ' de ' + (res.total || 6) + ' pistas';
+          await new Promise((r) => setTimeout(r, 600));
+          res = await preguntar();
+        }
+        capa.classList.add('oculta');
+      }
+      if (res.estado !== 'listo') throw new Error(res.error || 'no se pudo');
+      return {semis, base: res.base};
+    } catch (e) {
+      capa.classList.add('oculta');
+      this.avisar('No se pudo cambiar el tono: ' + e.message);
+      return original;
+    }
+  }
+
+  async cambiarTono(n) {
+    if (!this.cancion || this.cambiandoTono) return;
+    n = Math.max(-TONO_MAX, Math.min(TONO_MAX, n | 0));
+    if (n === this.transporte) return;
+    this.cambiandoTono = true;
+    try {
+      const donde = await this.prepararTono(this.slug, n);
+      if (donde.semis !== n) return;      // no se pudo: todo se queda igual
+
+      // Dónde ibas y si sonaba: cambiar de tono no debe sacarte del sitio
+      const t = this.pistas.voz.currentTime;
+      const sonaba = !this.pistas.voz.paused;
+      this.pausar();
+
+      transportarCancion(this.cancion, n - this.transporte);
+      this.transporte = n;
+      this.recordarTono();
+
+      await this.cargarPistas(donde.base, this.cancion.audio);
+      this.aplicarConsola();
+      this.saltarA(t);
+
+      this.rollo.cargar(this.cancion.piano_notas || []);
+      this.pintarMeta();
+      this.pintarTono();
+      this.indiceActual = -1;
+      this.lineaActual = -1;
+      this.dibujarCinta();
+      this.rehacerHoja();
+      if (sonaba) this.reproducir();
+    } finally {
+      this.cambiandoTono = false;
+    }
+  }
+
+  pintarTono() {
+    const etq = $('etq-tono');
+    if (etq) etq.textContent = nombreTono(this.transporte);
+    const caja = $('tono');
+    if (caja) caja.classList.toggle('activo', !!this.transporte);
+    const baja = $('btn-tono-baja'), sube = $('btn-tono-sube');
+    if (baja) baja.disabled = this.transporte <= -TONO_MAX;
+    if (sube) sube.disabled = this.transporte >= TONO_MAX;
+  }
+
+  pintarMeta() {
+    const c = this.cancion;
+    const partes = [c.artista, c.tonalidad.nombre,
+      c.tempo.toFixed(1) + ' BPM', c.compas];
+    // Que se vea de un golpe que no estás en el tono del disco
+    if (this.transporte) {
+      partes.splice(2, 0, 'tono ' + nombreTono(this.transporte));
+    }
+    $('meta').textContent = partes.join(' · ');
+  }
+
   // ============================================================ modos
 
   ajustarModo() {
@@ -324,13 +481,60 @@ class Atril {
     return this.notacion === 'latino' ? a.latino : a.anglo;
   }
 
+  // Mover un acorde a otra silaba o a un espacio. El segundo sigue siendo
+  // el momento musical; el ancla recuerda por separado el caracter exacto
+  // donde la persona quiso verlo en la hoja.
+  moverAcorde(viejo, nuevo, ancla) {
+    const lista = this.cancion.acordes;
+    const i = lista.findIndex((a) => Math.abs(a.inicio - viejo) < 0.02);
+    if (i < 0) return;
+    const a = lista[i];
+
+    // No puede adelantarse al anterior ni pasarse del siguiente
+    const min = i > 0 ? lista[i - 1].inicio + 0.15 : 0;
+    const max = i + 1 < lista.length ? lista[i + 1].inicio - 0.15 : a.fin;
+    const propuesto = Number(nuevo);
+    if (!Number.isFinite(propuesto)) return;
+    const limitado = propuesto < min || propuesto > max;
+    const t = Math.max(min, Math.min(max, propuesto));
+
+    if (i > 0) {
+      lista[i - 1].fin = round3(t);
+      // Esta frontera pertenece a los dos acordes. Si solo se conserva el
+      // segundo al reprocesar, el anterior puede desaparecer o dejar hueco.
+      lista[i - 1].editado = true;
+    }
+    a.inicio = round3(t);
+    if (!limitado && ancla && Number.isFinite(Number(ancla.linea)) &&
+        Number.isFinite(Number(ancla.columna))) {
+      a.ancla_cifrado = {
+        linea: round3(Number(ancla.linea)),
+        columna: Math.round(Number(ancla.columna)),
+      };
+    } else {
+      // Si los acordes vecinos obligaron a dejarlo en otro segundo, guardar
+      // la linea tocada haria que audio y hoja contaran cosas distintas.
+      delete a.ancla_cifrado;
+    }
+    a.editado = true;
+    this.sinGuardar = true;
+    this.indiceActual = -1;
+    this.marcarEstado();
+    this.dibujarCinta();
+    this.rehacerHoja();
+    this.hoja.editando = true;
+    this.avisar(a.latino + ' movido a ' + this.formato(t));
+  }
+
   // Todo lo que cambia como se LLAMA un acorde obliga a rehacer la hoja
   rehacerHoja() {
     if (!this.hoja || !this.cancion) return;
     this.hoja.cancion = this.cancion;
     this.hoja.notacion = this.notacion;
     this.hoja.tapado = this.tapado;
+    const seguiaEditando = this.hoja.editando;
     this.hoja.construir();
+    this.hoja.editando = seguiaEditando;
   }
 
   // La hoja ocupa el sitio de la cinta y de la letra: no caben las dos
@@ -347,6 +551,55 @@ class Atril {
     if (v) this.rehacerHoja();
   }
 
+  // Mantener pulsado un acorde lo apunta en "los que no me se". Se usa
+  // pointer para que valga igual con el dedo y con el raton, y se bloquea
+  // el menu del navegador, que en el movil sale solo al mantener.
+  mantener(el, dameAnglo) {
+    let reloj = null;
+    const soltar = () => { clearTimeout(reloj); reloj = null; };
+    el.addEventListener('pointerdown', () => {
+      soltar();
+      reloj = setTimeout(() => {
+        const anglo = dameAnglo();
+        if (!anglo) return;
+        this.marcaLarga = performance.now();
+        const puesto = alternarMarcado(anglo);
+        this.marcados = leerMarcados();
+        this.avisar(puesto
+          ? anglo + ' · apuntado para practicar'
+          : anglo + ' · quitado de la lista');
+        if (navigator.vibrate) navigator.vibrate(35);
+        this.repintarMarcados();
+      }, 500);
+    });
+    for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) {
+      el.addEventListener(ev, soltar);
+    }
+    el.addEventListener('contextmenu', (e) => e.preventDefault());
+  }
+
+  // Tras una pulsacion larga no debe dispararse ademas el clic normal
+  veniaDeLargo() {
+    return this.marcaLarga && performance.now() - this.marcaLarga < 500;
+  }
+
+  repintarMarcados() {
+    for (const el of (this.pasos || [])) {
+      const a = el.dataset.anglo;
+      el.classList.toggle('marcado', !!a && this.marcados.has(a));
+    }
+    if (this.hoja) this.hoja.refrescarMarcas();
+  }
+
+  avisar(texto) {
+    const el = $('aviso-flotante');
+    if (!el) return;
+    el.textContent = texto;
+    el.classList.remove('oculta');
+    clearTimeout(this.relojAviso);
+    this.relojAviso = setTimeout(() => el.classList.add('oculta'), 1900);
+  }
+
   dibujarCinta() {
     const cont = $('cinta-acordes');
     cont.innerHTML = '';
@@ -356,10 +609,15 @@ class Atril {
       el.className = 'paso' + (a.anglo ? '' : ' vacio') + (a.editado ? ' editado' : '');
       el.innerHTML = '<div class="paso-nombre">' + this.nombre(a) + '</div>' +
                      '<div class="paso-pie">' + this.formato(a.inicio) + '</div>';
+      const anglo = angloAcorde(a, this.hoja ? this.hoja.simple : true);
+      el.dataset.anglo = anglo || '';
+      if (anglo && this.marcados.has(anglo)) el.classList.add('marcado');
       el.onclick = () => {
+        if (this.veniaDeLargo()) return;
         if (this.editando) this.abrirEditor(i);
         else this.saltarA(a.inicio);
       };
+      this.mantener(el, () => anglo);
       cont.appendChild(el);
       this.pasos.push(el);
     });
@@ -444,10 +702,12 @@ class Atril {
       this.pintarAcorde(i >= 0 ? this.cancion.acordes[i] : null,
                         this.cancion.acordes[i + 1] || null);
       this.acordeActual = i >= 0 ? this.cancion.acordes[i] : null;
-      const num = $('resta-num');
-      if (num) {
-        const a = this.acordeActual;
-        num.innerHTML = a ? this.etiquetaCompases(a.fin - a.inicio) : '';
+      const a = this.acordeActual;
+      for (const id of ['resta-num', 'guitarra-compases']) {
+        const num = $(id);
+        if (num) {
+          num.innerHTML = a ? this.etiquetaCompases(a.fin - a.inicio) : '';
+        }
       }
     }
 
@@ -486,6 +746,8 @@ class Atril {
   }
 
   pintarAcorde(a, siguiente) {
+    this.angloActual = a
+      ? angloAcorde(a, this.hoja ? this.hoja.simple : true) : null;
     const nom = this.nombre(a);
     const notas = (a && !this.tapado)
       ? (this.notacion === 'latino' ? a.notas_latinas : a.notas) : [];
@@ -828,12 +1090,22 @@ class Atril {
     $('btn-guardar').disabled = true;
     try {
       if (!this.clave) {
-        this.clave = (await (await fetch('/api/clave')).json()).clave;
+        const rk = await fetch('/api/clave').catch(() => null);
+        if (!rk || !rk.ok) throw new Error('solo disponible con el servidor en tu PC');
+        this.clave = (await rk.json()).clave;
       }
       const r = await fetch('/api/guardar/' + encodeURIComponent(this.slug), {
         method: 'POST',
         headers: {'Content-Type': 'application/json', 'X-Clave': this.clave},
-        body: JSON.stringify(this.cancion),
+        // Se guarda SIEMPRE en el tono del disco: lo que ves transportado
+        // es cómo tocas hoy, pero el archivo tiene que seguir siendo la
+        // canción. Va una copia devuelta a su sitio, sin tocar lo que hay
+        // en pantalla. Es exacto: transportar son las doce clases de nota,
+        // así que restar lo mismo que se sumó devuelve lo que había.
+        body: JSON.stringify(this.transporte
+          ? transportarCancion(JSON.parse(JSON.stringify(this.cancion)),
+                               -this.transporte)
+          : this.cancion),
       });
       const res = await r.json();
       if (!r.ok) throw new Error(res.error || 'error al guardar');
@@ -937,6 +1209,13 @@ class Atril {
       this.rehacerHoja();
     };
 
+    // El acorde grande es lo que tienes delante mientras tocas: si te
+    // frena, lo mantienes pulsado ahi mismo sin buscar nada.
+    for (const id of ['acorde-grande', 'tec-acorde', 'piano-acorde']) {
+      const el = $(id);
+      if (el) this.mantener(el, () => this.angloActual);
+    }
+
     $('btn-cifrado').onclick = () => this.mostrarCifrado(!this.verCifrado);
     const verSimple = (v) => {
       this.hoja.simple = v;
@@ -945,6 +1224,12 @@ class Atril {
       this.rehacerHoja();
     };
     $('cif-cerrar').onclick = () => this.mostrarCifrado(false);
+    $('cif-corregir').onclick = () => {
+      this.hoja.editando = !this.hoja.editando;
+      this.hoja.elegir(null);
+      $('cif-corregir').classList.toggle('activo', this.hoja.editando);
+      $('cif-ayuda').classList.toggle('oculta', !this.hoja.editando);
+    };
     $('cif-sencillo').onclick = () => verSimple(true);
     $('cif-completo').onclick = () => verSimple(false);
     this.mostrarCifrado(this.verCifrado);
@@ -967,15 +1252,16 @@ class Atril {
         const a = b.dataset.ambito;
         // La biblioteca se pide una sola vez: son los acordes de todas las
         // canciones, sin letra ni notas de piano (27 KB en vez de 870).
-        if (a === 'todas' && !this.entreno.biblioteca) {
+        if ((a === 'todas' || a === 'marcados') && !this.entreno.biblioteca) {
           b.textContent = 'Cargando…';
           try {
-            this.entreno.biblioteca =
-              await (await fetch('/api/acordes')).json();
+            let r = await fetch('/api/acordes').catch(() => null);
+            if (!r || !r.ok) r = await fetch('../canciones/acordes.json');
+            this.entreno.biblioteca = await r.json();
           } catch (e) {
             this.entreno.biblioteca = [];
           }
-          b.textContent = 'Todas mis canciones';
+          b.textContent = a === 'todas' ? 'Todas' : '★ Los que marqué';
         }
         this.entreno.irAmbito(a);
       };
@@ -1019,6 +1305,10 @@ class Atril {
       this.dibujarCinta();
     };
 
+    $('btn-tono-baja').onclick = () => this.cambiarTono(this.transporte - 1);
+    $('btn-tono-sube').onclick = () => this.cambiarTono(this.transporte + 1);
+    $('etq-tono').onclick = () => this.cambiarTono(0);   // volver al del disco
+
     $('btn-editar').onclick = () => {
       this.editando = !this.editando;
       document.body.classList.toggle('modo-edicion', this.editando);
@@ -1054,6 +1344,12 @@ class Atril {
       if (e.key === 'h' && !e.ctrlKey && !e.metaKey) {
         e.preventDefault();
         this.plegar(!document.body.classList.contains('menu-plegado'));
+      }
+      if (e.key === '+' || e.key === '=') {
+        e.preventDefault(); this.cambiarTono(this.transporte + 1);
+      }
+      if (e.key === '-') {
+        e.preventDefault(); this.cambiarTono(this.transporte - 1);
       }
       const n = parseInt(e.key, 10);
       if (n >= 1 && n <= PISTAS.length) {

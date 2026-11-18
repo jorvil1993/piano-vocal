@@ -28,6 +28,7 @@ import unicodedata
 import analisis
 import bateria as mod_bateria
 import piano_notas as mod_piano
+from nombres import limpiar_nombres
 
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 CANCIONES = os.path.join(RAIZ, "canciones")
@@ -73,8 +74,12 @@ def leer_datos(url):
                   "leyendo datos del video")
     linea = [l for l in meta.stdout.strip().splitlines() if "|||" in l][-1]
     vid, titulo, autor, dur = linea.split("|||")
-    return {"youtube_id": vid, "titulo": titulo.strip(),
-            "artista": autor.strip(), "duracion_youtube": int(dur)}
+    # YouTube devuelve el titulo con el canal, el disco, el ano y los
+    # "(VIDEO OFICIAL)" pegados. Se limpia aqui, en la puerta de entrada,
+    # para que la carpeta y la lista salgan ya presentables.
+    limpio, autor_limpio = limpiar_nombres(titulo.strip(), autor.strip())
+    return {"youtube_id": vid, "titulo": limpio,
+            "artista": autor_limpio, "duracion_youtube": int(dur)}
 
 
 def descargar(url, carpeta, hasta=None):
@@ -211,6 +216,36 @@ def separar(carpeta):
 
 # ---------------------------------------------------------------- 3. acordes
 
+def respetar_ediciones(nuevos, carpeta, campo="acordes"):
+    """Vuelve a poner encima lo corregido a mano: acordes o letra.
+
+    Sin esto, cada reproceso borraba las correcciones. Y las correcciones
+    valen mas que la deteccion: salen del cancionero, no de un cromagrama
+    ni de Whisper. Lo marcado `editado` pisa a todo lo nuevo que caiga en
+    su tramo.
+    """
+    ruta = os.path.join(carpeta, "cancion.json")
+    if not os.path.isfile(ruta):
+        return nuevos
+    try:
+        with open(ruta, encoding="utf-8") as f:
+            viejos = json.load(f).get(campo) or []
+    except (OSError, ValueError):
+        return nuevos
+
+    mano = [a for a in viejos if a.get("editado")]
+    if not mano:
+        return nuevos
+
+    salida = [a for a in nuevos
+              if not any(a["inicio"] < m["fin"] and m["inicio"] < a["fin"]
+                         for m in mano)]
+    salida.extend(mano)
+    salida.sort(key=lambda a: a["inicio"])
+    log(campo, "respetados %d corregidos a mano" % len(mano))
+    return salida
+
+
 def sacar_acordes(armonico, ritmo):
     log("acordes", "extrayendo rasgos (cromagrama sin bateria, pulso sobre la percusion)")
     t0 = time.time()
@@ -334,7 +369,12 @@ def sacar_letra(voz, idioma="es", modelo="large-v3"):
             "fin": round(float(s["end"]), 3),
             "texto": texto,
             "editado": False,
+            # El final permite distinguir una palabra sostenida del silencio
+            # que hay antes de la siguiente. Sin el, la hoja solo sabe en que
+            # palabra empezo el canto y termina pegando acordes a la silaba
+            # equivocada.
             "palabras": [{"t": round(float(w["start"]), 3),
+                          "f": round(float(w.get("end", w["start"])), 3),
                           "w": w["word"].strip()}
                          for w in s.get("words", []) or []],
         })
@@ -409,15 +449,21 @@ def procesar(url, saltar_letra=False, modelo="large-v3", hasta=None):
         # Positivo = mostrar los acordes antes de que suenen.
         "ajuste_ms": 0,
         "beats": beats,
-        "acordes": segmentos,
+        "acordes": respetar_ediciones(segmentos, carpeta),
         "bateria": golpes["golpes"],
         "piano_notas": notas_piano,
-        "letra": letra,
+        "letra": respetar_ediciones(letra, carpeta, "letra"),
         "generado_por": "claude",
         "version_datos": 1,
     }
 
     salida = os.path.join(carpeta, "cancion.json")
+    # Antes de pisar nada, una copia. Si el analisis nuevo sale peor que
+    # el viejo, se recupera con: python volver.py <slug>
+    if os.path.exists(salida):
+        shutil.copy2(salida, salida.replace(".json", ".anterior.json"))
+        log("respaldo", "guardado cancion.anterior.json por si acaso")
+
     with open(salida, "w", encoding="utf-8") as f:
         json.dump(cancion, f, ensure_ascii=False, indent=1)
     log("listo", salida)

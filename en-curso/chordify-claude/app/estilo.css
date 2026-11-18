@@ -63,7 +63,12 @@ body {
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-.acciones { grid-area: acciones; display: flex; gap: 5px; align-items: center; }
+/* Ahora hay nueve: si no envuelven, se salen por el borde. Como la
+   cabecera se pliega entera, aqui una segunda linea no estorba. */
+.acciones {
+  grid-area: acciones; display: flex; gap: 5px;
+  align-items: center; flex-wrap: wrap;
+}
 
 /* Los modos: lo que decide qué instrumento estás tocando */
 .modos {
@@ -143,9 +148,8 @@ body {
   font-size: clamp(1.1rem, 4vw, 1.5rem); font-weight: 800; line-height: 1;
   color: var(--acento); letter-spacing: -.01em;
 }
-/* En guitarra el nombre vive encima de cada mástil; repetirlo arriba
-   duplicaba la información y quitaba altura al diagrama. */
-body[data-modo="guitarra"] #vista-guitarra .acorde-grande { display: none; }
+/* En guitarra se repite arriba porque al tocar importa ver de un golpe
+   el acorde, el compás actual y cuántos compases ocupa. */
 .notas-acorde { color: var(--tenue); font-size: 0.76rem; }
 
 .pulsos { display: flex; gap: 6px; align-items: center; }
@@ -841,6 +845,7 @@ body.menu-plegado .cabecera { display: none; }
   flex: none; display: grid; grid-template-columns: 1fr 1fr;
   gap: 5px; padding: 0 12px 7px;
 }
+.ent-ambito.tres { grid-template-columns: 1fr 0.7fr 1.2fr; }
 .ent-amb {
   background: var(--panel-alto); color: var(--tenue);
   border: 1px solid var(--borde); border-radius: 8px;
@@ -849,3 +854,73 @@ body.menu-plegado .cabecera { display: none; }
 .ent-amb.activo {
   background: var(--acento-2); color: #06131f; border-color: var(--acento-2);
 }
+
+/* Aviso breve al marcar un acorde. Va por encima de todo y no estorba:
+   se apaga solo. */
+.aviso-flotante {
+  position: fixed; left: 50%; bottom: calc(96px + var(--seguro));
+  transform: translateX(-50%); z-index: 90;
+  background: var(--acento); color: #1b1200;
+  padding: 9px 16px; border-radius: 99px;
+  font-size: 0.82rem; font-weight: 700; white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(0,0,0,.45);
+  pointer-events: none;
+}
+
+/* Acorde apuntado en "los que no me se": estrella y borde, en la cinta y
+   en la hoja de cifrado. */
+.paso.marcado { border-color: var(--acento-2); }
+.paso.marcado .paso-nombre::after,
+.cif-ac.marcado::after {
+  content: '★'; font-size: 0.62em; margin-left: 2px; color: var(--acento-2);
+}
+.cif-ac.marcado {
+  text-decoration: underline; text-decoration-color: var(--acento-2);
+  text-underline-offset: 2px;
+}
+/* Sin seleccion de texto al mantener pulsado: estorbaba al gesto */
+.paso, .cif-ac, .acorde-grande, #tec-acorde, #piano-acorde {
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Modo corregir: el acorde agarrado y la instruccion */
+.cif-ac.elegido {
+  background: var(--ok); color: #04220c; outline: 2px solid var(--ok);
+  outline-offset: 1px;
+}
+.cif-ayuda {
+  flex: none; padding: 7px 12px; font-size: 0.74rem; line-height: 1.45;
+  color: #cfe6d6; background: #14301f; border-bottom: 1px solid var(--borde);
+}
+.cif-ayuda strong { color: #7ee2a0; }
+/* Con el modo activo, la letra invita a que la toques */
+body .cifrado .cif-letra { cursor: pointer; }
+
+/* ------------------------------------------------------ tono (transporte)
+   Tres piezas pegadas: bajar, el número, subir. El número es un botón y no
+   una etiqueta porque tocarlo devuelve al tono del disco, y en el celular
+   tiene que ser tan tocable como los otros dos. */
+.tono {
+  display: inline-flex; align-items: stretch;
+  background: var(--panel-alto);
+  border: 1px solid var(--borde); border-radius: 8px; overflow: hidden;
+}
+.tono-paso, .tono-valor {
+  background: none; border: none; color: var(--texto);
+  font-family: inherit; font-size: 0.78rem; font-weight: 700;
+  padding: 6px 8px; cursor: pointer;
+}
+.tono-paso { font-size: 1rem; line-height: 1; }
+.tono-paso:hover, .tono-valor:hover { background: #232d3d; }
+.tono-paso:disabled { opacity: .3; cursor: default; }
+.tono-valor {
+  min-width: 30px; text-align: center;
+  font-variant-numeric: tabular-nums;   /* que no baile al cambiar de cifra */
+  border-left: 1px solid var(--borde);
+  border-right: 1px solid var(--borde);
+}
+/* En cuanto no estás en el tono del disco se nota de un golpe. Es lo que
+   evita ponerte a tocar en otro tono sin haberte dado cuenta. */
+.tono.activo { border-color: var(--acento); }
+.tono.activo .tono-valor { background: var(--acento); color: #1b1200; }

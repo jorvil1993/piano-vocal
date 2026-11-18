@@ -1,6 +1,6 @@
-// Hoja de cifrado: la letra con cada acorde encima de la silaba donde entra.
-// Se puede porque la letra guarda el segundo de CADA palabra, no solo el de
-// la linea: sin eso el acorde caeria aproximado y la hoja no serviria.
+// Hoja de cifrado: la letra con cada acorde encima de la silaba o del espacio
+// donde entra. La letra guarda el tiempo de CADA palabra, no solo el de la
+// linea, y una correccion manual puede fijar ademas la columna visual exacta.
 
 const LAT = {C: 'Do', 'C#': 'Do#', D: 'Re', 'D#': 'Re#', E: 'Mi', F: 'Fa',
   'F#': 'Fa#', G: 'Sol', 'G#': 'Sol#', A: 'La', 'A#': 'La#', B: 'Si'};
@@ -13,15 +13,6 @@ const SIMPLE = {min: 'm', m7: 'm', m6: 'm', m9: 'm', dim: 'dim', 'm7b5': 'dim'};
 
 // Hueco entre lineas a partir del cual se ve como parrafo aparte
 const PARRAFO = 2.6;
-// Un acorde que arranca justo antes de la linea es el de su primera palabra
-const ANTES = 0.35;
-// Mas lejos que esto de cualquier palabra, el acorde no es de nadie
-const LEJOS = 1.5;
-// Si la silaba siguiente entra dentro de este margen del cambio de acorde,
-// es el mismo momento y el acorde va encima de ella. Medido sobre las seis
-// canciones: con 0.15 solo 58 acordes quedan escritos tarde (mediana 0.08 s)
-// frente a 110 con 0.35 (mediana 0.18 s), y el lado temprano no empeora.
-const JUNTOS = 0.15;
 // Un acorde en un hueco mas corto que esto antes de la linea se dibuja en
 // la MISMA fila de acordes, a la izquierda. Solo un hueco mas largo es un
 // instrumental de verdad y se lleva su propia fila.
@@ -59,7 +50,13 @@ export function nombreAcorde(a, {simple = true, notacion = 'latino',
                                  tapado = false} = {}) {
   if (!a || !a.anglo) return null;                 // 'N' = sin acorde
   if (tapado) return '?';
-  if (!simple) return notacion === 'latino' ? a.latino : a.anglo;
+  if (!simple) {
+    const n = notacion === 'latino' ? a.latino : a.anglo;
+    // La barra solo en la version completa: en la sencilla estorba, un
+    // Sol/Fa# se toca Sol y suena bien.
+    const b = notacion === 'latino' ? a.bajo_latino : a.bajo;
+    return b ? n + '/' + b : n;
+  }
   const p = (a.etiqueta || '').split(':');
   const raiz = p[0], cal = p[1] || 'maj';
   const suf = SIMPLE[cal] !== undefined ? SIMPLE[cal] : '';
@@ -101,11 +98,148 @@ export function midisAcorde(a, simple) {
   return iv.map((n) => base + n);
 }
 
+// ------------------------------------------------ tiempo <-> columna
+//
+// La armonia tiene un segundo real y la hoja tiene una columna. No son la
+// misma cosa: un acorde puede entrar dentro de una palabra o en el silencio
+// que hay antes de la siguiente. Estas funciones conservan esa diferencia.
+
+// En que caracteres del texto empieza y termina cada palabra cronometrada.
+// Whisper da tambien el final (`f`) en canciones nuevas. Para las antiguas,
+// se infiere repartiendo el intervalo hasta la palabra siguiente entre los
+// caracteres visibles; asi siguen funcionando sin volver a transcribirlas.
+export function posicionesDeLinea(linea) {
+  const txt = linea.texto || '';
+  const res = [];
+  let desde = 0;
+  for (const p of (linea.palabras || [])) {
+    const w = (p.w || '').trim();
+    const t = Number(p.t);
+    if (!w || !Number.isFinite(t)) continue;
+    const i = txt.indexOf(w, desde);
+    if (i < 0) continue;
+    const bruto = p.f !== undefined ? Number(p.f) : Number(p.fin);
+    res.push({t, f: Number.isFinite(bruto) && bruto >= t ? bruto : null,
+              col: i, finCol: i + w.length});
+    desde = i + w.length;
+  }
+  return res;
+}
+
+function limiteLinea(linea, posiciones) {
+  const ultimo = posiciones[posiciones.length - 1];
+  const f = Number(linea.fin);
+  return Number.isFinite(f) && (!ultimo || f >= ultimo.t)
+    ? f : (ultimo ? (ultimo.f || ultimo.t + 0.6) : Number(linea.inicio) || 0);
+}
+
+function finPalabra(linea, posiciones, i) {
+  const p = posiciones[i];
+  const sig = posiciones[i + 1];
+  if (p.f !== null) return sig ? Math.min(p.f, sig.t) : p.f;
+  if (!sig) return limiteLinea(linea, posiciones);
+
+  // Archivo antiguo sin final de palabra: se reserva para el espacio la
+  // parte temporal que le corresponde como caracter. No es una adivinanza
+  // brusca a la palabra anterior o siguiente y, sobre todo, nunca salta al
+  // principio de la linea por superar un umbral arbitrario.
+  const letras = Math.max(1, p.finCol - p.col);
+  const visibles = Math.max(letras, sig.col - p.col);
+  return p.t + (sig.t - p.t) * (letras / visibles);
+}
+
+function interpolar(t, t0, t1, c0, c1) {
+  if (c1 <= c0 || t1 <= t0) return c0;
+  const parte = Math.max(0, Math.min(1, (t - t0) / (t1 - t0)));
+  return Math.round(c0 + parte * (c1 - c0));
+}
+
+// Columna automática donde debe imprimirse un cambio de acorde.
+export function columnaDeTiempo(linea, tiempo) {
+  const txt = linea.texto || '';
+  const tope = Math.max(0, txt.length - 1);
+  const pos = posicionesDeLinea(linea);
+  if (!pos.length) {
+    const ini = Number(linea.inicio) || 0;
+    return interpolar(tiempo, ini, limiteLinea(linea, pos), 0, tope);
+  }
+
+  const primero = pos[0];
+  if (tiempo < primero.t) {
+    const ini = Number(linea.inicio);
+    return Math.min(tope, interpolar(tiempo,
+      Number.isFinite(ini) ? ini : primero.t, primero.t,
+      0, Math.max(0, primero.col - 1)));
+  }
+
+  for (let i = 0; i < pos.length; i++) {
+    const p = pos[i];
+    const sig = pos[i + 1];
+    const tf = finPalabra(linea, pos, i);
+    if (tiempo <= tf || !sig) {
+      return Math.min(tope, interpolar(tiempo, p.t, tf,
+        p.col, Math.max(p.col, p.finCol - 1)));
+    }
+    if (tiempo < sig.t) {
+      // Aqui esta la pausa real: se escribe sobre el espacio, no encima de
+      // ninguna de las dos palabras.
+      return Math.min(tope, interpolar(tiempo, tf, sig.t,
+        p.finCol, Math.max(p.finCol, sig.col - 1)));
+    }
+  }
+  return tope;
+}
+
+// Inversa usada al corregir con el dedo. Devuelve un segundo continuo para
+// cualquier caracter, incluidos los espacios entre palabras.
+export function tiempoDeColumna(linea, columna) {
+  const txt = linea.texto || '';
+  const tope = Math.max(0, txt.length - 1);
+  const col = Math.max(0, Math.min(tope, Math.round(columna)));
+  const pos = posicionesDeLinea(linea);
+  const ini = Number(linea.inicio) || 0;
+  const fin = limiteLinea(linea, pos);
+  if (!pos.length) {
+    return tope ? ini + (fin - ini) * col / tope : ini;
+  }
+
+  const primero = pos[0];
+  if (col < primero.col) {
+    const c1 = Math.max(1, primero.col);
+    return ini + (primero.t - ini) * col / c1;
+  }
+
+  for (let i = 0; i < pos.length; i++) {
+    const p = pos[i];
+    const sig = pos[i + 1];
+    const tf = finPalabra(linea, pos, i);
+    if (col < p.finCol || !sig) {
+      const c1 = Math.max(p.col + 1, p.finCol - 1);
+      const parte = Math.max(0, Math.min(1, (col - p.col) / (c1 - p.col)));
+      return p.t + (tf - p.t) * parte;
+    }
+    if (col < sig.col) {
+      const huecos = Math.max(1, sig.col - p.finCol);
+      const parte = Math.max(0, Math.min(1, (col - p.finCol + 0.5) / huecos));
+      return tf + (sig.t - tf) * parte;
+    }
+  }
+  return fin;
+}
+
 export class Cifrado {
-  constructor(contenedor, {alSaltar} = {}) {
+  constructor(contenedor, {alSaltar, alMantener, marcado, alMover} = {}) {
     this.cont = typeof contenedor === 'string'
       ? document.getElementById(contenedor) : contenedor;
     this.alSaltar = alSaltar;
+    // Mantener pulsado un acorde lo apunta en "los que no me se"
+    this.alMantener = alMantener;
+    this.marcado = marcado || (() => false);
+    // Modo corregir: tocas un acorde y luego la silaba donde va
+    this.alMover = alMover;
+    this.editando = false;
+    this.elegido = null;
+    this.anchoLetra = 8;
     this.simple = true;
     this.notacion = 'latino';
     this.tapado = false;
@@ -150,12 +284,21 @@ export class Cifrado {
       const n = this.nombre(a);
       if (!n) continue;
       const k = this.clave(a);
+      const dato = a.ancla_cifrado;
+      const ancla = dato && Number.isFinite(Number(dato.linea)) &&
+        Number.isFinite(Number(dato.columna))
+        ? {linea: Number(dato.linea), columna: Math.round(Number(dato.columna))}
+        : null;
       const ult = out[out.length - 1];
-      if (ult && ult.k === k && Math.abs(ult.fin - a.inicio) < 0.06) {
+      // Si el usuario coloco expresamente este segundo acorde, no se puede
+      // fundir con el anterior: desapareceria justo la correccion que hizo.
+      if (ult && ult.k === k && !ancla &&
+          Math.abs(ult.fin - a.inicio) < 0.06) {
         ult.fin = a.fin;
         continue;
       }
-      out.push({k, nombre: n, inicio: a.inicio, fin: a.fin});
+      out.push({k, nombre: n, anglo: angloAcorde(a, this.simple),
+                inicio: a.inicio, fin: a.fin, ancla});
     }
     return out;
   }
@@ -164,57 +307,35 @@ export class Cifrado {
 
   // En que caracter del texto empieza cada palabra cronometrada
   posiciones(linea) {
-    const txt = linea.texto || '';
-    const res = [];
-    let desde = 0;
-    for (const p of (linea.palabras || [])) {
-      const w = (p.w || '').trim();
-      if (!w) continue;
-      const i = txt.indexOf(w, desde);
-      if (i < 0) continue;
-      res.push({t: p.t, col: i});
-      desde = i + w.length;
-    }
-    return res;
+    return posicionesDeLinea(linea);
   }
 
-  // La columna del acorde es la de la palabra que se canta en ese instante.
-  // "antes" son los del hueco previo: van arrimados a la izquierda, delante
-  // de la primera silaba. "despues" son los del hueco siguiente: van al
-  // final, pasada la ultima palabra. Ninguno se queda flotando en una fila
-  // sin letra, que no deja ver cuando entra.
-  colocar(bloques, linea, antes = [], despues = []) {
-    const pos = this.posiciones(linea);
+  // La columna sale del instante exacto, incluidos los espacios. "antes"
+  // son los del hueco previo: van a la izquierda, delante de la primera
+  // silaba, con un margen visible reservado para ellos.
+  colocar(bloques, linea, antes = [], prefijo = 0,
+          inicioOriginal = linea.inicio) {
     const largo = (linea.texto || '').length;
     const tope = Math.max(0, largo - 1);
     const marcas = bloques.map((b) => {
-      let col = 0;
-      if (pos.length) {
-        // El acorde cambia en b.inicio. Coger la silaba MAS CERCANA hacia
-        // que a veces fuera la de despues, y entonces al leer la hoja
-        // tocas el cambio tarde. Se escribe sobre la silaba que se esta
-        // cantando cuando entra el acorde; solo si la siguiente arranca
-        // practicamente a la vez, va sobre esa.
-        let previo = null, siguiente = null;
-        for (const o of pos) {
-          if (o.t <= b.inicio) previo = o;
-          else { siguiente = o; break; }
-        }
-        let mejor = null;
-        if (siguiente && siguiente.t - b.inicio <= JUNTOS) mejor = siguiente;
-        else mejor = previo || siguiente;
-        col = (!mejor || Math.abs(mejor.t - b.inicio) > LEJOS)
-          ? 0 : Math.min(mejor.col, tope);
-      }
-      return {nombre: b.nombre, col, inicio: b.inicio, fin: b.fin};
+      const fijada = b.ancla &&
+        Math.abs(b.ancla.linea - Number(inicioOriginal)) < 0.02;
+      // El ancla manda solo en la hoja. El segundo musical se conserva por
+      // separado y sigue gobernando audio, seguimiento y color activo.
+      const cruda = fijada
+        ? prefijo + b.ancla.columna
+        : columnaDeTiempo(linea, b.inicio);
+      const col = Math.max(0, Math.min(tope, Math.round(cruda)));
+      return {nombre: b.nombre, anglo: b.anglo, col,
+              inicio: b.inicio, fin: b.fin};
     });
     marcas.sort((x, y) => x.col - y.col || x.inicio - y.inicio);
 
     const todas = [];
     let libre = 0;
     for (const b of antes) {
-      todas.push({nombre: b.nombre, col: libre, inicio: b.inicio,
-                  fin: b.fin, hueco: true});
+      todas.push({nombre: b.nombre, anglo: b.anglo, col: libre,
+                  inicio: b.inicio, fin: b.fin, antes: true});
       libre += b.nombre.length + 1;
     }
     // Dos acordes sobre la misma silaba se pisarian: se corre el segundo
@@ -222,12 +343,6 @@ export class Cifrado {
       if (m.col < libre) m.col = libre;
       todas.push(m);
       libre = m.col + m.nombre.length + 1;
-    }
-    for (const b of despues) {
-      const col = Math.max(libre, largo + 1);
-      todas.push({nombre: b.nombre, col, inicio: b.inicio,
-                  fin: b.fin, hueco: true});
-      libre = col + b.nombre.length + 1;
     }
     return todas;
   }
@@ -239,6 +354,7 @@ export class Cifrado {
     regla.textContent = '0'.repeat(80);
     this.cont.appendChild(regla);
     const ancho = regla.getBoundingClientRect().width / 80;
+    this.anchoLetra = ancho || 8;
     regla.remove();
     const util = this.cont.clientWidth - 20;
     // Una columna de margen: el nombre del acorde de la ultima palabra
@@ -272,9 +388,14 @@ export class Cifrado {
           if (suyas[i - 1].col > hueco) suyas[i - 1].col = Math.max(0, hueco);
         }
       }
-      trozos.push({texto: texto.slice(desde, hasta), marcas: suyas});
+      trozos.push({texto: texto.slice(desde, hasta), marcas: suyas,
+                   desde, hasta});
       ini = fin;
-      while (texto[ini] === ' ') ini++;
+      // Los espacios normales del corte no se repiten al comienzo del
+      // siguiente renglon. Pero si un acorde esta fijado JUSTO en uno de
+      // ellos, ese espacio tiene contenido musical: se conserva como la
+      // primera columna del nuevo renglon para que la marca no desaparezca.
+      while (texto[ini] === ' ' && !marcas.some((m) => m.col === ini)) ini++;
     } while (ini < texto.length);
     return trozos;
   }
@@ -287,6 +408,7 @@ export class Cifrado {
     this.cont.innerHTML = '';
     this.filas = [];
     this.marcas = [];
+    this.elegido = null;
     this.filaActiva = -1;
     this.acActivo = -1;
 
@@ -299,12 +421,11 @@ export class Cifrado {
       return;
     }
 
-    // Cada acorde busca dueno. Regla: NUNCA un acorde flotando en una fila
-    // sin nada debajo, porque asi no se ve cuando entra. O cae sobre la
-    // silaba que se canta, o se arrima al verso vecino mas cercano, o —si
-    // no hay ninguno cerca— forma un bloque instrumental que lleva su
-    // propio rotulo debajo.
-    const duenos = lineas.map((ln) => ({ln, antes: [], dentro: [], despues: []}));
+    // Cada acorde busca dueno. Regla: NUNCA queda al extremo de una frase
+    // anterior. O cae en el caracter que corresponde por tiempo, o ocupa el
+    // margen previo del verso siguiente, o —si no hay ninguno cerca— forma
+    // un bloque instrumental que lleva su propio rotulo debajo.
+    const duenos = lineas.map((ln) => ({ln, antes: [], dentro: []}));
     const sueltos = new Map();
     const apartar = (b, j) => {
       if (!sueltos.has(j)) sueltos.set(j, []);
@@ -313,18 +434,33 @@ export class Cifrado {
 
     let i = 0;
     for (const b of bl) {
-      while (i < lineas.length && b.inicio >= lineas[i].fin) i++;
-      if (i < lineas.length && b.inicio >= lineas[i].inicio - ANTES) {
-        duenos[i].dentro.push(b);
+      // Una correccion visual elegida por la persona gana a la asignacion
+      // automatica por tiempo. Si la letra fue retranscrita y ya no existe
+      // esa linea (su inicio cambio), simplemente se vuelve al automatico.
+      const fijada = b.ancla
+        ? lineas.findIndex((ln) => Math.abs(ln.inicio - b.ancla.linea) < 0.02)
+        : -1;
+      if (fijada >= 0) {
+        duenos[fijada].dentro.push(b);
         continue;
       }
-      const prev = i > 0 ? duenos[i - 1] : null;
+
+      while (i < lineas.length && b.inicio >= lineas[i].fin) i++;
+      if (i < lineas.length && b.inicio >= lineas[i].inicio) {
+        const primera = this.posiciones(lineas[i])[0];
+        // Puede haber aire entre el inicio del segmento de Whisper y la
+        // primera palabra. Ese acorde va en un margen real, no sobre ella.
+        (primera && b.inicio < primera.t ? duenos[i].antes : duenos[i].dentro)
+          .push(b);
+        continue;
+      }
       const sig = i < lineas.length ? duenos[i] : null;
-      const dPrev = prev ? b.inicio - prev.ln.fin : Infinity;
       const dSig = sig ? sig.ln.inicio - b.inicio : Infinity;
-      if (Math.min(dPrev, dSig) > HUECO) apartar(b, i);
-      else if (dPrev <= dSig) prev.despues.push(b);
-      else sig.antes.push(b);
+      // En una pausa corta se lee hacia delante: el acorde queda en el
+      // espacio ANTES del verso que viene. Nunca se manda despues de toda
+      // la frase anterior, que era el salto lejano de la captura.
+      if (sig && (dSig <= HUECO || b.fin >= sig.ln.inicio)) sig.antes.push(b);
+      else apartar(b, i);
     }
 
     for (let j = 0; j <= lineas.length; j++) {
@@ -337,12 +473,34 @@ export class Cifrado {
       if (j === lineas.length) break;
 
       const d = duenos[j];
-      const marcas = this.colocar(d.dentro, d.ln, d.antes, d.despues);
-      const trozos = this.partir(d.ln.texto || '', marcas, cols);
-      const pos = this.posiciones(d.ln);
+      const anchoAntes = d.antes.reduce((n, b) => n + b.nombre.length + 1, 0);
+      const anchoAnclas = d.dentro.reduce((n, b) => {
+        if (!b.ancla || Math.abs(b.ancla.linea - d.ln.inicio) >= 0.02) return n;
+        return Math.max(n, -b.ancla.columna);
+      }, 0);
+      const prefijo = Math.max(anchoAntes, anchoAnclas);
+      const inicioVista = Math.min(d.ln.inicio,
+        ...d.antes.map((b) => b.inicio),
+        ...d.dentro.filter((b) => b.ancla && b.ancla.columna < 0)
+          .map((b) => b.inicio));
+      const lineaVista = {...d.ln, inicio: inicioVista,
+        texto: ' '.repeat(prefijo) + (d.ln.texto || '')};
+      const marcas = this.colocar(d.dentro, lineaVista, d.antes,
+                                  prefijo, d.ln.inicio);
+      const trozos = this.partir(lineaVista.texto, marcas, cols);
+      const pos = this.posiciones(lineaVista);
       trozos.forEach((tr, n) => {
-        const t0 = n === 0 ? d.ln.inicio
-          : (tr.marcas[0] ? tr.marcas[0].inicio : (pos[0] ? pos[0].t : d.ln.inicio));
+        const primeraTrozo = pos.find((o) =>
+          o.col >= tr.desde && o.col < tr.hasta);
+        const t0 = n === 0 ? inicioVista
+          : (tr.marcas[0] ? tr.marcas[0].inicio
+            : (primeraTrozo ? primeraTrozo.t : d.ln.inicio));
+        // Se conserva el mapa completo, aunque la frase se haya partido en
+        // pantalla. Asi un espacio al borde de un trozo sigue convirtiendose
+        // al segundo correcto de la linea original.
+        tr.mapaLinea = lineaVista;
+        tr.lineaInicio = d.ln.inicio;
+        tr.prefijo = prefijo;
         this.filaLetra(tr, t0, d.ln.fin);
       });
     }
@@ -393,11 +551,29 @@ export class Cifrado {
 
   spanAcorde(m) {
     const s = document.createElement('span');
-    s.className = 'cif-ac' + (m.antes ? ' antes' : '');
+    s.className = 'cif-ac' + (m.antes ? ' antes' : '') +
+      (m.anglo && this.marcado(m.anglo) ? ' marcado' : '');
     s.textContent = m.nombre;
-    s.onclick = () => this.alSaltar && this.alSaltar(m.inicio);
+    s.dataset.anglo = m.anglo || '';
+    s.onclick = () => {
+      if (this.editando) {
+        const marca = this.marcas.find((x) => x.el === s);
+        this.elegir(this.elegido && this.elegido.el === s ? null : marca);
+        return;
+      }
+      if (this.alSaltar) this.alSaltar(m.inicio);
+    };
+    if (this.alMantener) this.alMantener(s, m.anglo);
     this.marcas.push({inicio: m.inicio, fin: m.fin, el: s});
     return s;
+  }
+
+  // Repinta la senal de "no me lo se" sin reconstruir la hoja entera
+  refrescarMarcas() {
+    for (const {el} of this.marcas) {
+      const a = el.dataset.anglo;
+      el.classList.toggle('marcado', !!a && this.marcado(a));
+    }
   }
 
   filaLetra(trozo, inicio, fin) {
@@ -419,11 +595,52 @@ export class Cifrado {
     const fl = document.createElement('div');
     fl.className = 'cif-letra';
     fl.textContent = trozo.texto || ' ';
-    fl.onclick = () => this.alSaltar && this.alSaltar(inicio);
+    fl.onclick = (e) => {
+      if (!this.editando) {
+        if (this.alSaltar) this.alSaltar(inicio);
+        return;
+      }
+      const destino = this.momentoDeltoque(e, fl, trozo, inicio);
+      if (destino && this.elegido && this.alMover) {
+        this.alMover(this.elegido.inicio, destino.t, destino.ancla);
+      }
+    };
 
     fila.append(fa, fl);
     this.cont.appendChild(fila);
     this.filas.push({inicio, fin, el: fila});
+  }
+
+  // Donde tocaste, en segundos Y en columna. La primera mueve el momento
+  // musical; la segunda se guarda como ancla visual. Sin el ancla, al
+  // reconstruir la hoja un toque en un espacio volveria a saltar a una
+  // palabra y la correccion pareceria perdida.
+  momentoDeltoque(e, el, trozo, inicioLinea) {
+    const caja = el.getBoundingClientRect();
+    const x = (e.clientX !== undefined ? e.clientX : 0) - caja.left;
+    const tope = Math.max(0, (trozo.texto || '').length - 1);
+    const local = Math.max(0, Math.min(tope,
+      Math.floor(x / this.anchoLetra)));
+    const global = (trozo.desde || 0) + local;
+    const mapa = trozo.mapaLinea || {
+      inicio: inicioLinea, fin: inicioLinea, texto: trozo.texto || '',
+      palabras: [],
+    };
+    return {
+      t: tiempoDeColumna(mapa, global),
+      ancla: {
+        linea: Number.isFinite(Number(trozo.lineaInicio))
+          ? Number(trozo.lineaInicio) : Number(inicioLinea),
+        columna: global - (trozo.prefijo || 0),
+      },
+    };
+  }
+
+  // Agarrar un acorde para moverlo
+  elegir(marca) {
+    for (const m of this.marcas) m.el.classList.remove('elegido');
+    this.elegido = marca;
+    if (marca) marca.el.classList.add('elegido');
   }
 
   // --------------------------------------------------------- seguir

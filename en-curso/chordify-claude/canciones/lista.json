@@ -1,0 +1,322 @@
+[
+ {
+  "id": "a-ti-te-alabo",
+  "titulo": "A Ti te alabo",
+  "artista": "Hakuna Group Music",
+  "tonalidad": "Re# mayor",
+  "tempo": 86.13,
+  "duracion": 235.152,
+  "acordes": 70,
+  "editados": 0
+ },
+ {
+  "id": "agradecida",
+  "titulo": "Agradecida",
+  "artista": "Ana Bolivar",
+  "tonalidad": "Si menor",
+  "tempo": 69.84,
+  "duracion": 238.08,
+  "acordes": 76,
+  "editados": 0
+ },
+ {
+  "id": "asi-te-adorare",
+  "titulo": "Así Te Adoraré",
+  "artista": "Via Cantus",
+  "tonalidad": "Mi mayor",
+  "tempo": 92.29,
+  "duracion": 301.585,
+  "acordes": 134,
+  "editados": 0
+ },
+ {
+  "id": "caminare",
+  "titulo": "Caminaré",
+  "artista": "Cristian Arboleda",
+  "tonalidad": "La mayor",
+  "tempo": 80.75,
+  "duracion": 173.232,
+  "acordes": 62,
+  "editados": 0
+ },
+ {
+  "id": "destruyeme",
+  "titulo": "Destrúyeme",
+  "artista": "Marisol Carrasco",
+  "tonalidad": "Sol mayor",
+  "tempo": 60.09,
+  "duracion": 236.04,
+  "acordes": 91,
+  "editados": 4
+ },
+ {
+  "id": "destruyeme-v2",
+  "titulo": "Destrúyeme (v2 con bajo)",
+  "artista": "Marisol Carrasco",
+  "tonalidad": "Sol mayor",
+  "tempo": 60.09,
+  "duracion": 236.04,
+  "acordes": 100,
+  "editados": 0
+ },
+ {
+  "id": "destruyeme-v3",
+  "titulo": "Destrúyeme (v3 solo bajo)",
+  "artista": "Marisol Carrasco",
+  "tonalidad": "Sol mayor",
+  "tempo": 60.09,
+  "duracion": 236.04,
+  "acordes": 144,
+  "editados": 0
+ },
+ {
+  "id": "destruyeme-v4",
+  "titulo": "Destrúyeme (v4 tu cifrado)",
+  "artista": "Marisol Carrasco",
+  "tonalidad": "Sol mayor",
+  "tempo": 60.09,
+  "duracion": 236.04,
+  "acordes": 144,
+  "editados": 6
+ },
+ {
+  "id": "dios-mio",
+  "titulo": "Dios Mío",
+  "artista": "Lazos de Amor Mariano",
+  "tonalidad": "La menor",
+  "tempo": 143.55,
+  "duracion": 333.216,
+  "acordes": 111,
+  "editados": 0
+ },
+ {
+  "id": "hacer-y-desaparecer",
+  "titulo": "Hacer y Desaparecer",
+  "artista": "Marisol Carrasco",
+  "tonalidad": "Sol# mayor",
+  "tempo": 60.09,
+  "duracion": 270.84,
+  "acordes": 86,
+  "editados": 0
+ },
+ {
+  "id": "hasta-el-final",
+  "titulo": "Hasta el Final",
+  "artista": "Estación Cero",
+  "tonalidad": "Re mayor",
+  "tempo": 69.84,
+  "duracion": 310.704,
+  "acordes": 98,
+  "editados": 0
+ },
+ {
+  "id": "infinito",
+  "titulo": "Infinito",
+  "artista": "Fran Correa",
+  "tonalidad": "Sol mayor",
+  "tempo": 78.3,
+  "duracion": 306.384,
+  "acordes": 88,
+  "editados": 0
+ },
+ {
+  "id": "lo-que-suenas",
+  "titulo": "Lo Que Sueñas",
+  "artista": "Ana Bolivar",
+  "tonalidad": "Do mayor",
+  "tempo": 129.2,
+  "duracion": 254.448,
+  "acordes": 109,
+  "editados": 0
+ },
+ {
+  "id": "magnificat",
+  "titulo": "Magnificat",
+  "artista": "Trisagion",
+  "tonalidad": "Re menor",
+  "tempo": 92.29,
+  "duracion": 356.472,
+  "acordes": 162,
+  "editados": 0
+ },
+ {
+  "id": "me-rindo",
+  "titulo": "Me Rindo",
+  "artista": "Alfareros",
+  "tonalidad": "Sol# mayor",
+  "tempo": 69.84,
+  "duracion": 326.784,
+  "acordes": 77,
+  "editados": 0
+ },
+ {
+  "id": "mi-eterno-destino",
+  "titulo": "Mi Eterno Destino",
+  "artista": "Estacion Cero",
+  "tonalidad": "Do mayor",
+  "tempo": 80.75,
+  "duracion": 216.264,
+  "acordes": 116,
+  "editados": 0
+ },
+ {
+  "id": "nada-guardaste",
+  "titulo": "Nada Guardaste",
+  "artista": "Ana Bolivar",
+  "tonalidad": "Do# mayor",
+  "tempo": 112.35,
+  "duracion": 219.48,
+  "acordes": 94,
+  "editados": 0
+ },
+ {
+  "id": "nada-te-turbe",
+  "titulo": "Nada te Turbe",
+  "artista": "Pablo Martinez",
+  "tonalidad": "Mi mayor",
+  "tempo": 60.09,
+  "duracion": 272.04,
+  "acordes": 81,
+  "editados": 0
+ },
+ {
+  "id": "padre-nuestro",
+  "titulo": "Padre Nuestro",
+  "artista": "Estación Cero",
+  "tonalidad": "Sol mayor",
+  "tempo": 89.1,
+  "duracion": 216.432,
+  "acordes": 54,
+  "editados": 0
+ },
+ {
+  "id": "por-donde-vas-ire",
+  "titulo": "Por Donde Vas Iré",
+  "artista": "Ana Bolivar",
+  "tonalidad": "Fa# mayor",
+  "tempo": 76.0,
+  "duracion": 251.184,
+  "acordes": 88,
+  "editados": 0
+ },
+ {
+  "id": "por-que-lloras-maria-magdalena",
+  "titulo": "¿Por Qué Lloras? (María Magdalena)",
+  "artista": "Hakuna Group Music",
+  "tonalidad": "Re mayor",
+  "tempo": 80.75,
+  "duracion": 236.52,
+  "acordes": 62,
+  "editados": 0
+ },
+ {
+  "id": "que-dios-tan-bueno",
+  "titulo": "Que Dios tan bueno",
+  "artista": "La Barca Network",
+  "tonalidad": "Fa# mayor",
+  "tempo": 73.83,
+  "duracion": 291.432,
+  "acordes": 119,
+  "editados": 0
+ },
+ {
+  "id": "quiero-ser-santo",
+  "titulo": "Quiero Ser Santo",
+  "artista": "Lazos de Amor Mariano",
+  "tonalidad": "La menor",
+  "tempo": 92.29,
+  "duracion": 215.424,
+  "acordes": 52,
+  "editados": 0
+ },
+ {
+  "id": "regresar-a-ti-quiero-adorarte",
+  "titulo": "Regresar a Ti (Quiero Adorarte)",
+  "artista": "Estación Cero",
+  "tonalidad": "Re mayor",
+  "tempo": 112.35,
+  "duracion": 196.272,
+  "acordes": 70,
+  "editados": 0
+ },
+ {
+  "id": "ruah",
+  "titulo": "Ruah",
+  "artista": "Jesse Demara",
+  "tonalidad": "Do mayor",
+  "tempo": 73.83,
+  "duracion": 234.096,
+  "acordes": 75,
+  "editados": 0
+ },
+ {
+  "id": "salvame",
+  "titulo": "Sálvame",
+  "artista": "Estación Cero",
+  "tonalidad": "Re mayor",
+  "tempo": 80.75,
+  "duracion": 234.264,
+  "acordes": 63,
+  "editados": 0
+ },
+ {
+  "id": "san-pablo",
+  "titulo": "San Pablo",
+  "artista": "Marisol Carrasco",
+  "tonalidad": "Do# mayor",
+  "tempo": 80.75,
+  "duracion": 239.784,
+  "acordes": 64,
+  "editados": 0
+ },
+ {
+  "id": "te-confieso",
+  "titulo": "Te Confieso",
+  "artista": "Ana Bolivar",
+  "tonalidad": "Re# mayor",
+  "tempo": 64.6,
+  "duracion": 214.872,
+  "acordes": 76,
+  "editados": 0
+ },
+ {
+  "id": "tranquilo",
+  "titulo": "Tranquilo",
+  "artista": "Alex Católico",
+  "tonalidad": "Re mayor",
+  "tempo": 78.3,
+  "duracion": 253.008,
+  "acordes": 90,
+  "editados": 0
+ },
+ {
+  "id": "un-minuto",
+  "titulo": "Un Minuto",
+  "artista": "Fruto del Madero",
+  "tonalidad": "Fa mayor",
+  "tempo": 83.35,
+  "duracion": 201.144,
+  "acordes": 60,
+  "editados": 0
+ },
+ {
+  "id": "vale-la-pena",
+  "titulo": "Vale la Pena",
+  "artista": "Felipe Gomez",
+  "tonalidad": "Do mayor",
+  "tempo": 103.36,
+  "duracion": 145.08,
+  "acordes": 72,
+  "editados": 0
+ },
+ {
+  "id": "veronica-sanfilippo",
+  "titulo": "Verónica Sanfilippo",
+  "artista": "Jonatan Narvaez",
+  "tonalidad": "Fa mayor",
+  "tempo": 95.7,
+  "duracion": 199.296,
+  "acordes": 88,
+  "editados": 0
+ }
+]

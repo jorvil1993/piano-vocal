@@ -1,0 +1,24 @@
+# Destruyeme - letra del cuaderno de Jorge
+# Escribe tu frase despues de cada barra. Los minutos ya estan
+# calculados: son donde de verdad empieza a cantarse.
+# Borra las lineas que no quieras corregir.
+#
+# Cuando termines:   python corregir.py destruyeme-v4 --solo-letra
+# Para deshacer:     python volver.py destruyeme-v4
+
+@0:35.56 | 
+@0:42.28 | 
+@0:54.34 | 
+@1:06.72 | 
+@1:12.28 | 
+@1:23.60 | 
+@1:37.28 | 
+@1:54.68 | 
+@2:16.92 | 
+@2:32.30 | 
+@2:43.10 | 
+@2:48.10 | 
+@3:05.24 | 
+@3:15.16 | 
+@3:27.10 | 
+@3:35.08 | 

@@ -1,8 +1,20 @@
-# Audio pesado no comprimido
+# Audio pesado no comprimido y mezclas originales no usadas en la web
 *.wav
 en-curso/separated/*/*.wav
 en-curso/*.webm
 temp_*.wav
+en-curso/chordify-claude/canciones/*/original.mp3
+en-curso/chordify-claude/canciones/*/*.anterior.json
+en-curso/chordify-claude/canciones/*/*.respaldo.json
+en-curso/chordify-claude/canciones/_descarga/
+
+# Secretos, certificados privados y temporales locales
+en-curso/chordify-claude/.clave
+en-curso/chordify-claude/cert/clave.pem
+en-curso/chordify-claude/_*.log
+en-curso/chordify-claude/_lote.*
+graphify-out/
+en-curso/chordify-claude/graphify-out/
 
 # Cache
 __pycache__/

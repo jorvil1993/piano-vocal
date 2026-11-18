@@ -36,10 +36,17 @@ class Lecciones {
 
   async arrancar() {
     try {
-      const d = await (await fetch('/api/practica')).json();
+      const r = await fetch('/api/practica');
+      if (!r.ok) throw new Error(r.status);
+      const d = await r.json();
       this.hechas = new Set((d.lecciones || []).map(Number));
     } catch (e) {
-      this.hechas = new Set();
+      try {
+        const d = JSON.parse(localStorage.getItem('practica-local') || '{}');
+        this.hechas = new Set((d.lecciones || []).map(Number));
+      } catch (e2) {
+        this.hechas = new Set();
+      }
     }
     this.pintar();
   }
@@ -612,7 +619,9 @@ class Lecciones {
     this.hechas.add(this.n);
     try {
       if (!this.clave) {
-        this.clave = (await (await fetch('/api/clave')).json()).clave;
+        const rk = await fetch('/api/clave');
+        if (!rk.ok) throw new Error(rk.status);
+        this.clave = (await rk.json()).clave;
       }
       await fetch('/api/practica', {
         method: 'POST',
@@ -622,7 +631,13 @@ class Lecciones {
           minutos: 5, ejercicios: [], leccion: this.n,
         }),
       });
-    } catch (e) { console.warn('no se pudo registrar', e); }
+    } catch (e) {
+      try {
+        const d = JSON.parse(localStorage.getItem('practica-local') || '{}');
+        d.lecciones = Array.from(this.hechas);
+        localStorage.setItem('practica-local', JSON.stringify(d));
+      } catch (e2) {}
+    }
     this.pintarIndice();
     this.pintarNavegacion();
     if (this.n < TOTAL_ESCRITAS) {

@@ -20,9 +20,16 @@ Wi-Fi contra el servidor de su PC.
 
 ```
 python procesar.py "https://youtube.com/watch?v=..."   # analiza una canción
+python revisar.py                                       # OBLIGATORIO después
 python servidor.py                                      # http 8300 / https 8443
 python reletra.py <slug>                                # rehace SOLO la letra
 ```
+
+**Procesar una canción son dos pasos, no uno.** `procesar.py` termina sin
+quejarse aunque la transcripción se haya dejado media canción o el tempo
+salga al doble; nada de eso aparece en el log. `revisar.py` lo mide y te
+dice qué hacer. Nunca des una canción por buena sin pasarlo — la tabla de
+avisos está en `LEEME.md`.
 
 Entra por **https://<ip>:8443** desde el celular: el Wake Lock (impedir que
 se apague la pantalla) solo funciona en contexto seguro.
@@ -157,10 +164,19 @@ canción volvía a bajar 32 MB cada vez.
   transfieren entre canciones: medido, 0.308 s vs 0.168 s de caída).
 - `piano_notas.py` — transcripción a MIDI (ByteDance). Si el piano domina
   (>0.55) transcribe el audio original en vez del stem.
+- `tono.py` — sube o baja el audio con `rubberband`, que cambia el tono
+  **sin tocar la duración** (medido: deriva 0.000 s en las seis pistas). Por
+  eso el transporte no obliga a resincronizar nada y el `cancion.json` se
+  queda igual. El caché va a `%LOCALAPPDATA%`, **fuera de OneDrive**: son
+  17 MB por tono y por canción, y se rehace en 13 s. `nombre_carpeta()` es
+  el **único** sitio donde se decide cómo se llama la carpeta de un tono;
+  el navegador no la construye, se la da `/api/tono` en `base`.
 - `servidor.py` — HTTP 8300 + HTTPS 8443, `ThreadingTCPServer`, HTTP/1.1
   con keep-alive, rangos, escritura protegida por cabecera `X-Clave`.
   Endpoint `/api/acordes`: solo las secuencias de acordes de toda la
-  biblioteca, 27 KB en vez de 870 KB.
+  biblioteca, 27 KB en vez de 870 KB. `/api/tono` lanza el renderizado en
+  un hilo y contesta al momento: trece segundos colgado y el navegador da
+  la petición por muerta.
 
 ### Interfaz (JS, ES modules, sin dependencias)
 
@@ -169,6 +185,13 @@ canción volvía a bajar 32 MB cada vez.
   (`this.cargaToken`): si vuelves de un `await` y ya no eres la última
   carga, abandonas. Sin eso, cambiar de canción mientras otra cargaba
   dejaba la pantalla en la anterior.
+- `transportar.js` — sube o baja los NOMBRES (acordes, tonalidad, notas del
+  rollo). Cambia los objetos en su sitio y por saltos relativos, así que no
+  hace falta guardar una copia intacta: son las doce clases de nota, y restar
+  lo mismo que se sumó devuelve exactamente lo que había (probado: 29
+  canciones × 12 saltos, 2594 acordes, 0 fallos). **La regla de oro: si el
+  audio no se pudo transportar, los nombres NO se mueven** — tocarías Fa
+  mientras suena Mi y mirando la pantalla no habría cómo notarlo.
 - `cifrado.js` — la hoja de letra con acordes encima. Ver abajo.
 - `practicar.js` — entrenador de acordes en tres pasos.
 - `piano.js` — teclado guía. **Siempre estado fundamental, sin

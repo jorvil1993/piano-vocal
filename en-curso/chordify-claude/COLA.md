@@ -11,6 +11,9 @@ Todo lo pedido, en orden. Nada se empieza sin terminar lo anterior.
 - **Entrenador de acordes**: inventario → aprender → cambios, por canción o
   por toda la biblioteca. Lo que sabes se guarda global
 
+- **Cambio de tono**: ±6 semitonos, moviendo a la vez los acordes y el
+  audio (rubberband, sin alterar la duración). Se recuerda por canción y
+  el `cancion.json` sigue guardándose en el tono del disco
 - **Atril**: acordes, letra y batería sincronizados con tiempos medidos del audio
 - **Cuatro modos**: Guitarra, Teclado, Notas (rollo), Batería
 - **Consola de 6 pistas** colapsable, con presets

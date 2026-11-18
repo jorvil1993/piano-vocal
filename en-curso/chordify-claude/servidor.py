@@ -16,6 +16,8 @@ import time
 import urllib.parse
 from datetime import datetime
 
+import tono
+
 RAIZ = os.path.dirname(os.path.abspath(__file__))
 APP = os.path.join(RAIZ, "app")
 CANCIONES = os.path.join(RAIZ, "canciones")
@@ -240,6 +242,90 @@ def acordes_de_todas():
     return salida
 
 
+def actualizar_catalogo_estatico():
+    """Escribe canciones/lista.json y canciones/acordes.json para GitHub Pages."""
+    if not os.path.isdir(CANCIONES):
+        return
+    try:
+        with open(os.path.join(CANCIONES, "lista.json"), "w", encoding="utf-8") as f:
+            json.dump(listar_canciones(), f, ensure_ascii=False, indent=1)
+        with open(os.path.join(CANCIONES, "acordes.json"), "w", encoding="utf-8") as f:
+            json.dump(acordes_de_todas(), f, ensure_ascii=False)
+    except Exception as e:
+        print("no se pudo actualizar el catalogo estatico: %s" % e)
+
+
+# ------------------------------------------------------------------ tono
+#
+# Subir o bajar una cancion son trece segundos de ffmpeg: demasiado para
+# dejar colgada una peticion HTTP -el navegador la da por muerta y el
+# celular apaga la pantalla-. Se lanza en un hilo y la pagina pregunta
+# cada poco como va, que ademas es lo que permite pintar la barra.
+
+TONOS = {}                       # (slug, semis) -> como va ese trabajo
+TONOS_CERROJO = threading.Lock()
+
+
+def pedir_tono(slug, semis):
+    """Deja listo el audio de esa cancion a ese tono. No bloquea.
+
+    Devuelve siempre `base`: la carpeta de la que el navegador tiene que
+    bajarse las seis pistas. Se construye AQUI y no en el cliente para que
+    el nombre de la carpeta se decida en un solo sitio (tono.py); si el
+    navegador se lo inventara, bastaria cambiar la regla en un lado para
+    dejarlo pidiendo carpetas que no existen.
+    """
+    try:
+        semis = int(semis)
+    except (TypeError, ValueError):
+        return {"estado": "error", "error": "tono invalido"}
+
+    # Ni salir de la carpeta de canciones ni inventarse uno
+    if not slug or "/" in slug or "\\" in slug or slug.startswith("."):
+        return {"estado": "error", "error": "cancion invalida"}
+    if not os.path.isdir(os.path.join(CANCIONES, slug)):
+        return {"estado": "error", "error": "no existe esa cancion"}
+    if not -tono.LIMITE <= semis <= tono.LIMITE:
+        return {"estado": "error",
+                "error": "el tono va de -%d a +%d" % (tono.LIMITE, tono.LIMITE)}
+
+    if semis == 0:
+        return {"estado": "listo", "hechas": 0, "total": 0,
+                "base": "/canciones/" + urllib.parse.quote(slug) + "/"}
+
+    base = "/tono/%s/%s/" % (urllib.parse.quote(slug),
+                             tono.nombre_carpeta(semis))
+    if tono.listo(slug, semis):
+        return {"estado": "listo", "hechas": 0, "total": 0, "base": base}
+
+    llave = (slug, semis)
+    with TONOS_CERROJO:
+        paso = TONOS.get(llave)
+        if paso and paso["estado"] == "haciendo":
+            return dict(paso, base=base)          # ya hay uno en marcha
+        if paso and paso["estado"] == "error":
+            # Se cuenta el fallo una vez y se olvida, para que el siguiente
+            # intento vuelva a probar en vez de quedarse pegado a un error
+            # viejo (falto ffmpeg una vez, se instala, y sigue fallando).
+            TONOS.pop(llave, None)
+            return dict(paso, base=base)
+        paso = {"estado": "haciendo", "hechas": 0, "total": len(tono.PISTAS)}
+        TONOS[llave] = paso
+
+    def trabajo():
+        try:
+            tono.rendir(slug, semis,
+                        avisar=lambda h, t: paso.update(hechas=h, total=t))
+            paso["estado"] = "listo"
+        except Exception as e:
+            paso["estado"] = "error"
+            paso["error"] = str(e)
+            print("tono %+d de %s: %s" % (semis, slug, e))
+
+    threading.Thread(target=trabajo, daemon=True).start()
+    return dict(paso, base=base)
+
+
 class Handler(http.server.SimpleHTTPRequestHandler):
     # HTTP/1.0 cierra la conexion despues de CADA respuesta. Cargar una
     # cancion son seis mp3 y un monton de peticiones por rango: con
@@ -291,6 +377,23 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         if ruta == "/api/acordes":
             return self._json(acordes_de_todas())
+
+        if ruta == "/api/tono":
+            consulta = urllib.parse.parse_qs(
+                urllib.parse.urlparse(self.path).query)
+            return self._json(pedir_tono(consulta.get("cancion", [""])[0],
+                                         consulta.get("semis", ["0"])[0]))
+
+        # Las pistas transportadas no viven junto a la cancion sino en
+        # %LOCALAPPDATA%, fuera de OneDrive (el porque, en tono.py)
+        if ruta.startswith("/tono/"):
+            relativa = urllib.parse.unquote(ruta[len("/tono/"):])
+            destino = os.path.normpath(os.path.join(tono.CACHE, relativa))
+            if not destino.startswith(os.path.normpath(tono.CACHE)):
+                return self._json({"error": "ruta invalida"}, 403)
+            if not os.path.isfile(destino):
+                return self._json({"error": "no existe"}, 404)
+            return self._enviar_archivo(destino)
 
         if ruta.startswith("/canciones/"):
             relativa = urllib.parse.unquote(ruta[len("/canciones/"):])
@@ -441,6 +544,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         with open(destino, "w", encoding="utf-8") as f:
             json.dump(datos, f, ensure_ascii=False, indent=1)
 
+        actualizar_catalogo_estatico()
         editados = sum(1 for a in datos.get("acordes", []) if a.get("editado"))
         print("guardado %s (%d acordes corregidos)" % (slug, editados))
         return self._json({"ok": True, "editados": editados})
@@ -448,6 +552,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     CLAVE = clave_de_escritura()
+    actualizar_catalogo_estatico()
     canciones = listar_canciones()
     print("=" * 62)
     print(" CHORDIFY CLAUDE - panel de acordes")

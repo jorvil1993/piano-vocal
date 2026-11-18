@@ -1,0 +1,19 @@
+# Destruyeme - Marisol Carrasco
+# Del cuaderno de Jorge (foto). Primera estrofa.
+# El ciclo es Mim - Re - Do - Sol/Fa#, dos acordes por verso.
+Mim     | @0:35.6
+Re      | conocido:3
+Do      | amado:2
+Sol/Fa# | encontrado
+Mim     | contigo
+Re      | embargo
+Do      | consciente
+Sol/Fa# | amo
+Mim     | suficiente
+Re      | agrado
+Do      | lo
+Sol/Fa# | complaces
+Mim     | Jesus
+Re      | calle
+Do      | almas
+Sol/Fa# | perdiendose

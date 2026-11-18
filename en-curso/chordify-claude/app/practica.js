@@ -27,7 +27,18 @@ class Practica {
   }
 
   async arrancar() {
-    this.datos = await (await fetch('/api/practica')).json();
+    try {
+      const r = await fetch('/api/practica');
+      if (!r.ok) throw new Error(r.status);
+      this.datos = await r.json();
+    } catch (e) {
+      try {
+        this.datos = JSON.parse(localStorage.getItem('practica-local') || 'null')
+          || {sesiones: [], dominio: {}, lecciones: []};
+      } catch (e2) {
+        this.datos = {sesiones: [], dominio: {}, lecciones: []};
+      }
+    }
     const sesionHoy = this.datos.sesiones.find((s) => s.fecha === hoy());
     if (sesionHoy) for (const e of sesionHoy.ejercicios || []) this.hechos.add(e);
 
@@ -279,7 +290,9 @@ class Practica {
     const ej = porId(id);
     try {
       if (!this.clave) {
-        this.clave = (await (await fetch('/api/clave')).json()).clave;
+        const rk = await fetch('/api/clave');
+        if (!rk.ok) throw new Error(rk.status);
+        this.clave = (await rk.json()).clave;
       }
       await fetch('/api/practica', {
         method: 'POST',
@@ -291,7 +304,19 @@ class Practica {
       });
       this.datos = await (await fetch('/api/practica')).json();
     } catch (e) {
-      console.warn('no se pudo registrar', e);
+      const f = hoy();
+      const min = ej ? ej.minutos : 0;
+      let prev = this.datos.sesiones.find((s) => s.fecha === f);
+      if (prev) {
+        prev.minutos = (prev.minutos || 0) + min;
+        if (!prev.ejercicios.includes(id)) prev.ejercicios.push(id);
+      } else {
+        this.datos.sesiones.push({fecha: f, minutos: min, ejercicios: [id], dia_metodo: this.numeroDia});
+      }
+      const d = (this.datos.dominio[id] = this.datos.dominio[id] || {veces: 0, ultimo: null});
+      d.veces += 1;
+      d.ultimo = f;
+      try { localStorage.setItem('practica-local', JSON.stringify(this.datos)); } catch (e2) {}
     }
     this.pintarEjercicios();
     this.pintarCalendario();
