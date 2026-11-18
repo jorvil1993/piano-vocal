@@ -1,0 +1,52 @@
+{
+  "id": "./",
+  "name": "Atril — Acordes, Piano y Batería",
+  "short_name": "Atril",
+  "description": "Atril de ensayo con acordes en tiempo real, letra sincronizada, consola de 6 pistas, teclado y método de oído.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#0d1117",
+  "icons": [
+    {
+      "src": "icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icono-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Atril de canciones",
+      "short_name": "Atril",
+      "url": "./index.html",
+      "icons": [{ "src": "icono-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Método de 66 días",
+      "short_name": "Método",
+      "url": "./practica.html",
+      "icons": [{ "src": "icono-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Lecciones interactivas",
+      "short_name": "Lecciones",
+      "url": "./lecciones.html",
+      "icons": [{ "src": "icono-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
