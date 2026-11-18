@@ -1,0 +1,3389 @@
+{
+ "id": "vale-la-pena",
+ "titulo": "Vale la Pena",
+ "artista": "Felipe Gomez",
+ "youtube_id": "3nbfH-AAjqc",
+ "duracion": 145.08,
+ "tempo": 103.36,
+ "compas": "4/4",
+ "tonalidad": {
+  "raiz": "C",
+  "modo": "mayor",
+  "nombre": "Do mayor",
+  "confianza": 0.716
+ },
+ "audio": {
+  "completo": "original.mp3",
+  "voz": "voz.mp3",
+  "bateria": "bateria.mp3",
+  "bajo": "bajo.mp3",
+  "guitarra": "guitarra.mp3",
+  "piano": "piano.mp3",
+  "resto": "resto.mp3"
+ },
+ "ajuste_ms": 0,
+ "beats": [
+  {
+   "t": 0.116,
+   "compas": 0,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 0.697,
+   "compas": 0,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 1.277,
+   "compas": 1,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 1.881,
+   "compas": 1,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 2.485,
+   "compas": 1,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 3.065,
+   "compas": 1,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 3.669,
+   "compas": 2,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 4.272,
+   "compas": 2,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 4.853,
+   "compas": 2,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 5.387,
+   "compas": 2,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 5.944,
+   "compas": 3,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 6.525,
+   "compas": 3,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 7.082,
+   "compas": 3,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 7.639,
+   "compas": 3,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 8.243,
+   "compas": 4,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 8.824,
+   "compas": 4,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 9.381,
+   "compas": 4,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 9.985,
+   "compas": 4,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 10.542,
+   "compas": 5,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 11.122,
+   "compas": 5,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 11.703,
+   "compas": 5,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 12.26,
+   "compas": 5,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 12.841,
+   "compas": 6,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 13.398,
+   "compas": 6,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 13.978,
+   "compas": 6,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 14.512,
+   "compas": 6,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 15.0,
+   "compas": 7,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 15.604,
+   "compas": 7,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 16.184,
+   "compas": 7,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 16.742,
+   "compas": 7,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 17.322,
+   "compas": 8,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 17.926,
+   "compas": 8,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 18.553,
+   "compas": 8,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 19.156,
+   "compas": 8,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 19.737,
+   "compas": 9,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 20.317,
+   "compas": 9,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 20.898,
+   "compas": 9,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 21.502,
+   "compas": 9,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 22.152,
+   "compas": 10,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 22.756,
+   "compas": 10,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 23.359,
+   "compas": 10,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 23.94,
+   "compas": 10,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 24.52,
+   "compas": 11,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 25.101,
+   "compas": 11,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 25.681,
+   "compas": 11,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 26.262,
+   "compas": 11,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 26.865,
+   "compas": 12,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 27.469,
+   "compas": 12,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 28.073,
+   "compas": 12,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 28.653,
+   "compas": 12,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 29.257,
+   "compas": 13,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 29.814,
+   "compas": 13,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 30.418,
+   "compas": 13,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 30.999,
+   "compas": 13,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 31.579,
+   "compas": 14,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 32.136,
+   "compas": 14,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 32.74,
+   "compas": 14,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 33.344,
+   "compas": 14,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 33.971,
+   "compas": 15,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 34.575,
+   "compas": 15,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 35.132,
+   "compas": 15,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 35.736,
+   "compas": 15,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 36.316,
+   "compas": 16,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 36.92,
+   "compas": 16,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 37.523,
+   "compas": 16,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 38.104,
+   "compas": 16,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 38.661,
+   "compas": 17,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 39.242,
+   "compas": 17,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 39.822,
+   "compas": 17,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 40.38,
+   "compas": 17,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 40.937,
+   "compas": 18,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 41.564,
+   "compas": 18,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 42.144,
+   "compas": 18,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 42.725,
+   "compas": 18,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 43.305,
+   "compas": 19,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 43.886,
+   "compas": 19,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 44.443,
+   "compas": 19,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 45.07,
+   "compas": 19,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 45.674,
+   "compas": 20,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 46.254,
+   "compas": 20,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 46.858,
+   "compas": 20,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 47.438,
+   "compas": 20,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 48.019,
+   "compas": 21,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 48.669,
+   "compas": 21,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 49.342,
+   "compas": 21,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 49.946,
+   "compas": 21,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 50.55,
+   "compas": 22,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 51.154,
+   "compas": 22,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 51.734,
+   "compas": 22,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 52.361,
+   "compas": 22,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 52.988,
+   "compas": 23,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 53.568,
+   "compas": 23,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 54.126,
+   "compas": 23,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 54.706,
+   "compas": 23,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 55.263,
+   "compas": 24,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 55.867,
+   "compas": 24,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 56.471,
+   "compas": 24,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 57.051,
+   "compas": 24,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 57.632,
+   "compas": 25,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 58.212,
+   "compas": 25,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 58.793,
+   "compas": 25,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 59.35,
+   "compas": 25,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 59.907,
+   "compas": 26,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 60.488,
+   "compas": 26,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 61.092,
+   "compas": 26,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 61.672,
+   "compas": 26,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 62.253,
+   "compas": 27,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 62.833,
+   "compas": 27,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 63.414,
+   "compas": 27,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 63.994,
+   "compas": 27,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 64.575,
+   "compas": 28,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 65.109,
+   "compas": 28,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 65.596,
+   "compas": 28,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 66.177,
+   "compas": 28,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 66.711,
+   "compas": 29,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 67.291,
+   "compas": 29,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 67.872,
+   "compas": 29,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 68.429,
+   "compas": 29,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 69.033,
+   "compas": 30,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 69.613,
+   "compas": 30,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 70.171,
+   "compas": 30,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 70.728,
+   "compas": 30,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 71.448,
+   "compas": 31,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 72.005,
+   "compas": 31,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 72.586,
+   "compas": 31,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 73.143,
+   "compas": 31,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 73.747,
+   "compas": 32,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 74.304,
+   "compas": 32,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 74.908,
+   "compas": 32,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 75.488,
+   "compas": 32,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 76.022,
+   "compas": 33,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 76.579,
+   "compas": 33,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 77.16,
+   "compas": 33,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 77.764,
+   "compas": 33,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 78.344,
+   "compas": 34,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 78.925,
+   "compas": 34,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 79.482,
+   "compas": 34,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 80.062,
+   "compas": 34,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 80.643,
+   "compas": 35,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 81.223,
+   "compas": 35,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 81.804,
+   "compas": 35,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 82.384,
+   "compas": 35,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 82.965,
+   "compas": 36,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 83.569,
+   "compas": 36,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 84.149,
+   "compas": 36,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 84.73,
+   "compas": 36,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 85.287,
+   "compas": 37,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 85.867,
+   "compas": 37,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 86.448,
+   "compas": 37,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 87.028,
+   "compas": 37,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 87.609,
+   "compas": 38,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 88.166,
+   "compas": 38,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 88.723,
+   "compas": 38,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 89.374,
+   "compas": 38,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 89.977,
+   "compas": 39,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 90.581,
+   "compas": 39,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 91.162,
+   "compas": 39,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 91.719,
+   "compas": 39,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 92.323,
+   "compas": 40,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 92.926,
+   "compas": 40,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 93.507,
+   "compas": 40,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 94.11,
+   "compas": 40,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 94.691,
+   "compas": 41,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 95.271,
+   "compas": 41,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 95.852,
+   "compas": 41,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 96.409,
+   "compas": 41,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 96.99,
+   "compas": 42,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 97.547,
+   "compas": 42,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 98.104,
+   "compas": 42,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 98.685,
+   "compas": 42,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 99.358,
+   "compas": 43,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 99.962,
+   "compas": 43,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 100.542,
+   "compas": 43,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 101.123,
+   "compas": 43,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 101.703,
+   "compas": 44,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 102.261,
+   "compas": 44,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 102.818,
+   "compas": 44,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 103.375,
+   "compas": 44,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 103.979,
+   "compas": 45,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 104.583,
+   "compas": 45,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 105.186,
+   "compas": 45,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 105.79,
+   "compas": 45,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 106.371,
+   "compas": 46,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 106.951,
+   "compas": 46,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 107.532,
+   "compas": 46,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 108.112,
+   "compas": 46,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 108.716,
+   "compas": 47,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 109.273,
+   "compas": 47,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 109.877,
+   "compas": 47,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 110.457,
+   "compas": 47,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 111.038,
+   "compas": 48,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 111.642,
+   "compas": 48,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 112.222,
+   "compas": 48,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 112.779,
+   "compas": 48,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 113.313,
+   "compas": 49,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 113.871,
+   "compas": 49,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 114.451,
+   "compas": 49,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 115.032,
+   "compas": 49,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 115.612,
+   "compas": 50,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 116.216,
+   "compas": 50,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 116.796,
+   "compas": 50,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 117.4,
+   "compas": 50,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 118.004,
+   "compas": 51,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 118.561,
+   "compas": 51,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 119.118,
+   "compas": 51,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 119.676,
+   "compas": 51,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 120.256,
+   "compas": 52,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 120.813,
+   "compas": 52,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 121.394,
+   "compas": 52,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 121.974,
+   "compas": 52,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 122.578,
+   "compas": 53,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 123.135,
+   "compas": 53,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 123.716,
+   "compas": 53,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 124.32,
+   "compas": 53,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 124.923,
+   "compas": 54,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 125.55,
+   "compas": 54,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 126.177,
+   "compas": 54,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 126.758,
+   "compas": 54,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 127.361,
+   "compas": 55,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 127.965,
+   "compas": 55,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 128.546,
+   "compas": 55,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 129.08,
+   "compas": 55,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 129.637,
+   "compas": 56,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 130.194,
+   "compas": 56,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 130.775,
+   "compas": 56,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 131.309,
+   "compas": 56,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 131.843,
+   "compas": 57,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 132.447,
+   "compas": 57,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 133.074,
+   "compas": 57,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 133.631,
+   "compas": 57,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 134.188,
+   "compas": 58,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 134.676,
+   "compas": 58,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 135.14,
+   "compas": 58,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 135.697,
+   "compas": 58,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 136.348,
+   "compas": 59,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 136.928,
+   "compas": 59,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 137.532,
+   "compas": 59,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 138.112,
+   "compas": 59,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 138.716,
+   "compas": 60,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 139.32,
+   "compas": 60,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 139.923,
+   "compas": 60,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 140.481,
+   "compas": 60,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 141.038,
+   "compas": 61,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 141.595,
+   "compas": 61,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 142.176,
+   "compas": 61,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 142.756,
+   "compas": 61,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 143.337,
+   "compas": 62,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 143.917,
+   "compas": 62,
+   "pulso": 2,
+   "estimado": true
+  }
+ ],
+ "acordes": [
+  {
+   "inicio": 0.116,
+   "fin": 1.881,
+   "pulsos": 3,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 1.881,
+   "fin": 3.065,
+   "pulsos": 2,
+   "etiqueta": "G:sus4",
+   "editado": false,
+   "anglo": "Gsus4",
+   "latino": "Solsus4",
+   "notas": [
+    "G",
+    "C",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Do",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 3.065,
+   "fin": 5.387,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 5.387,
+   "fin": 7.639,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 7.639,
+   "fin": 9.381,
+   "pulsos": 3,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 9.381,
+   "fin": 9.985,
+   "pulsos": 1,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 9.985,
+   "fin": 11.703,
+   "pulsos": 3,
+   "etiqueta": "F:sus2",
+   "editado": false,
+   "anglo": "Fsus2",
+   "latino": "Fasus2",
+   "notas": [
+    "F",
+    "G",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 11.703,
+   "fin": 12.841,
+   "pulsos": 2,
+   "etiqueta": "G:sus4",
+   "editado": false,
+   "anglo": "Gsus4",
+   "latino": "Solsus4",
+   "notas": [
+    "G",
+    "C",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Do",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 12.841,
+   "fin": 15.0,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 15.0,
+   "fin": 19.737,
+   "pulsos": 8,
+   "etiqueta": "C:maj",
+   "editado": false,
+   "anglo": "C",
+   "latino": "Do",
+   "notas": [
+    "C",
+    "E",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Mi",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 19.737,
+   "fin": 20.317,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 20.317,
+   "fin": 21.502,
+   "pulsos": 2,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 21.502,
+   "fin": 24.52,
+   "pulsos": 5,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 24.52,
+   "fin": 26.865,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 26.865,
+   "fin": 27.469,
+   "pulsos": 1,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 27.469,
+   "fin": 29.257,
+   "pulsos": 3,
+   "etiqueta": "A:sus2",
+   "editado": false,
+   "anglo": "Asus2",
+   "latino": "Lasus2",
+   "notas": [
+    "A",
+    "B",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Si",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 29.257,
+   "fin": 29.814,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 29.814,
+   "fin": 30.999,
+   "pulsos": 2,
+   "etiqueta": "C:maj",
+   "editado": false,
+   "anglo": "C",
+   "latino": "Do",
+   "notas": [
+    "C",
+    "E",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Mi",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 30.999,
+   "fin": 33.971,
+   "pulsos": 5,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 33.971,
+   "fin": 36.316,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 36.316,
+   "fin": 38.661,
+   "pulsos": 4,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 38.661,
+   "fin": 39.242,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 39.242,
+   "fin": 40.38,
+   "pulsos": 2,
+   "etiqueta": "A:sus2",
+   "editado": false,
+   "anglo": "Asus2",
+   "latino": "Lasus2",
+   "notas": [
+    "A",
+    "B",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Si",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 40.38,
+   "fin": 41.564,
+   "pulsos": 2,
+   "etiqueta": "G:sus4",
+   "editado": false,
+   "anglo": "Gsus4",
+   "latino": "Solsus4",
+   "notas": [
+    "G",
+    "C",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Do",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 41.564,
+   "fin": 43.305,
+   "pulsos": 3,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 43.305,
+   "fin": 45.674,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 45.674,
+   "fin": 49.946,
+   "pulsos": 7,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 49.946,
+   "fin": 52.361,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 52.361,
+   "fin": 54.706,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 54.706,
+   "fin": 57.051,
+   "pulsos": 4,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 57.051,
+   "fin": 59.35,
+   "pulsos": 4,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 59.35,
+   "fin": 61.672,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 61.672,
+   "fin": 63.994,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 63.994,
+   "fin": 66.711,
+   "pulsos": 5,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 66.711,
+   "fin": 69.033,
+   "pulsos": 4,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 69.033,
+   "fin": 71.448,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 71.448,
+   "fin": 76.022,
+   "pulsos": 8,
+   "etiqueta": "C:maj",
+   "editado": false,
+   "anglo": "C",
+   "latino": "Do",
+   "notas": [
+    "C",
+    "E",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Mi",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 76.022,
+   "fin": 76.579,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 76.579,
+   "fin": 78.344,
+   "pulsos": 3,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 78.344,
+   "fin": 78.925,
+   "pulsos": 1,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 78.925,
+   "fin": 80.643,
+   "pulsos": 3,
+   "etiqueta": "G:sus2",
+   "editado": false,
+   "anglo": "Gsus2",
+   "latino": "Solsus2",
+   "notas": [
+    "G",
+    "A",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 80.643,
+   "fin": 82.965,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 82.965,
+   "fin": 87.609,
+   "pulsos": 8,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 87.609,
+   "fin": 89.977,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 89.977,
+   "fin": 92.323,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 92.323,
+   "fin": 94.691,
+   "pulsos": 4,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 94.691,
+   "fin": 95.271,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 95.271,
+   "fin": 96.99,
+   "pulsos": 3,
+   "etiqueta": "A:sus2",
+   "editado": false,
+   "anglo": "Asus2",
+   "latino": "Lasus2",
+   "notas": [
+    "A",
+    "B",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Si",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 96.99,
+   "fin": 99.358,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 99.358,
+   "fin": 101.123,
+   "pulsos": 3,
+   "etiqueta": "A:m7",
+   "editado": false,
+   "anglo": "Am7",
+   "latino": "Lam7",
+   "notas": [
+    "A",
+    "C",
+    "E",
+    "G"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 101.123,
+   "fin": 103.979,
+   "pulsos": 5,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 103.979,
+   "fin": 104.583,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 104.583,
+   "fin": 105.79,
+   "pulsos": 2,
+   "etiqueta": "C:sus4",
+   "editado": false,
+   "anglo": "Csus4",
+   "latino": "Dosus4",
+   "notas": [
+    "C",
+    "F",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Fa",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 105.79,
+   "fin": 106.371,
+   "pulsos": 1,
+   "etiqueta": "A:m7",
+   "editado": false,
+   "anglo": "Am7",
+   "latino": "Lam7",
+   "notas": [
+    "A",
+    "C",
+    "E",
+    "G"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 106.371,
+   "fin": 108.716,
+   "pulsos": 4,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 108.716,
+   "fin": 113.313,
+   "pulsos": 8,
+   "etiqueta": "A:m7",
+   "editado": false,
+   "anglo": "Am7",
+   "latino": "Lam7",
+   "notas": [
+    "A",
+    "C",
+    "E",
+    "G"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 113.313,
+   "fin": 113.871,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 113.871,
+   "fin": 115.612,
+   "pulsos": 3,
+   "etiqueta": "C:sus4",
+   "editado": false,
+   "anglo": "Csus4",
+   "latino": "Dosus4",
+   "notas": [
+    "C",
+    "F",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Fa",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 115.612,
+   "fin": 117.4,
+   "pulsos": 3,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 117.4,
+   "fin": 118.004,
+   "pulsos": 1,
+   "etiqueta": "D:sus4",
+   "editado": false,
+   "anglo": "Dsus4",
+   "latino": "Resus4",
+   "notas": [
+    "D",
+    "G",
+    "A"
+   ],
+   "notas_latinas": [
+    "Re",
+    "Sol",
+    "La"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 118.004,
+   "fin": 119.676,
+   "pulsos": 3,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 119.676,
+   "fin": 120.813,
+   "pulsos": 2,
+   "etiqueta": "G:sus4",
+   "editado": false,
+   "anglo": "Gsus4",
+   "latino": "Solsus4",
+   "notas": [
+    "G",
+    "C",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Do",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 120.813,
+   "fin": 122.578,
+   "pulsos": 3,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 122.578,
+   "fin": 123.135,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 123.135,
+   "fin": 124.32,
+   "pulsos": 2,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 124.32,
+   "fin": 125.55,
+   "pulsos": 2,
+   "etiqueta": "G:sus4",
+   "editado": false,
+   "anglo": "Gsus4",
+   "latino": "Solsus4",
+   "notas": [
+    "G",
+    "C",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Do",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 125.55,
+   "fin": 130.775,
+   "pulsos": 9,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 130.775,
+   "fin": 133.074,
+   "pulsos": 4,
+   "etiqueta": "C:sus4",
+   "editado": false,
+   "anglo": "Csus4",
+   "latino": "Dosus4",
+   "notas": [
+    "C",
+    "F",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Fa",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 133.074,
+   "fin": 135.697,
+   "pulsos": 5,
+   "etiqueta": "G:maj",
+   "editado": false,
+   "anglo": "G",
+   "latino": "Sol",
+   "notas": [
+    "G",
+    "B",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "Si",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 135.697,
+   "fin": 138.112,
+   "pulsos": 4,
+   "etiqueta": "E:min",
+   "editado": false,
+   "anglo": "Em",
+   "latino": "Mim",
+   "notas": [
+    "E",
+    "G",
+    "B"
+   ],
+   "notas_latinas": [
+    "Mi",
+    "Sol",
+    "Si"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 138.112,
+   "fin": 138.716,
+   "pulsos": 1,
+   "etiqueta": "A:min",
+   "editado": false,
+   "anglo": "Am",
+   "latino": "Lam",
+   "notas": [
+    "A",
+    "C",
+    "E"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do",
+    "Mi"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 138.716,
+   "fin": 145.08,
+   "pulsos": 10,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  }
+ ],
+ "bateria": [],
+ "piano_notas": [],
+ "letra": [
+  {
+   "inicio": 28.84,
+   "fin": 29.96,
+   "texto": "Canto en español.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 28.84,
+     "w": "Canto"
+    },
+    {
+     "t": 29.4,
+     "w": "en"
+    },
+    {
+     "t": 29.72,
+     "w": "español."
+    }
+   ]
+  },
+  {
+   "inicio": 30.0,
+   "fin": 45.32,
+   "texto": "Vale la pena, si lo das al Señor, vale la pena vivir amando a los demás.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 30.0,
+     "w": "Vale"
+    },
+    {
+     "t": 30.0,
+     "w": "la"
+    },
+    {
+     "t": 30.9,
+     "w": "pena,"
+    },
+    {
+     "t": 31.92,
+     "w": "si"
+    },
+    {
+     "t": 33.8,
+     "w": "lo"
+    },
+    {
+     "t": 34.22,
+     "w": "das"
+    },
+    {
+     "t": 34.58,
+     "w": "al"
+    },
+    {
+     "t": 35.1,
+     "w": "Señor,"
+    },
+    {
+     "t": 36.38,
+     "w": "vale"
+    },
+    {
+     "t": 37.86,
+     "w": "la"
+    },
+    {
+     "t": 38.28,
+     "w": "pena"
+    },
+    {
+     "t": 39.24,
+     "w": "vivir"
+    },
+    {
+     "t": 40.24,
+     "w": "amando"
+    },
+    {
+     "t": 42.36,
+     "w": "a"
+    },
+    {
+     "t": 42.52,
+     "w": "los"
+    },
+    {
+     "t": 43.28,
+     "w": "demás."
+    }
+   ]
+  },
+  {
+   "inicio": 45.32,
+   "fin": 54.86,
+   "texto": "Llenar un espacio gris de esperanza y de paz.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 45.32,
+     "w": "Llenar"
+    },
+    {
+     "t": 47.54,
+     "w": "un"
+    },
+    {
+     "t": 47.78,
+     "w": "espacio"
+    },
+    {
+     "t": 48.94,
+     "w": "gris"
+    },
+    {
+     "t": 50.28,
+     "w": "de"
+    },
+    {
+     "t": 51.16,
+     "w": "esperanza"
+    },
+    {
+     "t": 53.36,
+     "w": "y"
+    },
+    {
+     "t": 53.82,
+     "w": "de"
+    },
+    {
+     "t": 54.26,
+     "w": "paz."
+    }
+   ]
+  },
+  {
+   "inicio": 56.48,
+   "fin": 63.86,
+   "texto": "Vale la pena seguir los pasos de Jesús.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 55.92,
+     "w": "Vale"
+    },
+    {
+     "t": 56.62,
+     "w": "la"
+    },
+    {
+     "t": 56.98,
+     "w": "pena"
+    },
+    {
+     "t": 57.72,
+     "w": "seguir"
+    },
+    {
+     "t": 58.9,
+     "w": "los"
+    },
+    {
+     "t": 59.92,
+     "w": "pasos"
+    },
+    {
+     "t": 61.3,
+     "w": "de"
+    },
+    {
+     "t": 61.92,
+     "w": "Jesús."
+    }
+   ]
+  },
+  {
+   "inicio": 66.22,
+   "fin": 71.76,
+   "texto": "Seguir sus huellas hacia la cruz.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 66.22,
+     "w": "Seguir"
+    },
+    {
+     "t": 67.06,
+     "w": "sus"
+    },
+    {
+     "t": 68.12,
+     "w": "huellas"
+    },
+    {
+     "t": 69.56,
+     "w": "hacia"
+    },
+    {
+     "t": 70.78,
+     "w": "la"
+    },
+    {
+     "t": 71.12,
+     "w": "cruz."
+    }
+   ]
+  },
+  {
+   "inicio": 75.46,
+   "fin": 91.84,
+   "texto": "Vale la pena dar un poco de amor, quitando el frío, el hambre y el dolor.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 75.46,
+     "w": "Vale"
+    },
+    {
+     "t": 76.74,
+     "w": "la"
+    },
+    {
+     "t": 77.46,
+     "w": "pena"
+    },
+    {
+     "t": 78.6,
+     "w": "dar"
+    },
+    {
+     "t": 80.56,
+     "w": "un"
+    },
+    {
+     "t": 80.96,
+     "w": "poco"
+    },
+    {
+     "t": 81.36,
+     "w": "de"
+    },
+    {
+     "t": 82.0,
+     "w": "amor,"
+    },
+    {
+     "t": 83.14,
+     "w": "quitando"
+    },
+    {
+     "t": 86.5,
+     "w": "el"
+    },
+    {
+     "t": 86.88,
+     "w": "frío,"
+    },
+    {
+     "t": 88.06,
+     "w": "el"
+    },
+    {
+     "t": 89.96,
+     "w": "hambre"
+    },
+    {
+     "t": 90.58,
+     "w": "y"
+    },
+    {
+     "t": 90.68,
+     "w": "el"
+    },
+    {
+     "t": 90.96,
+     "w": "dolor."
+    }
+   ]
+  },
+  {
+   "inicio": 92.84,
+   "fin": 108.66,
+   "texto": "Vale la pena dar todo al Señor por encima del dolor.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 92.84,
+     "w": "Vale"
+    },
+    {
+     "t": 93.98,
+     "w": "la"
+    },
+    {
+     "t": 94.34,
+     "w": "pena"
+    },
+    {
+     "t": 95.3,
+     "w": "dar"
+    },
+    {
+     "t": 96.92,
+     "w": "todo"
+    },
+    {
+     "t": 97.64,
+     "w": "al"
+    },
+    {
+     "t": 98.04,
+     "w": "Señor"
+    },
+    {
+     "t": 99.12,
+     "w": "por"
+    },
+    {
+     "t": 103.3,
+     "w": "encima"
+    },
+    {
+     "t": 104.26,
+     "w": "del"
+    },
+    {
+     "t": 106.4,
+     "w": "dolor."
+    }
+   ]
+  },
+  {
+   "inicio": 111.0,
+   "fin": 117.7,
+   "texto": "¿O es más grande su amor?",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 111.0,
+     "w": "¿O"
+    },
+    {
+     "t": 112.4,
+     "w": "es"
+    },
+    {
+     "t": 112.66,
+     "w": "más"
+    },
+    {
+     "t": 113.04,
+     "w": "grande"
+    },
+    {
+     "t": 114.06,
+     "w": "su"
+    },
+    {
+     "t": 116.0,
+     "w": "amor?"
+    }
+   ]
+  },
+  {
+   "inicio": 120.3,
+   "fin": 129.08,
+   "texto": "¿O es más grande su amor?",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 120.3,
+     "w": "¿O"
+    },
+    {
+     "t": 121.7,
+     "w": "es"
+    },
+    {
+     "t": 121.88,
+     "w": "más"
+    },
+    {
+     "t": 122.16,
+     "w": "grande"
+    },
+    {
+     "t": 122.92,
+     "w": "su"
+    },
+    {
+     "t": 125.64,
+     "w": "amor?"
+    }
+   ]
+  }
+ ],
+ "generado_por": "claude",
+ "version_datos": 1
+}

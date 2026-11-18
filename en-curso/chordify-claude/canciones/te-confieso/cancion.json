@@ -1,0 +1,9491 @@
+{
+ "id": "te-confieso",
+ "titulo": "Te Confieso",
+ "artista": "Ana Bolivar",
+ "youtube_id": "xTa0tNs-LGg",
+ "duracion": 214.872,
+ "tempo": 64.6,
+ "compas": "4/4",
+ "tonalidad": {
+  "raiz": "D#",
+  "modo": "mayor",
+  "nombre": "Re# mayor",
+  "confianza": 0.873
+ },
+ "audio": {
+  "completo": "original.mp3",
+  "voz": "voz.mp3",
+  "bateria": "bateria.mp3",
+  "bajo": "bajo.mp3",
+  "guitarra": "guitarra.mp3",
+  "piano": "piano.mp3",
+  "resto": "resto.mp3"
+ },
+ "ajuste_ms": 0,
+ "beats": [
+  {
+   "t": 0.488,
+   "compas": 1,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 1.416,
+   "compas": 1,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 2.345,
+   "compas": 1,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 3.274,
+   "compas": 1,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 4.203,
+   "compas": 2,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 5.132,
+   "compas": 2,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 6.06,
+   "compas": 2,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 6.989,
+   "compas": 2,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 7.918,
+   "compas": 3,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 8.847,
+   "compas": 3,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 9.776,
+   "compas": 3,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 10.704,
+   "compas": 3,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 11.633,
+   "compas": 4,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 12.562,
+   "compas": 4,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 13.491,
+   "compas": 4,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 14.42,
+   "compas": 4,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 15.348,
+   "compas": 5,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 16.277,
+   "compas": 5,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 17.206,
+   "compas": 5,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 18.135,
+   "compas": 5,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 19.064,
+   "compas": 6,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 19.992,
+   "compas": 6,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 20.921,
+   "compas": 6,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 21.85,
+   "compas": 6,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 22.779,
+   "compas": 7,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 23.708,
+   "compas": 7,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 24.636,
+   "compas": 7,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 25.565,
+   "compas": 7,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 26.494,
+   "compas": 8,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 27.423,
+   "compas": 8,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 28.352,
+   "compas": 8,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 29.28,
+   "compas": 8,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 30.209,
+   "compas": 9,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 31.138,
+   "compas": 9,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 32.067,
+   "compas": 9,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 32.996,
+   "compas": 9,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 33.924,
+   "compas": 10,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 34.853,
+   "compas": 10,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 35.782,
+   "compas": 10,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 36.711,
+   "compas": 10,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 37.64,
+   "compas": 11,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 38.568,
+   "compas": 11,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 39.497,
+   "compas": 11,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 40.426,
+   "compas": 11,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 41.355,
+   "compas": 12,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 42.284,
+   "compas": 12,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 43.212,
+   "compas": 12,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 44.141,
+   "compas": 12,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 45.07,
+   "compas": 13,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 45.999,
+   "compas": 13,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 46.928,
+   "compas": 13,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 47.856,
+   "compas": 13,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 48.785,
+   "compas": 14,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 49.714,
+   "compas": 14,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 50.643,
+   "compas": 14,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 51.572,
+   "compas": 14,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 52.5,
+   "compas": 15,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 53.429,
+   "compas": 15,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 54.358,
+   "compas": 15,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 55.287,
+   "compas": 15,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 56.216,
+   "compas": 16,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 57.144,
+   "compas": 16,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 58.073,
+   "compas": 16,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 59.002,
+   "compas": 16,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 59.931,
+   "compas": 17,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 60.86,
+   "compas": 17,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 61.788,
+   "compas": 17,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 62.717,
+   "compas": 17,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 63.646,
+   "compas": 18,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 64.575,
+   "compas": 18,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 65.503,
+   "compas": 18,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 66.432,
+   "compas": 18,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 67.361,
+   "compas": 19,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 68.29,
+   "compas": 19,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 69.219,
+   "compas": 19,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 70.147,
+   "compas": 19,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 71.076,
+   "compas": 20,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 72.005,
+   "compas": 20,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 72.934,
+   "compas": 20,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 73.863,
+   "compas": 20,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 74.791,
+   "compas": 21,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 75.72,
+   "compas": 21,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 76.649,
+   "compas": 21,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 77.578,
+   "compas": 21,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 78.507,
+   "compas": 22,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 79.435,
+   "compas": 22,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 80.364,
+   "compas": 22,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 81.293,
+   "compas": 22,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 82.222,
+   "compas": 23,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 83.151,
+   "compas": 23,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 84.079,
+   "compas": 23,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 85.008,
+   "compas": 23,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 85.937,
+   "compas": 24,
+   "pulso": 1,
+   "estimado": true
+  },
+  {
+   "t": 86.866,
+   "compas": 24,
+   "pulso": 2,
+   "estimado": true
+  },
+  {
+   "t": 87.795,
+   "compas": 24,
+   "pulso": 3,
+   "estimado": true
+  },
+  {
+   "t": 88.723,
+   "compas": 24,
+   "pulso": 4,
+   "estimado": true
+  },
+  {
+   "t": 89.652,
+   "compas": 25,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 90.581,
+   "compas": 25,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 91.51,
+   "compas": 25,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 92.439,
+   "compas": 25,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 93.367,
+   "compas": 26,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 94.273,
+   "compas": 26,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 95.202,
+   "compas": 26,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 96.131,
+   "compas": 26,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 97.059,
+   "compas": 27,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 97.965,
+   "compas": 27,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 98.894,
+   "compas": 27,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 99.823,
+   "compas": 27,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 100.751,
+   "compas": 28,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 101.657,
+   "compas": 28,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 102.586,
+   "compas": 28,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 103.515,
+   "compas": 28,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 104.443,
+   "compas": 29,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 105.349,
+   "compas": 29,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 106.278,
+   "compas": 29,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 107.207,
+   "compas": 29,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 108.135,
+   "compas": 30,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 109.041,
+   "compas": 30,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 109.946,
+   "compas": 30,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 110.899,
+   "compas": 30,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 111.827,
+   "compas": 31,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 112.733,
+   "compas": 31,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 113.662,
+   "compas": 31,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 114.59,
+   "compas": 31,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 115.519,
+   "compas": 32,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 116.425,
+   "compas": 32,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 117.354,
+   "compas": 32,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 118.259,
+   "compas": 32,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 119.188,
+   "compas": 33,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 120.117,
+   "compas": 33,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 121.046,
+   "compas": 33,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 121.951,
+   "compas": 33,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 122.88,
+   "compas": 34,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 123.809,
+   "compas": 34,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 124.714,
+   "compas": 34,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 125.643,
+   "compas": 34,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 126.572,
+   "compas": 35,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 127.501,
+   "compas": 35,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 128.43,
+   "compas": 35,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 129.335,
+   "compas": 35,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 130.264,
+   "compas": 36,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 131.193,
+   "compas": 36,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 132.122,
+   "compas": 36,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 133.05,
+   "compas": 36,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 133.956,
+   "compas": 37,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 134.885,
+   "compas": 37,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 135.814,
+   "compas": 37,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 136.719,
+   "compas": 37,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 137.648,
+   "compas": 38,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 138.577,
+   "compas": 38,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 139.505,
+   "compas": 38,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 140.411,
+   "compas": 38,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 141.34,
+   "compas": 39,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 142.269,
+   "compas": 39,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 143.197,
+   "compas": 39,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 144.103,
+   "compas": 39,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 145.032,
+   "compas": 40,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 145.961,
+   "compas": 40,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 146.889,
+   "compas": 40,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 147.818,
+   "compas": 40,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 148.747,
+   "compas": 41,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 149.653,
+   "compas": 41,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 150.581,
+   "compas": 41,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 151.487,
+   "compas": 41,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 152.416,
+   "compas": 42,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 153.345,
+   "compas": 42,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 154.273,
+   "compas": 42,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 155.202,
+   "compas": 42,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 156.108,
+   "compas": 43,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 157.037,
+   "compas": 43,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 157.965,
+   "compas": 43,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 158.871,
+   "compas": 43,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 159.8,
+   "compas": 44,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 160.729,
+   "compas": 44,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 161.657,
+   "compas": 44,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 162.47,
+   "compas": 44,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 163.283,
+   "compas": 45,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 164.235,
+   "compas": 45,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 165.187,
+   "compas": 45,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 166.139,
+   "compas": 45,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 167.091,
+   "compas": 46,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 168.043,
+   "compas": 46,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 168.995,
+   "compas": 46,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 169.947,
+   "compas": 46,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 170.899,
+   "compas": 47,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 171.828,
+   "compas": 47,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 172.756,
+   "compas": 47,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 173.685,
+   "compas": 47,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 174.614,
+   "compas": 48,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 175.543,
+   "compas": 48,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 176.425,
+   "compas": 48,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 177.354,
+   "compas": 48,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 178.283,
+   "compas": 49,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 179.188,
+   "compas": 49,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 180.117,
+   "compas": 49,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 181.046,
+   "compas": 49,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 181.952,
+   "compas": 50,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 182.88,
+   "compas": 50,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 183.809,
+   "compas": 50,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 184.715,
+   "compas": 50,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 185.644,
+   "compas": 51,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 186.572,
+   "compas": 51,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 187.501,
+   "compas": 51,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 188.43,
+   "compas": 51,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 189.359,
+   "compas": 52,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 190.264,
+   "compas": 52,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 191.193,
+   "compas": 52,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 192.122,
+   "compas": 52,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 193.051,
+   "compas": 53,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 194.003,
+   "compas": 53,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 194.955,
+   "compas": 53,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 195.907,
+   "compas": 53,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 196.859,
+   "compas": 54,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 197.811,
+   "compas": 54,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 198.763,
+   "compas": 54,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 199.715,
+   "compas": 54,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 200.667,
+   "compas": 55,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 201.619,
+   "compas": 55,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 202.571,
+   "compas": 55,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 203.523,
+   "compas": 55,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 204.452,
+   "compas": 56,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 205.38,
+   "compas": 56,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 206.309,
+   "compas": 56,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 207.238,
+   "compas": 56,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 208.167,
+   "compas": 57,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 209.096,
+   "compas": 57,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 210.024,
+   "compas": 57,
+   "pulso": 3,
+   "estimado": false
+  },
+  {
+   "t": 210.953,
+   "compas": 57,
+   "pulso": 4,
+   "estimado": false
+  },
+  {
+   "t": 211.882,
+   "compas": 58,
+   "pulso": 1,
+   "estimado": false
+  },
+  {
+   "t": 212.811,
+   "compas": 58,
+   "pulso": 2,
+   "estimado": false
+  },
+  {
+   "t": 213.74,
+   "compas": 58,
+   "pulso": 3,
+   "estimado": false
+  }
+ ],
+ "acordes": [
+  {
+   "inicio": 0.488,
+   "fin": 1.416,
+   "pulsos": 1,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 1.416,
+   "fin": 3.274,
+   "pulsos": 2,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 3.274,
+   "fin": 5.132,
+   "pulsos": 2,
+   "etiqueta": "F:m7",
+   "editado": false,
+   "anglo": "Fm7",
+   "latino": "Fam7",
+   "notas": [
+    "F",
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 5.132,
+   "fin": 6.989,
+   "pulsos": 2,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 6.989,
+   "fin": 8.847,
+   "pulsos": 2,
+   "etiqueta": "C:min",
+   "editado": false,
+   "anglo": "Cm",
+   "latino": "Dom",
+   "notas": [
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 8.847,
+   "fin": 10.704,
+   "pulsos": 2,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 10.704,
+   "fin": 11.633,
+   "pulsos": 1,
+   "etiqueta": "F:6",
+   "editado": false,
+   "anglo": "F6",
+   "latino": "Fa6",
+   "notas": [
+    "F",
+    "A",
+    "C",
+    "D"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 11.633,
+   "fin": 14.42,
+   "pulsos": 3,
+   "etiqueta": "D#:sus2",
+   "editado": false,
+   "anglo": "D#sus2",
+   "latino": "Re#sus2",
+   "notas": [
+    "D#",
+    "F",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Fa",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 14.42,
+   "fin": 19.992,
+   "pulsos": 6,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 19.992,
+   "fin": 22.779,
+   "pulsos": 3,
+   "etiqueta": "D#:sus4",
+   "editado": false,
+   "anglo": "D#sus4",
+   "latino": "Re#sus4",
+   "notas": [
+    "D#",
+    "G#",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol#",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 22.779,
+   "fin": 25.565,
+   "pulsos": 3,
+   "etiqueta": "C:min",
+   "editado": false,
+   "anglo": "Cm",
+   "latino": "Dom",
+   "notas": [
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 25.565,
+   "fin": 30.209,
+   "pulsos": 5,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 30.209,
+   "fin": 32.067,
+   "pulsos": 2,
+   "etiqueta": "F:m7",
+   "editado": false,
+   "anglo": "Fm7",
+   "latino": "Fam7",
+   "notas": [
+    "F",
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 32.067,
+   "fin": 33.924,
+   "pulsos": 2,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 33.924,
+   "fin": 37.64,
+   "pulsos": 4,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 37.64,
+   "fin": 38.568,
+   "pulsos": 1,
+   "etiqueta": "F:maj",
+   "editado": false,
+   "anglo": "F",
+   "latino": "Fa",
+   "notas": [
+    "F",
+    "A",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "La",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 38.568,
+   "fin": 45.07,
+   "pulsos": 7,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 45.07,
+   "fin": 46.928,
+   "pulsos": 2,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 46.928,
+   "fin": 48.785,
+   "pulsos": 2,
+   "etiqueta": "A#:sus4",
+   "editado": false,
+   "anglo": "A#sus4",
+   "latino": "La#sus4",
+   "notas": [
+    "A#",
+    "D#",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re#",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 48.785,
+   "fin": 52.5,
+   "pulsos": 4,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 52.5,
+   "fin": 53.429,
+   "pulsos": 1,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 53.429,
+   "fin": 56.216,
+   "pulsos": 3,
+   "etiqueta": "D#:sus4",
+   "editado": false,
+   "anglo": "D#sus4",
+   "latino": "Re#sus4",
+   "notas": [
+    "D#",
+    "G#",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol#",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 56.216,
+   "fin": 59.931,
+   "pulsos": 4,
+   "etiqueta": "G#:min",
+   "editado": false,
+   "anglo": "G#m",
+   "latino": "Sol#m",
+   "notas": [
+    "G#",
+    "B",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Si",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 59.931,
+   "fin": 63.646,
+   "pulsos": 4,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 63.646,
+   "fin": 67.361,
+   "pulsos": 4,
+   "etiqueta": "G:m7",
+   "editado": false,
+   "anglo": "Gm7",
+   "latino": "Solm7",
+   "notas": [
+    "G",
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 67.361,
+   "fin": 71.076,
+   "pulsos": 4,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 71.076,
+   "fin": 73.863,
+   "pulsos": 3,
+   "etiqueta": "G#:min",
+   "editado": false,
+   "anglo": "G#m",
+   "latino": "Sol#m",
+   "notas": [
+    "G#",
+    "B",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Si",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 73.863,
+   "fin": 76.649,
+   "pulsos": 3,
+   "etiqueta": "A#:sus4",
+   "editado": false,
+   "anglo": "A#sus4",
+   "latino": "La#sus4",
+   "notas": [
+    "A#",
+    "D#",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re#",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 76.649,
+   "fin": 79.435,
+   "pulsos": 3,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 79.435,
+   "fin": 80.364,
+   "pulsos": 1,
+   "etiqueta": "D#:sus2",
+   "editado": false,
+   "anglo": "D#sus2",
+   "latino": "Re#sus2",
+   "notas": [
+    "D#",
+    "F",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Fa",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 80.364,
+   "fin": 82.222,
+   "pulsos": 2,
+   "etiqueta": "F:sus2",
+   "editado": false,
+   "anglo": "Fsus2",
+   "latino": "Fasus2",
+   "notas": [
+    "F",
+    "G",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 82.222,
+   "fin": 83.151,
+   "pulsos": 1,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 83.151,
+   "fin": 85.937,
+   "pulsos": 3,
+   "etiqueta": "G#:maj7",
+   "editado": false,
+   "anglo": "G#maj7",
+   "latino": "Sol#maj7",
+   "notas": [
+    "G#",
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 85.937,
+   "fin": 86.866,
+   "pulsos": 1,
+   "etiqueta": "B:dim",
+   "editado": false,
+   "anglo": "Bdim",
+   "latino": "Sidim",
+   "notas": [
+    "B",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "Si",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 86.866,
+   "fin": 89.652,
+   "pulsos": 3,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 89.652,
+   "fin": 93.367,
+   "pulsos": 4,
+   "etiqueta": "C:min",
+   "editado": false,
+   "anglo": "Cm",
+   "latino": "Dom",
+   "notas": [
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 93.367,
+   "fin": 97.059,
+   "pulsos": 4,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 97.059,
+   "fin": 100.751,
+   "pulsos": 4,
+   "etiqueta": "C:min",
+   "editado": false,
+   "anglo": "Cm",
+   "latino": "Dom",
+   "notas": [
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 100.751,
+   "fin": 104.443,
+   "pulsos": 4,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 104.443,
+   "fin": 108.135,
+   "pulsos": 4,
+   "etiqueta": "F:min",
+   "editado": false,
+   "anglo": "Fm",
+   "latino": "Fam",
+   "notas": [
+    "F",
+    "G#",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 108.135,
+   "fin": 110.899,
+   "pulsos": 3,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 110.899,
+   "fin": 111.827,
+   "pulsos": 1,
+   "etiqueta": "C:m7",
+   "editado": false,
+   "anglo": "Cm7",
+   "latino": "Dom7",
+   "notas": [
+    "C",
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 111.827,
+   "fin": 114.59,
+   "pulsos": 3,
+   "etiqueta": "F:sus2",
+   "editado": false,
+   "anglo": "Fsus2",
+   "latino": "Fasus2",
+   "notas": [
+    "F",
+    "G",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 114.59,
+   "fin": 115.519,
+   "pulsos": 1,
+   "etiqueta": "F:min",
+   "editado": false,
+   "anglo": "Fm",
+   "latino": "Fam",
+   "notas": [
+    "F",
+    "G#",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 115.519,
+   "fin": 119.188,
+   "pulsos": 4,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 119.188,
+   "fin": 122.88,
+   "pulsos": 4,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 122.88,
+   "fin": 126.572,
+   "pulsos": 4,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 126.572,
+   "fin": 133.05,
+   "pulsos": 7,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 133.05,
+   "fin": 137.648,
+   "pulsos": 5,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 137.648,
+   "fin": 141.34,
+   "pulsos": 4,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 141.34,
+   "fin": 148.747,
+   "pulsos": 8,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 148.747,
+   "fin": 152.416,
+   "pulsos": 4,
+   "etiqueta": "F:min",
+   "editado": false,
+   "anglo": "Fm",
+   "latino": "Fam",
+   "notas": [
+    "F",
+    "G#",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 152.416,
+   "fin": 155.202,
+   "pulsos": 3,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 155.202,
+   "fin": 156.108,
+   "pulsos": 1,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 156.108,
+   "fin": 159.8,
+   "pulsos": 4,
+   "etiqueta": "F:min",
+   "editado": false,
+   "anglo": "Fm",
+   "latino": "Fam",
+   "notas": [
+    "F",
+    "G#",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 159.8,
+   "fin": 164.235,
+   "pulsos": 5,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 164.235,
+   "fin": 167.091,
+   "pulsos": 3,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 167.091,
+   "fin": 170.899,
+   "pulsos": 4,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 170.899,
+   "fin": 171.828,
+   "pulsos": 1,
+   "etiqueta": "G#:sus2",
+   "editado": false,
+   "anglo": "G#sus2",
+   "latino": "Sol#sus2",
+   "notas": [
+    "G#",
+    "A#",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "La#",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 171.828,
+   "fin": 174.614,
+   "pulsos": 3,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 174.614,
+   "fin": 177.354,
+   "pulsos": 3,
+   "etiqueta": "G#:min",
+   "editado": false,
+   "anglo": "G#m",
+   "latino": "Sol#m",
+   "notas": [
+    "G#",
+    "B",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Si",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 177.354,
+   "fin": 178.283,
+   "pulsos": 1,
+   "etiqueta": "G#:sus2",
+   "editado": false,
+   "anglo": "G#sus2",
+   "latino": "Sol#sus2",
+   "notas": [
+    "G#",
+    "A#",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "La#",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 178.283,
+   "fin": 181.952,
+   "pulsos": 4,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 181.952,
+   "fin": 183.809,
+   "pulsos": 2,
+   "etiqueta": "C:min",
+   "editado": false,
+   "anglo": "Cm",
+   "latino": "Dom",
+   "notas": [
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 183.809,
+   "fin": 185.644,
+   "pulsos": 2,
+   "etiqueta": "D#:sus2",
+   "editado": false,
+   "anglo": "D#sus2",
+   "latino": "Re#sus2",
+   "notas": [
+    "D#",
+    "F",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Fa",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 185.644,
+   "fin": 188.43,
+   "pulsos": 3,
+   "etiqueta": "F:min",
+   "editado": false,
+   "anglo": "Fm",
+   "latino": "Fam",
+   "notas": [
+    "F",
+    "G#",
+    "C"
+   ],
+   "notas_latinas": [
+    "Fa",
+    "Sol#",
+    "Do"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 188.43,
+   "fin": 189.359,
+   "pulsos": 1,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 189.359,
+   "fin": 193.051,
+   "pulsos": 4,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 193.051,
+   "fin": 195.907,
+   "pulsos": 3,
+   "etiqueta": "D#:maj",
+   "editado": false,
+   "anglo": "D#",
+   "latino": "Re#",
+   "notas": [
+    "D#",
+    "G",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Sol",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 195.907,
+   "fin": 198.763,
+   "pulsos": 3,
+   "etiqueta": "D#:sus2",
+   "editado": false,
+   "anglo": "D#sus2",
+   "latino": "Re#sus2",
+   "notas": [
+    "D#",
+    "F",
+    "A#"
+   ],
+   "notas_latinas": [
+    "Re#",
+    "Fa",
+    "La#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 198.763,
+   "fin": 200.667,
+   "pulsos": 2,
+   "etiqueta": "A#:maj",
+   "editado": false,
+   "anglo": "A#",
+   "latino": "La#",
+   "notas": [
+    "A#",
+    "D",
+    "F"
+   ],
+   "notas_latinas": [
+    "La#",
+    "Re",
+    "Fa"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 200.667,
+   "fin": 202.571,
+   "pulsos": 2,
+   "etiqueta": "C:min",
+   "editado": false,
+   "anglo": "Cm",
+   "latino": "Dom",
+   "notas": [
+    "C",
+    "D#",
+    "G"
+   ],
+   "notas_latinas": [
+    "Do",
+    "Re#",
+    "Sol"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 202.571,
+   "fin": 210.953,
+   "pulsos": 9,
+   "etiqueta": "N",
+   "editado": false,
+   "anglo": null,
+   "latino": null,
+   "notas": [],
+   "notas_latinas": [],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 210.953,
+   "fin": 211.882,
+   "pulsos": 1,
+   "etiqueta": "G:min",
+   "editado": false,
+   "anglo": "Gm",
+   "latino": "Solm",
+   "notas": [
+    "G",
+    "A#",
+    "D"
+   ],
+   "notas_latinas": [
+    "Sol",
+    "La#",
+    "Re"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 211.882,
+   "fin": 212.811,
+   "pulsos": 1,
+   "etiqueta": "G#:maj",
+   "editado": false,
+   "anglo": "G#",
+   "latino": "Sol#",
+   "notas": [
+    "G#",
+    "C",
+    "D#"
+   ],
+   "notas_latinas": [
+    "Sol#",
+    "Do",
+    "Re#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  },
+  {
+   "inicio": 212.811,
+   "fin": 214.872,
+   "pulsos": 2,
+   "etiqueta": "A:maj7",
+   "editado": false,
+   "anglo": "Amaj7",
+   "latino": "Lamaj7",
+   "notas": [
+    "A",
+    "C#",
+    "E",
+    "G#"
+   ],
+   "notas_latinas": [
+    "La",
+    "Do#",
+    "Mi",
+    "Sol#"
+   ],
+   "bajo": null,
+   "bajo_latino": null
+  }
+ ],
+ "bateria": [
+  {
+   "t": 89.606,
+   "tipo": "bombo",
+   "fuerza": 0.686
+  },
+  {
+   "t": 90.302,
+   "tipo": "bombo",
+   "fuerza": 0.854
+  },
+  {
+   "t": 92.381,
+   "tipo": "bombo",
+   "fuerza": 0.834
+  },
+  {
+   "t": 93.298,
+   "tipo": "bombo",
+   "fuerza": 0.694
+  },
+  {
+   "t": 93.994,
+   "tipo": "bombo",
+   "fuerza": 0.856
+  },
+  {
+   "t": 96.073,
+   "tipo": "bombo",
+   "fuerza": 0.885
+  },
+  {
+   "t": 96.99,
+   "tipo": "bombo",
+   "fuerza": 0.656
+  },
+  {
+   "t": 97.686,
+   "tipo": "bombo",
+   "fuerza": 0.809
+  },
+  {
+   "t": 99.765,
+   "tipo": "bombo",
+   "fuerza": 0.879
+  },
+  {
+   "t": 100.682,
+   "tipo": "bombo",
+   "fuerza": 0.652
+  },
+  {
+   "t": 101.378,
+   "tipo": "bombo",
+   "fuerza": 0.81
+  },
+  {
+   "t": 103.457,
+   "tipo": "bombo",
+   "fuerza": 0.863
+  },
+  {
+   "t": 104.374,
+   "tipo": "bombo",
+   "fuerza": 0.615
+  },
+  {
+   "t": 105.07,
+   "tipo": "bombo",
+   "fuerza": 0.799
+  },
+  {
+   "t": 107.148,
+   "tipo": "bombo",
+   "fuerza": 0.812
+  },
+  {
+   "t": 108.066,
+   "tipo": "bombo",
+   "fuerza": 0.616
+  },
+  {
+   "t": 108.762,
+   "tipo": "bombo",
+   "fuerza": 0.811
+  },
+  {
+   "t": 110.84,
+   "tipo": "bombo",
+   "fuerza": 0.837
+  },
+  {
+   "t": 111.758,
+   "tipo": "bombo",
+   "fuerza": 0.602
+  },
+  {
+   "t": 112.454,
+   "tipo": "bombo",
+   "fuerza": 0.796
+  },
+  {
+   "t": 114.532,
+   "tipo": "bombo",
+   "fuerza": 0.863
+  },
+  {
+   "t": 115.45,
+   "tipo": "bombo",
+   "fuerza": 0.591
+  },
+  {
+   "t": 116.146,
+   "tipo": "bombo",
+   "fuerza": 0.784
+  },
+  {
+   "t": 119.142,
+   "tipo": "caja",
+   "fuerza": 0.585
+  },
+  {
+   "t": 119.153,
+   "tipo": "platillo",
+   "fuerza": 0.402
+  },
+  {
+   "t": 119.188,
+   "tipo": "bombo",
+   "fuerza": 0.595
+  },
+  {
+   "t": 119.618,
+   "tipo": "platillo",
+   "fuerza": 0.192
+  },
+  {
+   "t": 120.059,
+   "tipo": "caja",
+   "fuerza": 0.416
+  },
+  {
+   "t": 120.988,
+   "tipo": "platillo",
+   "fuerza": 0.304
+  },
+  {
+   "t": 120.999,
+   "tipo": "caja",
+   "fuerza": 0.389
+  },
+  {
+   "t": 121.034,
+   "tipo": "bombo",
+   "fuerza": 0.493
+  },
+  {
+   "t": 121.452,
+   "tipo": "caja",
+   "fuerza": 0.459
+  },
+  {
+   "t": 121.452,
+   "tipo": "platillo",
+   "fuerza": 0.414
+  },
+  {
+   "t": 121.498,
+   "tipo": "bombo",
+   "fuerza": 0.471
+  },
+  {
+   "t": 121.905,
+   "tipo": "platillo",
+   "fuerza": 0.476
+  },
+  {
+   "t": 121.916,
+   "tipo": "caja",
+   "fuerza": 0.59
+  },
+  {
+   "t": 122.834,
+   "tipo": "caja",
+   "fuerza": 0.532
+  },
+  {
+   "t": 122.834,
+   "tipo": "platillo",
+   "fuerza": 0.466
+  },
+  {
+   "t": 122.892,
+   "tipo": "bombo",
+   "fuerza": 0.676
+  },
+  {
+   "t": 123.286,
+   "tipo": "platillo",
+   "fuerza": 0.274
+  },
+  {
+   "t": 123.751,
+   "tipo": "caja",
+   "fuerza": 0.469
+  },
+  {
+   "t": 123.751,
+   "tipo": "platillo",
+   "fuerza": 0.602
+  },
+  {
+   "t": 124.215,
+   "tipo": "platillo",
+   "fuerza": 0.243
+  },
+  {
+   "t": 124.68,
+   "tipo": "platillo",
+   "fuerza": 0.38
+  },
+  {
+   "t": 124.691,
+   "tipo": "caja",
+   "fuerza": 0.45
+  },
+  {
+   "t": 124.726,
+   "tipo": "bombo",
+   "fuerza": 0.445
+  },
+  {
+   "t": 125.132,
+   "tipo": "platillo",
+   "fuerza": 0.219
+  },
+  {
+   "t": 125.144,
+   "tipo": "caja",
+   "fuerza": 0.361
+  },
+  {
+   "t": 125.19,
+   "tipo": "bombo",
+   "fuerza": 0.515
+  },
+  {
+   "t": 125.597,
+   "tipo": "caja",
+   "fuerza": 0.622
+  },
+  {
+   "t": 125.597,
+   "tipo": "platillo",
+   "fuerza": 0.464
+  },
+  {
+   "t": 126.073,
+   "tipo": "platillo",
+   "fuerza": 0.26
+  },
+  {
+   "t": 126.293,
+   "tipo": "platillo",
+   "fuerza": 0.256
+  },
+  {
+   "t": 126.526,
+   "tipo": "caja",
+   "fuerza": 0.355
+  },
+  {
+   "t": 126.526,
+   "tipo": "platillo",
+   "fuerza": 0.401
+  },
+  {
+   "t": 126.572,
+   "tipo": "bombo",
+   "fuerza": 0.575
+  },
+  {
+   "t": 127.443,
+   "tipo": "caja",
+   "fuerza": 0.437
+  },
+  {
+   "t": 127.443,
+   "tipo": "platillo",
+   "fuerza": 0.547
+  },
+  {
+   "t": 127.919,
+   "tipo": "platillo",
+   "fuerza": 0.2
+  },
+  {
+   "t": 128.372,
+   "tipo": "platillo",
+   "fuerza": 0.361
+  },
+  {
+   "t": 128.383,
+   "tipo": "caja",
+   "fuerza": 0.358
+  },
+  {
+   "t": 128.418,
+   "tipo": "bombo",
+   "fuerza": 0.446
+  },
+  {
+   "t": 128.836,
+   "tipo": "caja",
+   "fuerza": 0.458
+  },
+  {
+   "t": 128.836,
+   "tipo": "platillo",
+   "fuerza": 0.422
+  },
+  {
+   "t": 128.882,
+   "tipo": "bombo",
+   "fuerza": 0.567
+  },
+  {
+   "t": 129.289,
+   "tipo": "caja",
+   "fuerza": 0.428
+  },
+  {
+   "t": 129.289,
+   "tipo": "platillo",
+   "fuerza": 0.392
+  },
+  {
+   "t": 130.218,
+   "tipo": "caja",
+   "fuerza": 0.568
+  },
+  {
+   "t": 130.218,
+   "tipo": "platillo",
+   "fuerza": 0.367
+  },
+  {
+   "t": 130.264,
+   "tipo": "bombo",
+   "fuerza": 0.482
+  },
+  {
+   "t": 131.135,
+   "tipo": "platillo",
+   "fuerza": 0.352
+  },
+  {
+   "t": 131.146,
+   "tipo": "caja",
+   "fuerza": 0.981
+  },
+  {
+   "t": 132.063,
+   "tipo": "platillo",
+   "fuerza": 0.297
+  },
+  {
+   "t": 132.075,
+   "tipo": "caja",
+   "fuerza": 0.371
+  },
+  {
+   "t": 132.11,
+   "tipo": "bombo",
+   "fuerza": 0.455
+  },
+  {
+   "t": 132.528,
+   "tipo": "platillo",
+   "fuerza": 0.225
+  },
+  {
+   "t": 132.574,
+   "tipo": "bombo",
+   "fuerza": 0.511
+  },
+  {
+   "t": 132.981,
+   "tipo": "platillo",
+   "fuerza": 0.353
+  },
+  {
+   "t": 132.992,
+   "tipo": "caja",
+   "fuerza": 0.457
+  },
+  {
+   "t": 133.224,
+   "tipo": "platillo",
+   "fuerza": 0.215
+  },
+  {
+   "t": 133.445,
+   "tipo": "platillo",
+   "fuerza": 0.409
+  },
+  {
+   "t": 133.457,
+   "tipo": "caja",
+   "fuerza": 0.595
+  },
+  {
+   "t": 133.677,
+   "tipo": "platillo",
+   "fuerza": 0.487
+  },
+  {
+   "t": 133.7,
+   "tipo": "bombo",
+   "fuerza": 0.391
+  },
+  {
+   "t": 133.909,
+   "tipo": "caja",
+   "fuerza": 0.503
+  },
+  {
+   "t": 133.909,
+   "tipo": "platillo",
+   "fuerza": 0.37
+  },
+  {
+   "t": 133.956,
+   "tipo": "bombo",
+   "fuerza": 0.552
+  },
+  {
+   "t": 134.827,
+   "tipo": "platillo",
+   "fuerza": 0.464
+  },
+  {
+   "t": 134.838,
+   "tipo": "caja",
+   "fuerza": 0.74
+  },
+  {
+   "t": 135.755,
+   "tipo": "caja",
+   "fuerza": 0.542
+  },
+  {
+   "t": 135.755,
+   "tipo": "platillo",
+   "fuerza": 0.247
+  },
+  {
+   "t": 135.814,
+   "tipo": "bombo",
+   "fuerza": 0.462
+  },
+  {
+   "t": 136.22,
+   "tipo": "caja",
+   "fuerza": 0.434
+  },
+  {
+   "t": 136.22,
+   "tipo": "platillo",
+   "fuerza": 0.441
+  },
+  {
+   "t": 136.266,
+   "tipo": "bombo",
+   "fuerza": 0.51
+  },
+  {
+   "t": 136.673,
+   "tipo": "platillo",
+   "fuerza": 0.439
+  },
+  {
+   "t": 136.684,
+   "tipo": "caja",
+   "fuerza": 0.461
+  },
+  {
+   "t": 137.601,
+   "tipo": "caja",
+   "fuerza": 0.452
+  },
+  {
+   "t": 137.601,
+   "tipo": "platillo",
+   "fuerza": 0.354
+  },
+  {
+   "t": 137.648,
+   "tipo": "bombo",
+   "fuerza": 0.571
+  },
+  {
+   "t": 138.054,
+   "tipo": "platillo",
+   "fuerza": 0.254
+  },
+  {
+   "t": 138.519,
+   "tipo": "platillo",
+   "fuerza": 0.51
+  },
+  {
+   "t": 138.53,
+   "tipo": "caja",
+   "fuerza": 0.621
+  },
+  {
+   "t": 138.983,
+   "tipo": "platillo",
+   "fuerza": 0.21
+  },
+  {
+   "t": 139.447,
+   "tipo": "platillo",
+   "fuerza": 0.381
+  },
+  {
+   "t": 139.459,
+   "tipo": "caja",
+   "fuerza": 0.452
+  },
+  {
+   "t": 139.505,
+   "tipo": "bombo",
+   "fuerza": 0.439
+  },
+  {
+   "t": 139.912,
+   "tipo": "caja",
+   "fuerza": 0.475
+  },
+  {
+   "t": 139.912,
+   "tipo": "platillo",
+   "fuerza": 0.329
+  },
+  {
+   "t": 139.958,
+   "tipo": "bombo",
+   "fuerza": 0.518
+  },
+  {
+   "t": 140.365,
+   "tipo": "platillo",
+   "fuerza": 0.471
+  },
+  {
+   "t": 140.376,
+   "tipo": "caja",
+   "fuerza": 0.496
+  },
+  {
+   "t": 140.841,
+   "tipo": "platillo",
+   "fuerza": 0.216
+  },
+  {
+   "t": 141.061,
+   "tipo": "platillo",
+   "fuerza": 0.314
+  },
+  {
+   "t": 141.293,
+   "tipo": "platillo",
+   "fuerza": 0.415
+  },
+  {
+   "t": 141.305,
+   "tipo": "caja",
+   "fuerza": 0.405
+  },
+  {
+   "t": 141.34,
+   "tipo": "bombo",
+   "fuerza": 0.465
+  },
+  {
+   "t": 142.211,
+   "tipo": "platillo",
+   "fuerza": 0.398
+  },
+  {
+   "t": 142.222,
+   "tipo": "caja",
+   "fuerza": 0.59
+  },
+  {
+   "t": 142.687,
+   "tipo": "platillo",
+   "fuerza": 0.205
+  },
+  {
+   "t": 143.139,
+   "tipo": "caja",
+   "fuerza": 0.377
+  },
+  {
+   "t": 143.139,
+   "tipo": "platillo",
+   "fuerza": 0.341
+  },
+  {
+   "t": 143.197,
+   "tipo": "bombo",
+   "fuerza": 0.462
+  },
+  {
+   "t": 143.604,
+   "tipo": "caja",
+   "fuerza": 0.4
+  },
+  {
+   "t": 143.604,
+   "tipo": "platillo",
+   "fuerza": 0.379
+  },
+  {
+   "t": 143.65,
+   "tipo": "bombo",
+   "fuerza": 0.455
+  },
+  {
+   "t": 144.057,
+   "tipo": "platillo",
+   "fuerza": 0.516
+  },
+  {
+   "t": 144.068,
+   "tipo": "caja",
+   "fuerza": 0.734
+  },
+  {
+   "t": 144.533,
+   "tipo": "platillo",
+   "fuerza": 0.228
+  },
+  {
+   "t": 144.985,
+   "tipo": "caja",
+   "fuerza": 0.398
+  },
+  {
+   "t": 144.985,
+   "tipo": "platillo",
+   "fuerza": 0.365
+  },
+  {
+   "t": 145.032,
+   "tipo": "bombo",
+   "fuerza": 0.464
+  },
+  {
+   "t": 145.461,
+   "tipo": "platillo",
+   "fuerza": 0.302
+  },
+  {
+   "t": 145.903,
+   "tipo": "platillo",
+   "fuerza": 0.362
+  },
+  {
+   "t": 145.914,
+   "tipo": "caja",
+   "fuerza": 0.632
+  },
+  {
+   "t": 146.843,
+   "tipo": "caja",
+   "fuerza": 0.427
+  },
+  {
+   "t": 146.843,
+   "tipo": "platillo",
+   "fuerza": 0.354
+  },
+  {
+   "t": 146.889,
+   "tipo": "bombo",
+   "fuerza": 0.459
+  },
+  {
+   "t": 147.296,
+   "tipo": "platillo",
+   "fuerza": 0.283
+  },
+  {
+   "t": 147.307,
+   "tipo": "caja",
+   "fuerza": 0.506
+  },
+  {
+   "t": 147.342,
+   "tipo": "bombo",
+   "fuerza": 0.503
+  },
+  {
+   "t": 147.749,
+   "tipo": "platillo",
+   "fuerza": 0.35
+  },
+  {
+   "t": 147.76,
+   "tipo": "caja",
+   "fuerza": 0.579
+  },
+  {
+   "t": 147.992,
+   "tipo": "caja",
+   "fuerza": 0.506
+  },
+  {
+   "t": 147.992,
+   "tipo": "platillo",
+   "fuerza": 0.731
+  },
+  {
+   "t": 148.213,
+   "tipo": "caja",
+   "fuerza": 0.412
+  },
+  {
+   "t": 148.213,
+   "tipo": "platillo",
+   "fuerza": 0.293
+  },
+  {
+   "t": 148.445,
+   "tipo": "caja",
+   "fuerza": 0.477
+  },
+  {
+   "t": 148.445,
+   "tipo": "platillo",
+   "fuerza": 0.387
+  },
+  {
+   "t": 148.677,
+   "tipo": "caja",
+   "fuerza": 0.408
+  },
+  {
+   "t": 148.689,
+   "tipo": "platillo",
+   "fuerza": 0.332
+  },
+  {
+   "t": 148.735,
+   "tipo": "bombo",
+   "fuerza": 0.536
+  },
+  {
+   "t": 149.595,
+   "tipo": "platillo",
+   "fuerza": 0.31
+  },
+  {
+   "t": 149.606,
+   "tipo": "caja",
+   "fuerza": 0.585
+  },
+  {
+   "t": 150.291,
+   "tipo": "platillo",
+   "fuerza": 0.328
+  },
+  {
+   "t": 150.303,
+   "tipo": "caja",
+   "fuerza": 0.39
+  },
+  {
+   "t": 150.523,
+   "tipo": "caja",
+   "fuerza": 0.5
+  },
+  {
+   "t": 150.535,
+   "tipo": "platillo",
+   "fuerza": 0.307
+  },
+  {
+   "t": 150.57,
+   "tipo": "bombo",
+   "fuerza": 0.419
+  },
+  {
+   "t": 150.988,
+   "tipo": "caja",
+   "fuerza": 0.477
+  },
+  {
+   "t": 150.988,
+   "tipo": "platillo",
+   "fuerza": 0.34
+  },
+  {
+   "t": 151.034,
+   "tipo": "bombo",
+   "fuerza": 0.432
+  },
+  {
+   "t": 151.441,
+   "tipo": "platillo",
+   "fuerza": 0.4
+  },
+  {
+   "t": 151.452,
+   "tipo": "caja",
+   "fuerza": 0.53
+  },
+  {
+   "t": 151.905,
+   "tipo": "caja",
+   "fuerza": 0.394
+  },
+  {
+   "t": 151.905,
+   "tipo": "platillo",
+   "fuerza": 0.494
+  },
+  {
+   "t": 152.369,
+   "tipo": "caja",
+   "fuerza": 0.577
+  },
+  {
+   "t": 152.369,
+   "tipo": "platillo",
+   "fuerza": 0.387
+  },
+  {
+   "t": 152.416,
+   "tipo": "bombo",
+   "fuerza": 0.484
+  },
+  {
+   "t": 152.822,
+   "tipo": "platillo",
+   "fuerza": 0.206
+  },
+  {
+   "t": 153.287,
+   "tipo": "platillo",
+   "fuerza": 0.415
+  },
+  {
+   "t": 153.298,
+   "tipo": "caja",
+   "fuerza": 0.529
+  },
+  {
+   "t": 153.763,
+   "tipo": "caja",
+   "fuerza": 0.529
+  },
+  {
+   "t": 153.763,
+   "tipo": "platillo",
+   "fuerza": 0.259
+  },
+  {
+   "t": 153.983,
+   "tipo": "caja",
+   "fuerza": 0.473
+  },
+  {
+   "t": 153.983,
+   "tipo": "platillo",
+   "fuerza": 0.447
+  },
+  {
+   "t": 154.018,
+   "tipo": "bombo",
+   "fuerza": 0.591
+  },
+  {
+   "t": 154.227,
+   "tipo": "caja",
+   "fuerza": 0.361
+  },
+  {
+   "t": 154.227,
+   "tipo": "platillo",
+   "fuerza": 0.219
+  },
+  {
+   "t": 154.68,
+   "tipo": "caja",
+   "fuerza": 0.566
+  },
+  {
+   "t": 154.68,
+   "tipo": "platillo",
+   "fuerza": 0.642
+  },
+  {
+   "t": 154.703,
+   "tipo": "bombo",
+   "fuerza": 0.618
+  },
+  {
+   "t": 155.144,
+   "tipo": "caja",
+   "fuerza": 0.667
+  },
+  {
+   "t": 155.144,
+   "tipo": "platillo",
+   "fuerza": 0.941
+  },
+  {
+   "t": 155.609,
+   "tipo": "platillo",
+   "fuerza": 0.274
+  },
+  {
+   "t": 155.829,
+   "tipo": "platillo",
+   "fuerza": 0.207
+  },
+  {
+   "t": 156.061,
+   "tipo": "caja",
+   "fuerza": 0.569
+  },
+  {
+   "t": 156.061,
+   "tipo": "platillo",
+   "fuerza": 0.392
+  },
+  {
+   "t": 156.108,
+   "tipo": "bombo",
+   "fuerza": 0.565
+  },
+  {
+   "t": 156.99,
+   "tipo": "caja",
+   "fuerza": 0.593
+  },
+  {
+   "t": 157.675,
+   "tipo": "platillo",
+   "fuerza": 0.329
+  },
+  {
+   "t": 157.687,
+   "tipo": "caja",
+   "fuerza": 0.38
+  },
+  {
+   "t": 157.907,
+   "tipo": "platillo",
+   "fuerza": 0.234
+  },
+  {
+   "t": 157.919,
+   "tipo": "caja",
+   "fuerza": 0.475
+  },
+  {
+   "t": 157.954,
+   "tipo": "bombo",
+   "fuerza": 0.432
+  },
+  {
+   "t": 158.372,
+   "tipo": "caja",
+   "fuerza": 0.471
+  },
+  {
+   "t": 158.418,
+   "tipo": "bombo",
+   "fuerza": 0.544
+  },
+  {
+   "t": 158.824,
+   "tipo": "platillo",
+   "fuerza": 0.41
+  },
+  {
+   "t": 158.836,
+   "tipo": "caja",
+   "fuerza": 0.583
+  },
+  {
+   "t": 159.753,
+   "tipo": "caja",
+   "fuerza": 0.416
+  },
+  {
+   "t": 159.753,
+   "tipo": "platillo",
+   "fuerza": 0.306
+  },
+  {
+   "t": 159.8,
+   "tipo": "bombo",
+   "fuerza": 0.477
+  },
+  {
+   "t": 160.229,
+   "tipo": "platillo",
+   "fuerza": 0.221
+  },
+  {
+   "t": 160.67,
+   "tipo": "platillo",
+   "fuerza": 0.311
+  },
+  {
+   "t": 160.682,
+   "tipo": "caja",
+   "fuerza": 0.646
+  },
+  {
+   "t": 161.367,
+   "tipo": "platillo",
+   "fuerza": 0.34
+  },
+  {
+   "t": 161.379,
+   "tipo": "caja",
+   "fuerza": 0.374
+  },
+  {
+   "t": 161.611,
+   "tipo": "caja",
+   "fuerza": 0.606
+  },
+  {
+   "t": 161.611,
+   "tipo": "platillo",
+   "fuerza": 0.371
+  },
+  {
+   "t": 161.646,
+   "tipo": "bombo",
+   "fuerza": 0.483
+  },
+  {
+   "t": 162.064,
+   "tipo": "caja",
+   "fuerza": 0.497
+  },
+  {
+   "t": 162.064,
+   "tipo": "platillo",
+   "fuerza": 0.425
+  },
+  {
+   "t": 162.122,
+   "tipo": "bombo",
+   "fuerza": 0.486
+  },
+  {
+   "t": 162.528,
+   "tipo": "caja",
+   "fuerza": 0.641
+  },
+  {
+   "t": 162.528,
+   "tipo": "platillo",
+   "fuerza": 0.876
+  },
+  {
+   "t": 162.772,
+   "tipo": "platillo",
+   "fuerza": 0.249
+  },
+  {
+   "t": 162.981,
+   "tipo": "platillo",
+   "fuerza": 0.347
+  },
+  {
+   "t": 162.992,
+   "tipo": "caja",
+   "fuerza": 0.707
+  },
+  {
+   "t": 163.016,
+   "tipo": "bombo",
+   "fuerza": 0.372
+  },
+  {
+   "t": 163.213,
+   "tipo": "caja",
+   "fuerza": 0.365
+  },
+  {
+   "t": 163.213,
+   "tipo": "platillo",
+   "fuerza": 0.43
+  },
+  {
+   "t": 163.248,
+   "tipo": "bombo",
+   "fuerza": 0.448
+  },
+  {
+   "t": 175.914,
+   "tipo": "caja",
+   "fuerza": 0.347
+  },
+  {
+   "t": 175.914,
+   "tipo": "platillo",
+   "fuerza": 0.64
+  },
+  {
+   "t": 176.135,
+   "tipo": "platillo",
+   "fuerza": 0.279
+  },
+  {
+   "t": 176.147,
+   "tipo": "caja",
+   "fuerza": 0.461
+  },
+  {
+   "t": 176.379,
+   "tipo": "caja",
+   "fuerza": 0.506
+  },
+  {
+   "t": 176.379,
+   "tipo": "platillo",
+   "fuerza": 0.366
+  },
+  {
+   "t": 176.39,
+   "tipo": "bombo",
+   "fuerza": 0.523
+  },
+  {
+   "t": 176.832,
+   "tipo": "caja",
+   "fuerza": 0.352
+  },
+  {
+   "t": 176.832,
+   "tipo": "platillo",
+   "fuerza": 0.541
+  },
+  {
+   "t": 177.064,
+   "tipo": "caja",
+   "fuerza": 0.477
+  },
+  {
+   "t": 177.075,
+   "tipo": "platillo",
+   "fuerza": 0.275
+  },
+  {
+   "t": 177.296,
+   "tipo": "platillo",
+   "fuerza": 0.319
+  },
+  {
+   "t": 177.528,
+   "tipo": "caja",
+   "fuerza": 0.503
+  },
+  {
+   "t": 177.528,
+   "tipo": "platillo",
+   "fuerza": 0.752
+  },
+  {
+   "t": 177.551,
+   "tipo": "bombo",
+   "fuerza": 0.408
+  },
+  {
+   "t": 177.749,
+   "tipo": "platillo",
+   "fuerza": 0.274
+  },
+  {
+   "t": 177.76,
+   "tipo": "caja",
+   "fuerza": 0.426
+  },
+  {
+   "t": 177.981,
+   "tipo": "platillo",
+   "fuerza": 0.281
+  },
+  {
+   "t": 177.993,
+   "tipo": "caja",
+   "fuerza": 0.429
+  },
+  {
+   "t": 178.225,
+   "tipo": "caja",
+   "fuerza": 0.787
+  },
+  {
+   "t": 178.26,
+   "tipo": "bombo",
+   "fuerza": 0.428
+  },
+  {
+   "t": 179.142,
+   "tipo": "caja",
+   "fuerza": 0.408
+  },
+  {
+   "t": 179.142,
+   "tipo": "platillo",
+   "fuerza": 0.648
+  },
+  {
+   "t": 180.071,
+   "tipo": "caja",
+   "fuerza": 0.324
+  },
+  {
+   "t": 180.071,
+   "tipo": "platillo",
+   "fuerza": 0.273
+  },
+  {
+   "t": 180.117,
+   "tipo": "bombo",
+   "fuerza": 0.403
+  },
+  {
+   "t": 180.524,
+   "tipo": "platillo",
+   "fuerza": 0.281
+  },
+  {
+   "t": 180.535,
+   "tipo": "caja",
+   "fuerza": 0.404
+  },
+  {
+   "t": 180.582,
+   "tipo": "bombo",
+   "fuerza": 0.447
+  },
+  {
+   "t": 180.988,
+   "tipo": "caja",
+   "fuerza": 0.519
+  },
+  {
+   "t": 180.988,
+   "tipo": "platillo",
+   "fuerza": 0.649
+  },
+  {
+   "t": 181.905,
+   "tipo": "caja",
+   "fuerza": 0.481
+  },
+  {
+   "t": 181.905,
+   "tipo": "platillo",
+   "fuerza": 0.285
+  },
+  {
+   "t": 181.952,
+   "tipo": "bombo",
+   "fuerza": 0.436
+  },
+  {
+   "t": 182.37,
+   "tipo": "platillo",
+   "fuerza": 0.283
+  },
+  {
+   "t": 182.822,
+   "tipo": "platillo",
+   "fuerza": 0.353
+  },
+  {
+   "t": 182.834,
+   "tipo": "caja",
+   "fuerza": 0.59
+  },
+  {
+   "t": 183.298,
+   "tipo": "platillo",
+   "fuerza": 0.208
+  },
+  {
+   "t": 183.751,
+   "tipo": "platillo",
+   "fuerza": 0.281
+  },
+  {
+   "t": 183.763,
+   "tipo": "caja",
+   "fuerza": 0.372
+  },
+  {
+   "t": 183.798,
+   "tipo": "bombo",
+   "fuerza": 0.443
+  },
+  {
+   "t": 184.216,
+   "tipo": "platillo",
+   "fuerza": 0.272
+  },
+  {
+   "t": 184.262,
+   "tipo": "bombo",
+   "fuerza": 0.431
+  },
+  {
+   "t": 184.668,
+   "tipo": "platillo",
+   "fuerza": 0.324
+  },
+  {
+   "t": 184.68,
+   "tipo": "caja",
+   "fuerza": 0.633
+  },
+  {
+   "t": 185.144,
+   "tipo": "platillo",
+   "fuerza": 0.2
+  },
+  {
+   "t": 185.377,
+   "tipo": "platillo",
+   "fuerza": 0.241
+  },
+  {
+   "t": 185.597,
+   "tipo": "platillo",
+   "fuerza": 0.331
+  },
+  {
+   "t": 185.609,
+   "tipo": "caja",
+   "fuerza": 0.453
+  },
+  {
+   "t": 185.644,
+   "tipo": "bombo",
+   "fuerza": 0.478
+  },
+  {
+   "t": 186.526,
+   "tipo": "caja",
+   "fuerza": 0.541
+  },
+  {
+   "t": 187.222,
+   "tipo": "platillo",
+   "fuerza": 0.379
+  },
+  {
+   "t": 187.455,
+   "tipo": "caja",
+   "fuerza": 0.579
+  },
+  {
+   "t": 187.455,
+   "tipo": "platillo",
+   "fuerza": 0.424
+  },
+  {
+   "t": 187.501,
+   "tipo": "bombo",
+   "fuerza": 0.479
+  },
+  {
+   "t": 187.907,
+   "tipo": "platillo",
+   "fuerza": 0.323
+  },
+  {
+   "t": 187.919,
+   "tipo": "caja",
+   "fuerza": 0.455
+  },
+  {
+   "t": 187.954,
+   "tipo": "bombo",
+   "fuerza": 0.418
+  },
+  {
+   "t": 188.372,
+   "tipo": "caja",
+   "fuerza": 0.532
+  },
+  {
+   "t": 188.372,
+   "tipo": "platillo",
+   "fuerza": 0.769
+  },
+  {
+   "t": 188.848,
+   "tipo": "platillo",
+   "fuerza": 0.243
+  },
+  {
+   "t": 189.301,
+   "tipo": "caja",
+   "fuerza": 0.387
+  },
+  {
+   "t": 189.301,
+   "tipo": "platillo",
+   "fuerza": 0.439
+  },
+  {
+   "t": 189.336,
+   "tipo": "bombo",
+   "fuerza": 0.538
+  },
+  {
+   "t": 190.218,
+   "tipo": "caja",
+   "fuerza": 0.68
+  },
+  {
+   "t": 190.218,
+   "tipo": "platillo",
+   "fuerza": 0.723
+  },
+  {
+   "t": 191.147,
+   "tipo": "caja",
+   "fuerza": 0.447
+  },
+  {
+   "t": 191.147,
+   "tipo": "platillo",
+   "fuerza": 0.368
+  },
+  {
+   "t": 191.193,
+   "tipo": "bombo",
+   "fuerza": 0.475
+  },
+  {
+   "t": 191.599,
+   "tipo": "platillo",
+   "fuerza": 0.244
+  },
+  {
+   "t": 191.611,
+   "tipo": "caja",
+   "fuerza": 0.427
+  },
+  {
+   "t": 191.658,
+   "tipo": "bombo",
+   "fuerza": 0.455
+  },
+  {
+   "t": 192.064,
+   "tipo": "caja",
+   "fuerza": 0.649
+  },
+  {
+   "t": 192.064,
+   "tipo": "platillo",
+   "fuerza": 0.712
+  },
+  {
+   "t": 192.308,
+   "tipo": "caja",
+   "fuerza": 0.336
+  },
+  {
+   "t": 192.308,
+   "tipo": "platillo",
+   "fuerza": 0.251
+  },
+  {
+   "t": 192.528,
+   "tipo": "platillo",
+   "fuerza": 0.701
+  },
+  {
+   "t": 192.54,
+   "tipo": "caja",
+   "fuerza": 0.358
+  },
+  {
+   "t": 192.551,
+   "tipo": "bombo",
+   "fuerza": 0.377
+  },
+  {
+   "t": 192.749,
+   "tipo": "platillo",
+   "fuerza": 0.275
+  },
+  {
+   "t": 192.76,
+   "tipo": "caja",
+   "fuerza": 0.316
+  },
+  {
+   "t": 192.784,
+   "tipo": "bombo",
+   "fuerza": 0.37
+  },
+  {
+   "t": 192.981,
+   "tipo": "platillo",
+   "fuerza": 0.343
+  },
+  {
+   "t": 192.993,
+   "tipo": "caja",
+   "fuerza": 0.408
+  },
+  {
+   "t": 193.004,
+   "tipo": "bombo",
+   "fuerza": 0.493
+  },
+  {
+   "t": 210.907,
+   "tipo": "platillo",
+   "fuerza": 0.252
+  }
+ ],
+ "piano_notas": [
+  {
+   "inicio": 0.089,
+   "fin": 3.589,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 70,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 0.317,
+   "fin": 3.817,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 66,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 0.55,
+   "fin": 4.05,
+   "midi": 72,
+   "nombre": "C5",
+   "latino": "Do5",
+   "velocidad": 86,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 1.014,
+   "fin": 2.16,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 1.014,
+   "fin": 2.16,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 54,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 1.016,
+   "fin": 4.01,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 1.474,
+   "fin": 1.7,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 69,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 1.705,
+   "fin": 4.92,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 82,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 2.167,
+   "fin": 2.39,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 59,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 2.173,
+   "fin": 2.39,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 34,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 2.397,
+   "fin": 2.77,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 64,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 2.402,
+   "fin": 2.81,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 31,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 2.785,
+   "fin": 4.903,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 34,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 3.323,
+   "fin": 3.54,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 38,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 3.552,
+   "fin": 4.904,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 59,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 3.555,
+   "fin": 4.904,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 73,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 4.017,
+   "fin": 4.24,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 4.247,
+   "fin": 4.7,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 44,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 4.247,
+   "fin": 7.46,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 68,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 4.712,
+   "fin": 7.5,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 5.176,
+   "fin": 8.676,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 32,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 5.633,
+   "fin": 7.49,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 7.245,
+   "fin": 7.52,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 64,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 7.475,
+   "fin": 8.62,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 86,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 7.704,
+   "fin": 8.6,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 77,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 7.934,
+   "fin": 8.36,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 79,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 8.373,
+   "fin": 9.08,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 45,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 8.399,
+   "fin": 11.899,
+   "midi": 48,
+   "nombre": "C3",
+   "latino": "Do3",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 9.09,
+   "fin": 10.1,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 59,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 9.091,
+   "fin": 12.44,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 66,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 9.555,
+   "fin": 9.77,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 37,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 9.784,
+   "fin": 12.5,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 58,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 10.112,
+   "fin": 12.55,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 29,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 10.708,
+   "fin": 12.06,
+   "midi": 41,
+   "nombre": "F2",
+   "latino": "Fa2",
+   "velocidad": 41,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 10.709,
+   "fin": 10.93,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 10.942,
+   "fin": 12.16,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 55,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 11.216,
+   "fin": 12.08,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 11.636,
+   "fin": 12.08,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 44,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.09,
+   "fin": 15.33,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 54,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.093,
+   "fin": 13.93,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.094,
+   "fin": 15.307,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 61,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.095,
+   "fin": 15.3,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 63,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.097,
+   "fin": 12.71,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 52,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.563,
+   "fin": 15.17,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 28,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.717,
+   "fin": 13.0,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 27,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 12.756,
+   "fin": 15.26,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 30,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 13.015,
+   "fin": 15.29,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 49,
+   "confianza": 0.79
+  },
+  {
+   "inicio": 18.554,
+   "fin": 19.01,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 58,
+   "confianza": 0.68
+  },
+  {
+   "inicio": 18.557,
+   "fin": 19.01,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 45,
+   "confianza": 0.68
+  },
+  {
+   "inicio": 18.558,
+   "fin": 19.11,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 48,
+   "confianza": 0.68
+  },
+  {
+   "inicio": 18.563,
+   "fin": 19.47,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 45,
+   "confianza": 0.68
+  },
+  {
+   "inicio": 19.478,
+   "fin": 20.39,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 51,
+   "confianza": 0.88
+  },
+  {
+   "inicio": 19.484,
+   "fin": 19.93,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 44,
+   "confianza": 0.88
+  },
+  {
+   "inicio": 20.399,
+   "fin": 20.64,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 76,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 20.401,
+   "fin": 22.18,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 47,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 20.405,
+   "fin": 22.151,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 40,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 20.652,
+   "fin": 21.01,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 39,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 20.865,
+   "fin": 22.148,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 41,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 21.318,
+   "fin": 21.993,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 35,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 23.172,
+   "fin": 25.01,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 47,
+   "confianza": 0.61
+  },
+  {
+   "inicio": 23.172,
+   "fin": 23.48,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 53,
+   "confianza": 0.61
+  },
+  {
+   "inicio": 23.174,
+   "fin": 23.39,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 52,
+   "confianza": 0.61
+  },
+  {
+   "inicio": 23.175,
+   "fin": 25.01,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 48,
+   "confianza": 0.61
+  },
+  {
+   "inicio": 23.176,
+   "fin": 25.73,
+   "midi": 48,
+   "nombre": "C3",
+   "latino": "Do3",
+   "velocidad": 44,
+   "confianza": 0.61
+  },
+  {
+   "inicio": 23.181,
+   "fin": 23.57,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 47,
+   "confianza": 0.61
+  },
+  {
+   "inicio": 24.09,
+   "fin": 27.5,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 65,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 24.092,
+   "fin": 24.53,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 66,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 24.275,
+   "fin": 27.5,
+   "midi": 86,
+   "nombre": "D6",
+   "latino": "Re6",
+   "velocidad": 56,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 24.345,
+   "fin": 25.01,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 39,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 24.544,
+   "fin": 27.5,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 24.591,
+   "fin": 27.5,
+   "midi": 95,
+   "nombre": "B6",
+   "latino": "Si6",
+   "velocidad": 61,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 24.657,
+   "fin": 27.5,
+   "midi": 96,
+   "nombre": "C7",
+   "latino": "Do7",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.015,
+   "fin": 25.93,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.016,
+   "fin": 25.93,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.022,
+   "fin": 25.47,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.023,
+   "fin": 25.94,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 34,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.942,
+   "fin": 27.77,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 41,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.943,
+   "fin": 26.85,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 49,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 25.954,
+   "fin": 29.454,
+   "midi": 84,
+   "nombre": "C6",
+   "latino": "Do6",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 26.861,
+   "fin": 27.77,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 53,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 26.863,
+   "fin": 27.32,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 58,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 27.327,
+   "fin": 28.24,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 46,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 27.332,
+   "fin": 27.78,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 27.784,
+   "fin": 28.7,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 55,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 27.785,
+   "fin": 29.59,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 64,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 27.787,
+   "fin": 28.7,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 47,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 28.25,
+   "fin": 28.72,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 41,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 28.706,
+   "fin": 30.51,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 28.706,
+   "fin": 30.52,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 40,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 28.706,
+   "fin": 29.63,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 29.635,
+   "fin": 30.486,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 44,
+   "confianza": 0.84
+  },
+  {
+   "inicio": 30.555,
+   "fin": 34.055,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 57,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 30.555,
+   "fin": 31.02,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 55,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 30.555,
+   "fin": 30.86,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 70,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 30.556,
+   "fin": 31.92,
+   "midi": 41,
+   "nombre": "F2",
+   "latino": "Fa2",
+   "velocidad": 57,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 30.868,
+   "fin": 32.39,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 53,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 31.016,
+   "fin": 32.85,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 61,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 31.155,
+   "fin": 31.26,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 45,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 31.266,
+   "fin": 34.766,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 55,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 31.474,
+   "fin": 33.31,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 95,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 31.644,
+   "fin": 34.26,
+   "midi": 87,
+   "nombre": "D#6",
+   "latino": "Re#6",
+   "velocidad": 67,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 32.404,
+   "fin": 32.61,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 53,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 32.864,
+   "fin": 34.226,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 53,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 33.324,
+   "fin": 34.235,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 62,
+   "confianza": 0.6
+  },
+  {
+   "inicio": 33.54,
+   "fin": 34.25,
+   "midi": 84,
+   "nombre": "C6",
+   "latino": "Do6",
+   "velocidad": 47,
+   "confianza": 0.6
+  },
+  {
+   "inicio": 33.785,
+   "fin": 34.229,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 57,
+   "confianza": 0.6
+  },
+  {
+   "inicio": 33.943,
+   "fin": 34.233,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 45,
+   "confianza": 0.6
+  },
+  {
+   "inicio": 34.249,
+   "fin": 34.53,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 63,
+   "confianza": 0.92
+  },
+  {
+   "inicio": 34.255,
+   "fin": 35.16,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 56,
+   "confianza": 0.92
+  },
+  {
+   "inicio": 34.712,
+   "fin": 35.17,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 54,
+   "confianza": 0.92
+  },
+  {
+   "inicio": 35.17,
+   "fin": 36.31,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 67,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.171,
+   "fin": 36.15,
+   "midi": 41,
+   "nombre": "F2",
+   "latino": "Fa2",
+   "velocidad": 42,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.173,
+   "fin": 36.112,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 63,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.174,
+   "fin": 35.63,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 50,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.174,
+   "fin": 36.08,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 60,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.174,
+   "fin": 36.91,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.181,
+   "fin": 35.62,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 42,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.634,
+   "fin": 36.11,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 47,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 35.635,
+   "fin": 36.08,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 36.091,
+   "fin": 36.94,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 44,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 36.093,
+   "fin": 36.923,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 58,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 36.094,
+   "fin": 36.96,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 36.926,
+   "fin": 37.02,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 40,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 37.029,
+   "fin": 37.54,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 53,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 37.706,
+   "fin": 38.0,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 47,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 37.928,
+   "fin": 38.43,
+   "midi": 69,
+   "nombre": "A4",
+   "latino": "La4",
+   "velocidad": 56,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 37.944,
+   "fin": 38.4,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 46,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 37.948,
+   "fin": 38.4,
+   "midi": 29,
+   "nombre": "F1",
+   "latino": "Fa1",
+   "velocidad": 45,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 37.949,
+   "fin": 38.49,
+   "midi": 41,
+   "nombre": "F2",
+   "latino": "Fa2",
+   "velocidad": 46,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 38.861,
+   "fin": 39.06,
+   "midi": 29,
+   "nombre": "F1",
+   "latino": "Fa1",
+   "velocidad": 46,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 38.863,
+   "fin": 39.77,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 47,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 38.864,
+   "fin": 39.29,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 45,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 39.784,
+   "fin": 40.2,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 44,
+   "confianza": 0.57
+  },
+  {
+   "inicio": 39.784,
+   "fin": 40.51,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 50,
+   "confianza": 0.57
+  },
+  {
+   "inicio": 40.706,
+   "fin": 41.5,
+   "midi": 29,
+   "nombre": "F1",
+   "latino": "Fa1",
+   "velocidad": 44,
+   "confianza": 0.7
+  },
+  {
+   "inicio": 40.706,
+   "fin": 41.405,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 48,
+   "confianza": 0.7
+  },
+  {
+   "inicio": 40.712,
+   "fin": 41.43,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 51,
+   "confianza": 0.7
+  },
+  {
+   "inicio": 41.63,
+   "fin": 42.05,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 51,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 41.632,
+   "fin": 42.54,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 48,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 41.634,
+   "fin": 42.14,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 48,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 41.638,
+   "fin": 41.86,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 45,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 42.064,
+   "fin": 42.54,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 31,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 42.554,
+   "fin": 43.46,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 41,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 42.555,
+   "fin": 43.47,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 37,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 42.556,
+   "fin": 43.47,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 35,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 42.556,
+   "fin": 44.4,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 42.563,
+   "fin": 43.47,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 28,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 43.471,
+   "fin": 43.75,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 43.475,
+   "fin": 44.39,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 43.476,
+   "fin": 44.388,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 43.48,
+   "fin": 44.4,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 29,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 43.484,
+   "fin": 44.42,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 34,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 47.169,
+   "fin": 48.034,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 45,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 47.174,
+   "fin": 47.38,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 50,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 47.174,
+   "fin": 47.39,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 60,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 47.191,
+   "fin": 47.39,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 44,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 47.403,
+   "fin": 47.89,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 45,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 48.103,
+   "fin": 48.54,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 63,
+   "confianza": 0.43
+  },
+  {
+   "inicio": 48.105,
+   "fin": 48.532,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 47,
+   "confianza": 0.43
+  },
+  {
+   "inicio": 48.224,
+   "fin": 48.36,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 45,
+   "confianza": 0.43
+  },
+  {
+   "inicio": 48.549,
+   "fin": 48.61,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 52,
+   "confianza": 0.43
+  },
+  {
+   "inicio": 49.016,
+   "fin": 49.3,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 75,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.017,
+   "fin": 50.81,
+   "midi": 31,
+   "nombre": "G1",
+   "latino": "Sol1",
+   "velocidad": 54,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.017,
+   "fin": 50.795,
+   "midi": 43,
+   "nombre": "G2",
+   "latino": "Sol2",
+   "velocidad": 53,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.018,
+   "fin": 49.14,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 62,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.022,
+   "fin": 49.55,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 53,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.153,
+   "fin": 49.31,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 49,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.31,
+   "fin": 49.47,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 61,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.316,
+   "fin": 49.46,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 53,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.318,
+   "fin": 49.56,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 50,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.32,
+   "fin": 49.6,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 48,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.469,
+   "fin": 49.59,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 52,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.476,
+   "fin": 49.61,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 50,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.574,
+   "fin": 49.94,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 46,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.596,
+   "fin": 49.77,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 46,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.615,
+   "fin": 49.92,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 45,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.618,
+   "fin": 49.93,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 50,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.927,
+   "fin": 50.1,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 53,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.935,
+   "fin": 50.39,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 56,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.936,
+   "fin": 50.42,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 47,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.938,
+   "fin": 51.3,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 63,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.945,
+   "fin": 51.3,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 57,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 49.947,
+   "fin": 50.85,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 50,
+   "confianza": 0.96
+  },
+  {
+   "inicio": 50.107,
+   "fin": 50.86,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 42,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 50.403,
+   "fin": 51.32,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 34,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 50.426,
+   "fin": 50.69,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 32,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 50.698,
+   "fin": 50.85,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 31,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 50.861,
+   "fin": 51.31,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 52,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 50.862,
+   "fin": 51.3,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 64,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 50.868,
+   "fin": 51.3,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 45,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 51.313,
+   "fin": 51.444,
+   "midi": 66,
+   "nombre": "F#4",
+   "latino": "Fa#4",
+   "velocidad": 50,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 51.783,
+   "fin": 52.08,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 63,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 51.786,
+   "fin": 52.07,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 60,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 51.786,
+   "fin": 52.07,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 60,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 51.878,
+   "fin": 52.716,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 61,
+   "confianza": 0.74
+  },
+  {
+   "inicio": 52.081,
+   "fin": 52.23,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 45,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.081,
+   "fin": 52.28,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 50,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.242,
+   "fin": 53.13,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 51,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.255,
+   "fin": 52.5,
+   "midi": 66,
+   "nombre": "F#4",
+   "latino": "Fa#4",
+   "velocidad": 52,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.707,
+   "fin": 52.93,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 68,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.713,
+   "fin": 53.155,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 57,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.713,
+   "fin": 53.16,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 51,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.713,
+   "fin": 52.93,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 56,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.714,
+   "fin": 52.94,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 62,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 52.943,
+   "fin": 53.153,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 49,
+   "confianza": 0.77
+  },
+  {
+   "inicio": 53.17,
+   "fin": 53.54,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 45,
+   "confianza": 0.48
+  },
+  {
+   "inicio": 53.175,
+   "fin": 53.27,
+   "midi": 39,
+   "nombre": "D#2",
+   "latino": "Re#2",
+   "velocidad": 44,
+   "confianza": 0.48
+  },
+  {
+   "inicio": 53.545,
+   "fin": 53.66,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 44,
+   "confianza": 0.48
+  },
+  {
+   "inicio": 53.637,
+   "fin": 54.5,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 53,
+   "confianza": 0.48
+  },
+  {
+   "inicio": 53.638,
+   "fin": 54.15,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 51,
+   "confianza": 0.48
+  },
+  {
+   "inicio": 53.642,
+   "fin": 54.14,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 49,
+   "confianza": 0.48
+  },
+  {
+   "inicio": 56.409,
+   "fin": 56.79,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 66,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 56.414,
+   "fin": 58.69,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 68,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 56.414,
+   "fin": 57.37,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 65,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 56.416,
+   "fin": 57.33,
+   "midi": 47,
+   "nombre": "B2",
+   "latino": "Si2",
+   "velocidad": 63,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 56.499,
+   "fin": 56.8,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 64,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 56.796,
+   "fin": 57.09,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 47,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 56.808,
+   "fin": 57.06,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 58,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 57.071,
+   "fin": 58.24,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 51,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.322,
+   "fin": 57.64,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 68,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.324,
+   "fin": 57.63,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 64,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.325,
+   "fin": 59.7,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 79,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.326,
+   "fin": 59.62,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 56,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.644,
+   "fin": 57.97,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 56,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.653,
+   "fin": 57.78,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 44,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.789,
+   "fin": 57.98,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 57,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.798,
+   "fin": 59.67,
+   "midi": 66,
+   "nombre": "F#4",
+   "latino": "Fa#4",
+   "velocidad": 63,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.833,
+   "fin": 60.09,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 60,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.899,
+   "fin": 60.17,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 61,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 57.984,
+   "fin": 58.23,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 58,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 58.245,
+   "fin": 59.16,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 64,
+   "confianza": 0.6
+  },
+  {
+   "inicio": 58.246,
+   "fin": 58.5,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 68,
+   "confianza": 0.6
+  },
+  {
+   "inicio": 59.157,
+   "fin": 60.08,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 58,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.167,
+   "fin": 59.38,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 74,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.173,
+   "fin": 60.08,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 58,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.175,
+   "fin": 59.62,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 56,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.393,
+   "fin": 59.62,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 50,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.626,
+   "fin": 60.136,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 61,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.633,
+   "fin": 60.15,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 55,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.634,
+   "fin": 60.136,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 58,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 59.637,
+   "fin": 60.15,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 57,
+   "confianza": 0.71
+  },
+  {
+   "inicio": 60.095,
+   "fin": 60.53,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 64,
+   "confianza": 0.83
+  },
+  {
+   "inicio": 60.096,
+   "fin": 60.57,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 62,
+   "confianza": 0.83
+  },
+  {
+   "inicio": 60.097,
+   "fin": 61.0,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 66,
+   "confianza": 0.83
+  },
+  {
+   "inicio": 60.097,
+   "fin": 60.53,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 70,
+   "confianza": 0.83
+  },
+  {
+   "inicio": 60.098,
+   "fin": 60.59,
+   "midi": 39,
+   "nombre": "D#2",
+   "latino": "Re#2",
+   "velocidad": 69,
+   "confianza": 0.83
+  },
+  {
+   "inicio": 60.544,
+   "fin": 61.0,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 44,
+   "confianza": 0.83
+  },
+  {
+   "inicio": 61.013,
+   "fin": 61.93,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 53,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.014,
+   "fin": 61.93,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 49,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.014,
+   "fin": 61.93,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 58,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.015,
+   "fin": 62.06,
+   "midi": 39,
+   "nombre": "D#2",
+   "latino": "Re#2",
+   "velocidad": 52,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.015,
+   "fin": 61.93,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 48,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.113,
+   "fin": 62.79,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 53,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.936,
+   "fin": 62.79,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 48,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.939,
+   "fin": 62.18,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 46,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 61.939,
+   "fin": 62.79,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 50,
+   "confianza": 0.54
+  },
+  {
+   "inicio": 63.783,
+   "fin": 65.18,
+   "midi": 43,
+   "nombre": "G2",
+   "latino": "Sol2",
+   "velocidad": 50,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 63.784,
+   "fin": 64.61,
+   "midi": 50,
+   "nombre": "D3",
+   "latino": "Re3",
+   "velocidad": 54,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 63.785,
+   "fin": 65.19,
+   "midi": 31,
+   "nombre": "G1",
+   "latino": "Sol1",
+   "velocidad": 54,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 63.785,
+   "fin": 64.69,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 55,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 63.788,
+   "fin": 64.59,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 50,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 63.788,
+   "fin": 64.57,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 58,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 65.003,
+   "fin": 65.61,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 27,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.62,
+   "fin": 65.74,
+   "midi": 43,
+   "nombre": "G2",
+   "latino": "Sol2",
+   "velocidad": 36,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.62,
+   "fin": 65.7,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.625,
+   "fin": 66.0,
+   "midi": 31,
+   "nombre": "G1",
+   "latino": "Sol1",
+   "velocidad": 39,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.625,
+   "fin": 66.12,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.625,
+   "fin": 66.27,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.628,
+   "fin": 66.269,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 45,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.629,
+   "fin": 66.3,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.629,
+   "fin": 66.23,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 55,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 65.629,
+   "fin": 66.25,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 63,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 66.557,
+   "fin": 67.21,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 64,
+   "confianza": 0.49
+  },
+  {
+   "inicio": 66.557,
+   "fin": 67.23,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 60,
+   "confianza": 0.49
+  },
+  {
+   "inicio": 66.563,
+   "fin": 66.91,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 57,
+   "confianza": 0.49
+  },
+  {
+   "inicio": 66.57,
+   "fin": 66.66,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 48,
+   "confianza": 0.49
+  },
+  {
+   "inicio": 66.924,
+   "fin": 67.28,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 44,
+   "confianza": 0.49
+  },
+  {
+   "inicio": 71.164,
+   "fin": 71.24,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 64,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.166,
+   "fin": 72.06,
+   "midi": 47,
+   "nombre": "B2",
+   "latino": "Si2",
+   "velocidad": 57,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.169,
+   "fin": 71.23,
+   "midi": 79,
+   "nombre": "G5",
+   "latino": "Sol5",
+   "velocidad": 77,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.17,
+   "fin": 71.54,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 49,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.174,
+   "fin": 71.28,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 64,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.174,
+   "fin": 72.15,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 67,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.287,
+   "fin": 71.54,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 62,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.554,
+   "fin": 72.17,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 53,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 71.561,
+   "fin": 71.78,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 44,
+   "confianza": 0.51
+  },
+  {
+   "inicio": 72.093,
+   "fin": 72.35,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 64,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 72.105,
+   "fin": 72.35,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 50,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 72.357,
+   "fin": 72.58,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 44,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 72.588,
+   "fin": 72.909,
+   "midi": 71,
+   "nombre": "B4",
+   "latino": "Si4",
+   "velocidad": 51,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 72.594,
+   "fin": 72.919,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 50,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 73.015,
+   "fin": 73.33,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 44,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.015,
+   "fin": 73.3,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 56,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.016,
+   "fin": 73.25,
+   "midi": 71,
+   "nombre": "B4",
+   "latino": "Si4",
+   "velocidad": 66,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.017,
+   "fin": 73.89,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 62,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.02,
+   "fin": 73.88,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 46,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.021,
+   "fin": 73.74,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 63,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.256,
+   "fin": 73.89,
+   "midi": 71,
+   "nombre": "B4",
+   "latino": "Si4",
+   "velocidad": 46,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.305,
+   "fin": 73.59,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 46,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 73.504,
+   "fin": 73.8,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 51,
+   "confianza": 0.62
+  },
+  {
+   "inicio": 75.088,
+   "fin": 75.31,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 65,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.09,
+   "fin": 75.31,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 61,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.317,
+   "fin": 75.54,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 49,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.321,
+   "fin": 76.0,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.545,
+   "fin": 76.0,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.547,
+   "fin": 78.37,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 46,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.548,
+   "fin": 76.92,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 72,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 75.781,
+   "fin": 76.24,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 95,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.005,
+   "fin": 76.76,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 50,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.009,
+   "fin": 76.43,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 55,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.014,
+   "fin": 77.608,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 50,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.014,
+   "fin": 76.08,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.091,
+   "fin": 76.44,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 56,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.232,
+   "fin": 76.76,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 49,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.233,
+   "fin": 76.77,
+   "midi": 48,
+   "nombre": "C3",
+   "latino": "Do3",
+   "velocidad": 51,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.238,
+   "fin": 76.738,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 59,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.245,
+   "fin": 77.37,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 63,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.454,
+   "fin": 76.93,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.704,
+   "fin": 77.64,
+   "midi": 79,
+   "nombre": "G5",
+   "latino": "Sol5",
+   "velocidad": 91,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.939,
+   "fin": 77.64,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 60,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 76.939,
+   "fin": 77.16,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 52,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.166,
+   "fin": 77.62,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 45,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.397,
+   "fin": 78.31,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 66,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.627,
+   "fin": 77.85,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 56,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.63,
+   "fin": 78.355,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 65,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.633,
+   "fin": 77.85,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.863,
+   "fin": 78.44,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 63,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.863,
+   "fin": 78.08,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 77.864,
+   "fin": 78.08,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.09,
+   "fin": 78.31,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.093,
+   "fin": 78.55,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 38,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.32,
+   "fin": 79.23,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 70,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.323,
+   "fin": 78.55,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 59,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.551,
+   "fin": 80.298,
+   "midi": 43,
+   "nombre": "G2",
+   "latino": "Sol2",
+   "velocidad": 56,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.56,
+   "fin": 78.78,
+   "midi": 50,
+   "nombre": "D3",
+   "latino": "Re3",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.564,
+   "fin": 78.77,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 40,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.564,
+   "fin": 78.77,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.783,
+   "fin": 81.03,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 62,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.785,
+   "fin": 80.32,
+   "midi": 50,
+   "nombre": "D3",
+   "latino": "Re3",
+   "velocidad": 52,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.785,
+   "fin": 79.02,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 55,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 78.785,
+   "fin": 79.01,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.018,
+   "fin": 79.7,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 49,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.034,
+   "fin": 80.34,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 35,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.244,
+   "fin": 79.93,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 67,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.468,
+   "fin": 79.7,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 61,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.473,
+   "fin": 80.16,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 93,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.475,
+   "fin": 80.302,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 66,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.705,
+   "fin": 79.96,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 72,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.707,
+   "fin": 80.295,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 52,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.937,
+   "fin": 80.294,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 63,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 79.975,
+   "fin": 80.16,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 43,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.168,
+   "fin": 80.297,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 70,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.174,
+   "fin": 80.295,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 51,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.394,
+   "fin": 83.15,
+   "midi": 79,
+   "nombre": "G5",
+   "latino": "Sol5",
+   "velocidad": 87,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.395,
+   "fin": 80.62,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 68,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.396,
+   "fin": 82.19,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 73,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.627,
+   "fin": 81.08,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 46,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.628,
+   "fin": 81.31,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 55,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.873,
+   "fin": 82.09,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 42,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.894,
+   "fin": 81.15,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 46,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 80.999,
+   "fin": 81.62,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 34,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 81.094,
+   "fin": 81.791,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 61,
+   "confianza": 0.44
+  },
+  {
+   "inicio": 81.321,
+   "fin": 81.49,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 63,
+   "confianza": 0.44
+  },
+  {
+   "inicio": 81.795,
+   "fin": 82.8,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 45,
+   "confianza": 0.44
+  },
+  {
+   "inicio": 81.8,
+   "fin": 82.03,
+   "midi": 72,
+   "nombre": "C5",
+   "latino": "Do5",
+   "velocidad": 44,
+   "confianza": 0.44
+  },
+  {
+   "inicio": 82.017,
+   "fin": 82.23,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 62,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.032,
+   "fin": 82.18,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 47,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.035,
+   "fin": 82.47,
+   "midi": 72,
+   "nombre": "C5",
+   "latino": "Do5",
+   "velocidad": 48,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.245,
+   "fin": 84.08,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 76,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.246,
+   "fin": 82.94,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 63,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.251,
+   "fin": 82.47,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 50,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.484,
+   "fin": 82.93,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 62,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.706,
+   "fin": 83.62,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 74,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.806,
+   "fin": 82.93,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 48,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.943,
+   "fin": 84.84,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 49,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 82.945,
+   "fin": 85.92,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 51,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 83.124,
+   "fin": 83.62,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 41,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 83.163,
+   "fin": 86.663,
+   "midi": 79,
+   "nombre": "G5",
+   "latino": "Sol5",
+   "velocidad": 94,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 83.398,
+   "fin": 85.92,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 47,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 83.633,
+   "fin": 86.23,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 37,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 83.633,
+   "fin": 86.73,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 68,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 84.087,
+   "fin": 86.81,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 72,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 84.089,
+   "fin": 85.965,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 55,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 84.545,
+   "fin": 85.28,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 68,
+   "confianza": 0.82
+  },
+  {
+   "inicio": 85.476,
+   "fin": 86.69,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 56,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 85.933,
+   "fin": 86.24,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 57,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 85.934,
+   "fin": 86.81,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 68,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 85.935,
+   "fin": 86.07,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 65,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 85.936,
+   "fin": 86.82,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 64,
+   "confianza": 0.63
+  },
+  {
+   "inicio": 86.083,
+   "fin": 86.23,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 48,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.238,
+   "fin": 86.81,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 37,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.243,
+   "fin": 86.49,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 47,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.247,
+   "fin": 86.87,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 32,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.414,
+   "fin": 86.7,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 32,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.503,
+   "fin": 86.82,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 39,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.851,
+   "fin": 87.11,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 44,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 86.856,
+   "fin": 87.13,
+   "midi": 71,
+   "nombre": "B4",
+   "latino": "Si4",
+   "velocidad": 67,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 87.782,
+   "fin": 88.63,
+   "midi": 59,
+   "nombre": "B3",
+   "latino": "Si3",
+   "velocidad": 30,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 110.857,
+   "fin": 111.09,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 79,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 110.864,
+   "fin": 111.09,
+   "midi": 53,
+   "nombre": "F3",
+   "latino": "Fa3",
+   "velocidad": 54,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 110.867,
+   "fin": 111.16,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 56,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 167.174,
+   "fin": 168.08,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 57,
+   "confianza": 0.56
+  },
+  {
+   "inicio": 167.175,
+   "fin": 168.08,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 64,
+   "confianza": 0.56
+  },
+  {
+   "inicio": 167.176,
+   "fin": 167.5,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 63,
+   "confianza": 0.56
+  },
+  {
+   "inicio": 167.509,
+   "fin": 168.08,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 55,
+   "confianza": 0.56
+  },
+  {
+   "inicio": 168.085,
+   "fin": 169.0,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 62,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 168.086,
+   "fin": 169.0,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 70,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 168.086,
+   "fin": 169.0,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 57,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 169.007,
+   "fin": 169.49,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 58,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.007,
+   "fin": 170.42,
+   "midi": 74,
+   "nombre": "D5",
+   "latino": "Re5",
+   "velocidad": 62,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.009,
+   "fin": 169.51,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 70,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.503,
+   "fin": 169.65,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 49,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.516,
+   "fin": 169.93,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 52,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.656,
+   "fin": 169.87,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 50,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.936,
+   "fin": 170.91,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 61,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.938,
+   "fin": 170.4,
+   "midi": 66,
+   "nombre": "F#4",
+   "latino": "Fa#4",
+   "velocidad": 64,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 169.943,
+   "fin": 170.21,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 68,
+   "confianza": 0.72
+  },
+  {
+   "inicio": 170.066,
+   "fin": 170.22,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 57,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.223,
+   "fin": 170.48,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 53,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.234,
+   "fin": 170.93,
+   "midi": 67,
+   "nombre": "G4",
+   "latino": "Sol4",
+   "velocidad": 49,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.492,
+   "fin": 170.69,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 48,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.855,
+   "fin": 171.77,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 64,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.856,
+   "fin": 171.33,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 56,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.856,
+   "fin": 171.45,
+   "midi": 48,
+   "nombre": "C3",
+   "latino": "Do3",
+   "velocidad": 45,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.856,
+   "fin": 171.56,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 51,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.856,
+   "fin": 171.32,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 62,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.859,
+   "fin": 171.1,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 60,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 170.864,
+   "fin": 171.1,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 61,
+   "confianza": 0.65
+  },
+  {
+   "inicio": 171.314,
+   "fin": 171.52,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 52,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 171.782,
+   "fin": 172.32,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 60,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 171.783,
+   "fin": 172.69,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 56,
+   "confianza": 0.52
+  },
+  {
+   "inicio": 172.702,
+   "fin": 173.61,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 64,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 172.703,
+   "fin": 173.64,
+   "midi": 56,
+   "nombre": "G#3",
+   "latino": "Sol#3",
+   "velocidad": 44,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 172.704,
+   "fin": 173.62,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 56,
+   "confianza": 0.47
+  },
+  {
+   "inicio": 174.111,
+   "fin": 174.21,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 52,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.225,
+   "fin": 174.29,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 58,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.551,
+   "fin": 175.32,
+   "midi": 77,
+   "nombre": "F5",
+   "latino": "Fa5",
+   "velocidad": 75,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.552,
+   "fin": 174.994,
+   "midi": 71,
+   "nombre": "B4",
+   "latino": "Si4",
+   "velocidad": 77,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.647,
+   "fin": 174.92,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 62,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.652,
+   "fin": 175.3,
+   "midi": 73,
+   "nombre": "C#5",
+   "latino": "Do#5",
+   "velocidad": 57,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.926,
+   "fin": 175.32,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 51,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 174.934,
+   "fin": 175.01,
+   "midi": 68,
+   "nombre": "G#4",
+   "latino": "Sol#4",
+   "velocidad": 51,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 197.161,
+   "fin": 197.62,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 47,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 197.625,
+   "fin": 198.08,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 51,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 197.627,
+   "fin": 198.54,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 73,
+   "confianza": 0.53
+  },
+  {
+   "inicio": 198.087,
+   "fin": 198.551,
+   "midi": 65,
+   "nombre": "F4",
+   "latino": "Fa4",
+   "velocidad": 68,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 198.089,
+   "fin": 198.55,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 49,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 198.547,
+   "fin": 199.09,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 42,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 198.553,
+   "fin": 199.11,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 37,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 198.564,
+   "fin": 198.91,
+   "midi": 46,
+   "nombre": "A#2",
+   "latino": "La#2",
+   "velocidad": 29,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 200.393,
+   "fin": 201.13,
+   "midi": 43,
+   "nombre": "G2",
+   "latino": "Sol2",
+   "velocidad": 53,
+   "confianza": 0.5
+  },
+  {
+   "inicio": 200.394,
+   "fin": 200.91,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 55,
+   "confianza": 0.5
+  },
+  {
+   "inicio": 200.396,
+   "fin": 200.85,
+   "midi": 60,
+   "nombre": "C4",
+   "latino": "Do4",
+   "velocidad": 61,
+   "confianza": 0.5
+  },
+  {
+   "inicio": 200.398,
+   "fin": 200.94,
+   "midi": 62,
+   "nombre": "D4",
+   "latino": "Re4",
+   "velocidad": 59,
+   "confianza": 0.5
+  },
+  {
+   "inicio": 200.403,
+   "fin": 200.54,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 58,
+   "confianza": 0.5
+  },
+  {
+   "inicio": 202.238,
+   "fin": 202.37,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 54,
+   "confianza": 0.66
+  },
+  {
+   "inicio": 202.244,
+   "fin": 204.19,
+   "midi": 72,
+   "nombre": "C5",
+   "latino": "Do5",
+   "velocidad": 58,
+   "confianza": 0.66
+  },
+  {
+   "inicio": 202.255,
+   "fin": 205.755,
+   "midi": 75,
+   "nombre": "D#5",
+   "latino": "Re#5",
+   "velocidad": 58,
+   "confianza": 0.66
+  },
+  {
+   "inicio": 202.959,
+   "fin": 204.08,
+   "midi": 82,
+   "nombre": "A#5",
+   "latino": "La#5",
+   "velocidad": 50,
+   "confianza": 0.66
+  },
+  {
+   "inicio": 204.087,
+   "fin": 207.5,
+   "midi": 55,
+   "nombre": "G3",
+   "latino": "Sol3",
+   "velocidad": 42,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 204.087,
+   "fin": 207.5,
+   "midi": 82,
+   "nombre": "A#5",
+   "latino": "La#5",
+   "velocidad": 61,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 204.092,
+   "fin": 207.5,
+   "midi": 70,
+   "nombre": "A#4",
+   "latino": "La#4",
+   "velocidad": 53,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 204.093,
+   "fin": 207.5,
+   "midi": 58,
+   "nombre": "A#3",
+   "latino": "La#3",
+   "velocidad": 46,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 204.093,
+   "fin": 207.5,
+   "midi": 63,
+   "nombre": "D#4",
+   "latino": "Re#4",
+   "velocidad": 45,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 204.096,
+   "fin": 207.5,
+   "midi": 44,
+   "nombre": "G#2",
+   "latino": "Sol#2",
+   "velocidad": 46,
+   "confianza": 1.0
+  },
+  {
+   "inicio": 204.099,
+   "fin": 207.5,
+   "midi": 51,
+   "nombre": "D#3",
+   "latino": "Re#3",
+   "velocidad": 42,
+   "confianza": 1.0
+  }
+ ],
+ "letra": [
+  {
+   "inicio": 20.98,
+   "fin": 27.46,
+   "texto": "Que te puedo esconder, que tú no entiendas.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 20.98,
+     "w": "Que"
+    },
+    {
+     "t": 22.06,
+     "w": "te"
+    },
+    {
+     "t": 22.46,
+     "w": "puedo"
+    },
+    {
+     "t": 23.0,
+     "w": "esconder,"
+    },
+    {
+     "t": 24.66,
+     "w": "que"
+    },
+    {
+     "t": 25.68,
+     "w": "tú"
+    },
+    {
+     "t": 25.92,
+     "w": "no"
+    },
+    {
+     "t": 26.14,
+     "w": "entiendas."
+    }
+   ]
+  },
+  {
+   "inicio": 29.38,
+   "fin": 34.46,
+   "texto": "Yo sé que tú me conoces bien por dentro.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 29.04,
+     "w": "Yo"
+    },
+    {
+     "t": 29.58,
+     "w": "sé"
+    },
+    {
+     "t": 29.86,
+     "w": "que"
+    },
+    {
+     "t": 30.12,
+     "w": "tú"
+    },
+    {
+     "t": 30.98,
+     "w": "me"
+    },
+    {
+     "t": 31.28,
+     "w": "conoces"
+    },
+    {
+     "t": 32.76,
+     "w": "bien"
+    },
+    {
+     "t": 33.14,
+     "w": "por"
+    },
+    {
+     "t": 33.56,
+     "w": "dentro."
+    }
+   ]
+  },
+  {
+   "inicio": 36.5,
+   "fin": 41.78,
+   "texto": "Y tú sabes bien cómo me estoy sintiendo.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 36.22,
+     "w": "Y"
+    },
+    {
+     "t": 36.76,
+     "w": "tú"
+    },
+    {
+     "t": 37.22,
+     "w": "sabes"
+    },
+    {
+     "t": 37.92,
+     "w": "bien"
+    },
+    {
+     "t": 38.74,
+     "w": "cómo"
+    },
+    {
+     "t": 39.14,
+     "w": "me"
+    },
+    {
+     "t": 40.2,
+     "w": "estoy"
+    },
+    {
+     "t": 40.58,
+     "w": "sintiendo."
+    }
+   ]
+  },
+  {
+   "inicio": 41.78,
+   "fin": 57.84,
+   "texto": "Te confieso que soy frágil, que me cuesta vivir con lo que pides de mí.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 41.78,
+     "w": "Te"
+    },
+    {
+     "t": 44.34,
+     "w": "confieso"
+    },
+    {
+     "t": 45.9,
+     "w": "que"
+    },
+    {
+     "t": 46.66,
+     "w": "soy"
+    },
+    {
+     "t": 48.06,
+     "w": "frágil,"
+    },
+    {
+     "t": 49.7,
+     "w": "que"
+    },
+    {
+     "t": 51.26,
+     "w": "me"
+    },
+    {
+     "t": 51.74,
+     "w": "cuesta"
+    },
+    {
+     "t": 53.1,
+     "w": "vivir"
+    },
+    {
+     "t": 53.76,
+     "w": "con"
+    },
+    {
+     "t": 55.46,
+     "w": "lo"
+    },
+    {
+     "t": 55.68,
+     "w": "que"
+    },
+    {
+     "t": 56.0,
+     "w": "pides"
+    },
+    {
+     "t": 56.96,
+     "w": "de"
+    },
+    {
+     "t": 57.36,
+     "w": "mí."
+    }
+   ]
+  },
+  {
+   "inicio": 57.84,
+   "fin": 74.56,
+   "texto": "Y te confieso que me cuesta buscarte para pedirte perdón, para dejarme alcanzar por tu amor.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 57.84,
+     "w": "Y"
+    },
+    {
+     "t": 58.3,
+     "w": "te"
+    },
+    {
+     "t": 58.64,
+     "w": "confieso"
+    },
+    {
+     "t": 60.24,
+     "w": "que"
+    },
+    {
+     "t": 60.76,
+     "w": "me"
+    },
+    {
+     "t": 61.18,
+     "w": "cuesta"
+    },
+    {
+     "t": 62.16,
+     "w": "buscarte"
+    },
+    {
+     "t": 63.86,
+     "w": "para"
+    },
+    {
+     "t": 66.32,
+     "w": "pedirte"
+    },
+    {
+     "t": 67.82,
+     "w": "perdón,"
+    },
+    {
+     "t": 69.06,
+     "w": "para"
+    },
+    {
+     "t": 70.24,
+     "w": "dejarme"
+    },
+    {
+     "t": 71.68,
+     "w": "alcanzar"
+    },
+    {
+     "t": 72.9,
+     "w": "por"
+    },
+    {
+     "t": 73.48,
+     "w": "tu"
+    },
+    {
+     "t": 73.94,
+     "w": "amor."
+    }
+   ]
+  },
+  {
+   "inicio": 88.16,
+   "fin": 93.52,
+   "texto": "El silencio ya me está haciendo daño.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 88.16,
+     "w": "El"
+    },
+    {
+     "t": 89.14,
+     "w": "silencio"
+    },
+    {
+     "t": 90.12,
+     "w": "ya"
+    },
+    {
+     "t": 90.44,
+     "w": "me"
+    },
+    {
+     "t": 90.76,
+     "w": "está"
+    },
+    {
+     "t": 91.06,
+     "w": "haciendo"
+    },
+    {
+     "t": 92.44,
+     "w": "daño."
+    }
+   ]
+  },
+  {
+   "inicio": 94.96,
+   "fin": 101.08,
+   "texto": "Sé que tú eres lo que me está faltando.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 94.96,
+     "w": "Sé"
+    },
+    {
+     "t": 95.94,
+     "w": "que"
+    },
+    {
+     "t": 96.42,
+     "w": "tú"
+    },
+    {
+     "t": 96.82,
+     "w": "eres"
+    },
+    {
+     "t": 97.66,
+     "w": "lo"
+    },
+    {
+     "t": 98.16,
+     "w": "que"
+    },
+    {
+     "t": 98.36,
+     "w": "me"
+    },
+    {
+     "t": 99.48,
+     "w": "está"
+    },
+    {
+     "t": 99.72,
+     "w": "faltando."
+    }
+   ]
+  },
+  {
+   "inicio": 103.16,
+   "fin": 108.28,
+   "texto": "Yo sé que me conoces bien por dentro.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 103.16,
+     "w": "Yo"
+    },
+    {
+     "t": 104.14,
+     "w": "sé"
+    },
+    {
+     "t": 104.54,
+     "w": "que"
+    },
+    {
+     "t": 104.84,
+     "w": "me"
+    },
+    {
+     "t": 105.12,
+     "w": "conoces"
+    },
+    {
+     "t": 106.64,
+     "w": "bien"
+    },
+    {
+     "t": 107.0,
+     "w": "por"
+    },
+    {
+     "t": 107.42,
+     "w": "dentro."
+    }
+   ]
+  },
+  {
+   "inicio": 109.82,
+   "fin": 115.34,
+   "texto": "Y tú sabes cómo me estoy sintiendo.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 109.82,
+     "w": "Y"
+    },
+    {
+     "t": 110.8,
+     "w": "tú"
+    },
+    {
+     "t": 111.0,
+     "w": "sabes"
+    },
+    {
+     "t": 111.86,
+     "w": "cómo"
+    },
+    {
+     "t": 113.38,
+     "w": "me"
+    },
+    {
+     "t": 114.0,
+     "w": "estoy"
+    },
+    {
+     "t": 114.3,
+     "w": "sintiendo."
+    }
+   ]
+  },
+  {
+   "inicio": 116.96,
+   "fin": 131.64,
+   "texto": "Te confieso que soy frágil, que me cuesta vivir con lo que pides de mí.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 116.96,
+     "w": "Te"
+    },
+    {
+     "t": 118.36,
+     "w": "confieso"
+    },
+    {
+     "t": 119.76,
+     "w": "que"
+    },
+    {
+     "t": 120.48,
+     "w": "soy"
+    },
+    {
+     "t": 121.88,
+     "w": "frágil,"
+    },
+    {
+     "t": 123.64,
+     "w": "que"
+    },
+    {
+     "t": 125.12,
+     "w": "me"
+    },
+    {
+     "t": 125.64,
+     "w": "cuesta"
+    },
+    {
+     "t": 126.92,
+     "w": "vivir"
+    },
+    {
+     "t": 127.66,
+     "w": "con"
+    },
+    {
+     "t": 129.34,
+     "w": "lo"
+    },
+    {
+     "t": 129.54,
+     "w": "que"
+    },
+    {
+     "t": 129.84,
+     "w": "pides"
+    },
+    {
+     "t": 130.82,
+     "w": "de"
+    },
+    {
+     "t": 131.18,
+     "w": "mí."
+    }
+   ]
+  },
+  {
+   "inicio": 131.64,
+   "fin": 147.52,
+   "texto": "Y te confieso que me cuesta buscarte para pedirte perdón, para dejarme alcanzar.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 131.64,
+     "w": "Y"
+    },
+    {
+     "t": 131.84,
+     "w": "te"
+    },
+    {
+     "t": 132.48,
+     "w": "confieso"
+    },
+    {
+     "t": 133.96,
+     "w": "que"
+    },
+    {
+     "t": 134.56,
+     "w": "me"
+    },
+    {
+     "t": 134.98,
+     "w": "cuesta"
+    },
+    {
+     "t": 135.88,
+     "w": "buscarte"
+    },
+    {
+     "t": 137.68,
+     "w": "para"
+    },
+    {
+     "t": 140.14,
+     "w": "pedirte"
+    },
+    {
+     "t": 141.78,
+     "w": "perdón,"
+    },
+    {
+     "t": 143.12,
+     "w": "para"
+    },
+    {
+     "t": 144.22,
+     "w": "dejarme"
+    },
+    {
+     "t": 145.52,
+     "w": "alcanzar."
+    }
+   ]
+  },
+  {
+   "inicio": 147.94,
+   "fin": 159.58,
+   "texto": "Te confieso que no tengo a dónde ir, porque es que ¿quién iré si no es a ti?",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 147.94,
+     "w": "Te"
+    },
+    {
+     "t": 149.1,
+     "w": "confieso"
+    },
+    {
+     "t": 149.78,
+     "w": "que"
+    },
+    {
+     "t": 150.06,
+     "w": "no"
+    },
+    {
+     "t": 150.34,
+     "w": "tengo"
+    },
+    {
+     "t": 150.7,
+     "w": "a"
+    },
+    {
+     "t": 151.12,
+     "w": "dónde"
+    },
+    {
+     "t": 151.7,
+     "w": "ir,"
+    },
+    {
+     "t": 152.84,
+     "w": "porque"
+    },
+    {
+     "t": 156.44,
+     "w": "es"
+    },
+    {
+     "t": 156.64,
+     "w": "que"
+    },
+    {
+     "t": 156.72,
+     "w": "¿quién"
+    },
+    {
+     "t": 157.12,
+     "w": "iré"
+    },
+    {
+     "t": 157.82,
+     "w": "si"
+    },
+    {
+     "t": 158.36,
+     "w": "no"
+    },
+    {
+     "t": 158.54,
+     "w": "es"
+    },
+    {
+     "t": 158.76,
+     "w": "a"
+    },
+    {
+     "t": 159.1,
+     "w": "ti?"
+    }
+   ]
+  },
+  {
+   "inicio": 161.64,
+   "fin": 175.98,
+   "texto": "Te confieso que soy frágil, que me cuesta vivir con lo que pides de mí.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 161.64,
+     "w": "Te"
+    },
+    {
+     "t": 162.68,
+     "w": "confieso"
+    },
+    {
+     "t": 164.14,
+     "w": "que"
+    },
+    {
+     "t": 164.94,
+     "w": "soy"
+    },
+    {
+     "t": 166.26,
+     "w": "frágil,"
+    },
+    {
+     "t": 167.78,
+     "w": "que"
+    },
+    {
+     "t": 169.42,
+     "w": "me"
+    },
+    {
+     "t": 169.94,
+     "w": "cuesta"
+    },
+    {
+     "t": 171.22,
+     "w": "vivir"
+    },
+    {
+     "t": 171.92,
+     "w": "con"
+    },
+    {
+     "t": 173.66,
+     "w": "lo"
+    },
+    {
+     "t": 173.96,
+     "w": "que"
+    },
+    {
+     "t": 174.28,
+     "w": "pides"
+    },
+    {
+     "t": 175.1,
+     "w": "de"
+    },
+    {
+     "t": 175.48,
+     "w": "mí."
+    }
+   ]
+  },
+  {
+   "inicio": 176.18,
+   "fin": 191.12,
+   "texto": "Te confieso para pedirte perdón, para dejarme alcanzar.",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 176.18,
+     "w": "Te"
+    },
+    {
+     "t": 176.8,
+     "w": "confieso"
+    },
+    {
+     "t": 178.18,
+     "w": "para"
+    },
+    {
+     "t": 179.78,
+     "w": "pedirte"
+    },
+    {
+     "t": 186.02,
+     "w": "perdón,"
+    },
+    {
+     "t": 187.28,
+     "w": "para"
+    },
+    {
+     "t": 188.52,
+     "w": "dejarme"
+    },
+    {
+     "t": 189.82,
+     "w": "alcanzar."
+    }
+   ]
+  },
+  {
+   "inicio": 198.48,
+   "fin": 204.5,
+   "texto": "¿Qué te puedo yo decir que tú no entiendas?",
+   "editado": false,
+   "palabras": [
+    {
+     "t": 198.48,
+     "w": "¿Qué"
+    },
+    {
+     "t": 199.6,
+     "w": "te"
+    },
+    {
+     "t": 199.82,
+     "w": "puedo"
+    },
+    {
+     "t": 200.34,
+     "w": "yo"
+    },
+    {
+     "t": 201.16,
+     "w": "decir"
+    },
+    {
+     "t": 201.74,
+     "w": "que"
+    },
+    {
+     "t": 202.96,
+     "w": "tú"
+    },
+    {
+     "t": 203.32,
+     "w": "no"
+    },
+    {
+     "t": 203.54,
+     "w": "entiendas?"
+    }
+   ]
+  }
+ ],
+ "generado_por": "claude",
+ "version_datos": 1
+}
